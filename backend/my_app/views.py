@@ -1,7 +1,7 @@
 # Views at the end of Workshop 2
-from backend import app
+from my_app import app
 from flask import render_template, request, redirect
-from backend.parse import parse_file
+from my_app.parse import parse_file
 
 @app.route("/api/class", methods=["POST"])
 def add_lecture():
