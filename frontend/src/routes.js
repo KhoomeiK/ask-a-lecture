@@ -37,7 +37,7 @@ const PageSwitches = (props) => {
 }
 
 const Frame = (props) => {
-    const [userType, setUserType] = useState('student')
+    const [userType, setUserType] = useState('professor')
     
     return (
         <div className="container">

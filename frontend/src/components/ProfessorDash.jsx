@@ -1,26 +1,29 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import {classes} from '../utils'
+import {StyledDropzone} from './Dropzone'
 
 export const ProfessorDash = (props) => {
 
+    return (<div className="dashboard">
+        <StyledDropzone />
+    </div>)
+    // const onDrop = useCallback(acceptedFiles => {
+    //     // Do something with the files
+    // }, [])
+    // const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
-    const onDrop = useCallback(acceptedFiles => {
-        // Do something with the files
-    }, [])
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-
-    return (
-        <div className="dashboard">
-            <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                {
-                    isDragActive ?
-                        <p>Drop the files here ...</p> :
-                        <p>Drag 'n' drop some files here, or click to select files</p>
-                }
-            </div>
-        </div>
-    )
+    // return (
+    //     <div className="dashboard">
+    //         <div {...getRootProps()}>
+    //             <input {...getInputProps()} />
+    //             {
+    //                 isDragActive ?
+    //                     <p>Drop the files here ...</p> :
+    //                     <p>Drag 'n' drop some files here, or click to select files</p>
+    //             }
+    //         </div>
+    //     </div>
+    // )
     
 }
