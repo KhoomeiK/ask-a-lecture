@@ -20,8 +20,6 @@ body,
 
 #logo-container {
     grid-area: logo;
-    top: 0px;
-    left: 0px;
     overflow:hidden;
     object-fit: contain;
 }
@@ -32,12 +30,8 @@ body,
     width: auto; 
 }
 
-.survey, .login, .default, .admin-container, .csv-upload {
+.dashboard {
     grid-area: main;
-}
-
-.table {
-  grid-area: table;
 }
 
 .header {
