@@ -1,5 +1,6 @@
 import React, {useMemo, useCallback} from 'react';
 import {useDropzone} from 'react-dropzone';
+import {Label} from 'theme-ui'
 
 const baseStyle = {
     flex: 1,
@@ -13,7 +14,7 @@ const baseStyle = {
     borderStyle: 'dashed',
     backgroundColor: '#fafafa',
     color: '#bdbdbd',
-    height: '200px',
+    height: '150px',
     outline: 'none',
     transition: 'border .24s ease-in-out'
 };
@@ -36,13 +37,14 @@ export const StyledDropzone = (props) => {
     const handleFileRead = (e) => {
         const content = fileReader.result
         props.setText(content)
+
     }
     const onDrop = useCallback(acceptedFiles => {
         fileReader = new FileReader();
         fileReader.onloadend = handleFileRead;
         fileReader.readAsText(acceptedFiles[0])
     }, [])
-    
+
     const {
         getRootProps,
         getInputProps,
@@ -64,6 +66,7 @@ export const StyledDropzone = (props) => {
 
     return (
         <div className="upload">
+            <Label>Class transcript</Label>
             <div {...getRootProps({style})}>
                 <input {...getInputProps()} />
                 <p>Drag and drop either .vtt or .txt files here, or click to upload!</p>
