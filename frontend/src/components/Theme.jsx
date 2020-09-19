@@ -1,14 +1,14 @@
 import React from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { deep } from '@theme-ui/presets'
+import { roboto } from '@theme-ui/presets'
 
-const deepTheme = {
-    ...deep,
+const theme = {
+    ...roboto,
     styles: {
-        ...deep.styles,
+        ...roboto.styles,
     },
 }
 
 export const Theme = props => (
-    <ThemeProvider theme={deepTheme}>{props.children}</ThemeProvider>
+    <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 )

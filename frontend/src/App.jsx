@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import { BrowserRouter } from 'react-router-dom'
 import { Routes } from './routes'
 
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
     return (
         <Theme>
@@ -15,5 +17,6 @@ function App() {
         </Theme>
     );
 }
+
 
 export default App;

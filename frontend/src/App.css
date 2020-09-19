@@ -37,3 +37,7 @@ body,
 .header {
   grid-area: head;
 }
+
+.upload {
+  height: 150px;
+}

@@ -1,2 +1,26 @@
+import {toast} from 'react-toastify'
 
 export const classes = [{className: 'Special Subject in Mathematics', classNumber: '18.S096'}, {className: 'Algorithms for Parallel Computing', classNumber: 'CS6320'}]
+
+
+export const postLecture = (lecture) => (fetch(`${process.env.REACT_APP_API_URL}/class`, 
+    {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(lecture)
+    }))
+
+export const popToast = (message) => {
+    toast(message);
+}
+
+/**
+ * 
+ * {
+    "transcript": "", 
+    "classId": "18.06",
+    "lectureNumber": 1, 
+    "lectureTitle": "", 
+    "videoLink": ""
+}
+ */
