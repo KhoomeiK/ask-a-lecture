@@ -4,11 +4,12 @@ import sqlite3
 
 from my_app.parse import parse_file
 from my_app.search import Model
+from jina.search_gina import Model_jina
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
 
-model = Model()
+model = Model_jina()
 
 @app.route("/api/class", methods=["POST"])
 def add_lecture():
@@ -41,13 +42,13 @@ def search():
     lectureId = '%s-%s' % (classId, lectureNumber)
     results = model.search(question, lectureId)
     # results = sorted([x['timestamp'] for x in results]) # todo: get rid of sorted?
-    
+
     conn = sqlite3.connect('lectures.db')
     c = conn.cursor()
     c.execute('SELECT video_link, lecture_title FROM lectures WHERE class_lecture=?', (lectureId,))
     info = c.fetchone()
     conn.close()
-    
+
     return jsonify({'link': info[0], 'title': info[1], 'results': results})
 
 @app.route("/api/list_lectures", methods=["GET"])
