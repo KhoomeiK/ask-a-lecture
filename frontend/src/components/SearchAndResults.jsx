@@ -1,21 +1,13 @@
 /** @jsx jsx */
 
 import _ from 'lodash'
-import React from 'react'
+import React, {useState} from 'react'
 import { Search } from 'semantic-ui-react'
 import { Card, Heading, jsx, Text} from 'theme-ui'
 import { Link } from 'react-router-dom'
 import {Link as ThemeLink} from 'theme-ui' 
 import { postSearch, timeStampToYouTube } from '../utils'
 
-// TODO: This should be replaced with acutal data
-// const getResults = () =>
-//   _.times(5, () => ({
-//     title: faker.company.companyName(),
-//     description: faker.company.catchPhrase(),
-//     image: faker.internet.avatar(),
-//     price: faker.finance.amount(0, 100, 2, '$'),
-//   }))
 const initialState = {
     loading: false,
     results: [],
@@ -23,11 +15,12 @@ const initialState = {
 }
 
 const ResultCard = ({text, timestamp, videoURL}) => {
-    return(<Card>
-        <Text>
+    return(
+        <Card>
+            <Text>
             Card
-        </Text>
-    </Card>
+            </Text>
+        </Card>
     )
 }
 
@@ -66,10 +59,8 @@ function exampleReducer(state, action) {
 
 const resultRenderer = ({text, linkWithTime, title}) => {
     const updatedText = text.slice(0, 100) + "..."
-    console.log(text)
-    console.log(typeof(text))
-    console.log(updatedText)
-    return <Card key={title}>{updatedText}, <ThemeLink target="_blank" href={linkWithTime} >Video Link</ThemeLink></Card>
+    return (
+        <Card key={title}>{updatedText}, <ThemeLink target="_blank" href={linkWithTime}>Video Link</ThemeLink></Card>)
 }
 
 function SearchExampleStandard(props) {
@@ -92,6 +83,7 @@ function SearchExampleStandard(props) {
 
             const search = {"classId": props.classId, "lectureNumber": props.lectureNum, "question": data.value}
             const source = await fetchResults(search)
+            props.setResults(source)
 
             dispatch({
                 type: 'FINISH_SEARCH',
@@ -99,6 +91,7 @@ function SearchExampleStandard(props) {
             })
         }, 300)
     }, [])
+
     React.useEffect(() => {
         return () => {
             clearTimeout(timeoutRef.current)
@@ -120,62 +113,10 @@ function SearchExampleStandard(props) {
     )
 }
 
-
-
-
-// class SearchBar extends Component {
-//   state = initialState
-  
-
-//   handleResultSelect = (e, { result }) => {
-//     this.setState({ value: result })
-//     // this.props.setResults
-// }
-
-//   handleSearchChange = (e, { value }) => {
-//     this.setState({ isLoading: true, value })
-
-//     setTimeout(async () => {
-//       if (this.state.value.length < 1) return this.setState(initialState)
-
-      
-//         const search = {"classId": this.props.classId, "lectureNumber": this.props.lectureNum, "question": this.state.value}
-//         console.log(search)
-
-//         // Array of JSON comes back
-//         const filteredResults = await fetchResults(search)
-
-//         console.log(filteredResults)
-
-//       this.setState({
-//         isLoading: false,
-//         results: filteredResults,
-//       })
-//     }, 300)
-//   }
-
-//   render() {
-//     const { isLoading, value, results } = this.state
-
-//     return (
-//       <div className="searchBar">
-//           <Search
-//             category
-//             loading={isLoading}
-//             onResultSelect={this.handleResultSelect}
-//             onSearchChange={_.debounce(this.handleSearchChange, 500, {
-//               leading: true,
-//             })}
-//             results={results}
-//             value={value}
-//           />
-//       </div>
-//     )
-//   }
-// }
-
 export const SearchAndResults = (props) => {
     const {to, staticContext, activeClassName, ...rest} = props
+
+    const [results, setResults] = useState([])
     let classId = "18.S096"
     let lectureNum = "1"
     if (props.location.state) {
@@ -192,7 +133,7 @@ export const SearchAndResults = (props) => {
             }}
             className="header">
             <Heading>Ask-A-Lecture</Heading>
-            <SearchExampleStandard classId={classId} lectureNum={lectureNum} />
+            <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
             <div sx={{ mx: 'auto' }} />
             
             <Link {...rest} to="/professor"
@@ -207,93 +148,3 @@ export const SearchAndResults = (props) => {
         </header>
     )
 }
-
-// const initialState = { isLoading: false, results: [], value: '' }
-
-// export const SearchAndResults = () => {
-
-//     const [isLoading, setIsLoading] = useState(false)
-//     const [results, setResults] = useState([])
-//     const [value, setValue] = useState('')
-
-    
-//     const handleResultSelect = (e, { result }) => setValue(result.title)
-
-//     const handleSearchChange = (e, { value }) => {
-//         setValue(value)
-//         setIsLoading(true)
-//     }
-
-//     const setTimeout = () => {
-//       if (value.length < 1) {
-//           setIsLoading(false)
-//           setResults([])
-//           setValue('')
-//         //   return this.setState(initialState)
-//       }
-
-//       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-//       const isMatch = (result) => re.test(result.title)
-
-//       const filteredResults = _.reduce(
-//         source,
-//         (memo, data, name) => {
-//           const results = _.filter(data.results, isMatch)
-//           if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
-
-//           return memo
-//         },
-//         {},
-//       )
-
-//       this.setState({
-//         isLoading: false,
-//         results: filteredResults,
-//       })
-//     }, 300)
-//   }
-
-//   render() {
-//     const { isLoading, value, results } = this.state
-
-//     return (
-//       <Grid>
-//         <Grid.Column width={8}>
-//           <Search
-//             category
-//             loading={isLoading}
-//             onResultSelect={this.handleResultSelect}
-//             onSearchChange={_.debounce(this.handleSearchChange, 500, {
-//               leading: true,
-//             })}
-//             results={results}
-//             value={value}
-//           />
-//         </Grid.Column>
-//         <Grid.Column width={8}>
-//           <Segment>
-//             <Header>State</Header>
-//             <pre style={{ overflowX: 'auto' }}>
-//               {JSON.stringify(this.state, null, 2)}
-//             </pre>
-//             <Header>Options</Header>
-//             <pre style={{ overflowX: 'auto' }}>
-//               {JSON.stringify(source, null, 2)}
-//             </pre>
-//           </Segment>
-//         </Grid.Column>
-//       </Grid>
-//     )
-//   }
-
-//     return(<Search
-//         category
-//         loading={isLoading}
-//         onResultSelect={this.handleResultSelect}
-//         onSearchChange={_.debounce(this.handleSearchChange, 500, {
-//             leading: true,
-//         })}
-//         results={results}
-//         value={value}
-//     />)
-// }
