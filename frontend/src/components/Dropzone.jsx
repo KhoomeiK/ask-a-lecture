@@ -14,7 +14,7 @@ const baseStyle = {
     borderStyle: 'dashed',
     backgroundColor: '#fafafa',
     color: '#bdbdbd',
-    height: '150px',
+    height: '100px',
     outline: 'none',
     transition: 'border .24s ease-in-out'
 };

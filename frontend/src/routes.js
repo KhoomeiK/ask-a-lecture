@@ -11,6 +11,7 @@ import {
 import {jsx, Heading} from 'theme-ui'
 import { ProfessorDash } from './components/ProfessorDash';
 import { StudentDash } from './components/StudentDash'
+import { SearchAndResults } from './components/SearchAndResults'
 
 const PageSwitches = (props) => {
 
@@ -18,6 +19,7 @@ const PageSwitches = (props) => {
         <Switch>
             <Route path="/professor" component={ProfessorDash} />
             <Route path="/student" component={StudentDash} />
+            <Route path="/search" component={SearchAndResults} />
             <Route path="/" component={ProfessorDash} />
         </Switch>
     )
