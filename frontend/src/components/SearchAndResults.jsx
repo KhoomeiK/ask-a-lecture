@@ -155,26 +155,31 @@ export const SearchAndResults = (props) => {
     console.log(results)
     
     return(
-        <header
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                variant: 'styles.header',
-            }}
-            className="header">
-            <Heading>Search</Heading>
-            <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
-            <div sx={{ mx: 'auto' }} />
-            
-            {/* <Link {...rest} to="/professor"
+        <React.Fragment>
+            <header
                 sx={{
-                    color: 'inherit',
-                    '&.active': {
-                        color: 'primary',
-                    },
-                    marginRight: '10px'
-                }}>Professor View</Link>  */}
+                    display: 'flex',
+                    alignItems: 'center',
+                    variant: 'styles.header',
+                }}
+                className="header">
+                <Heading>Search</Heading>
+                <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
+                <div sx={{ mx: 'auto' }} />
+            
+                <Link {...rest} to="/professor"
+                    sx={{
+                        color: 'inherit',
+                        '&.active': {
+                            color: 'primary',
+                        },
+                        marginRight: '10px'
+                    }}>Professor View</Link> 
 
-        </header>
+            </header>
+            <Box className="dashboard">
+                {results.map(result => <ResultCard {...result} />)}
+            </Box>
+        </React.Fragment>
     )
 }

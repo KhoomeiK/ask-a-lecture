@@ -56,14 +56,14 @@ export const ProfessorDash = (props) => {
                 className="header">
                 {/* <Heading>Niidl</Heading> */}
                 <div sx={{ mx: 'auto' }} />
-                {/* <Link {...rest} to="/student"
+                <Link {...rest} to="/student"
                     sx={{
                         color: 'inherit',
                         '&.active': {
                             color: 'primary',
                         },
                         marginRight: '10px'
-                    }}>Student View</Link>  */}
+                    }}>Student View</Link> 
 
             </header>
             <div className="dashboard">

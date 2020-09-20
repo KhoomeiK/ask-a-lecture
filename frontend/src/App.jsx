@@ -18,7 +18,6 @@ function App() {
                 <ToastContainer />
                 <Navbar className = 'navBar'>
                     <Heading>Niidl</Heading>
-                    
                 </Navbar>
                 <Routes />
             </BrowserRouter>
