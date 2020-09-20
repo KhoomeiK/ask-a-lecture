@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import _ from 'lodash'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Search } from 'semantic-ui-react'
 import { Card, Heading, jsx, Box} from 'theme-ui'
 import { Link } from 'react-router-dom'
@@ -18,18 +18,7 @@ const initialState = {
 const ResultCard = (props) => {
     const updatedText = props.text.slice(0, 100) + "..."
     // let time = props.timestamp.split(".")[0]
-    console.log(props)
-    const videoId = getVideoId(props.link)
 
-    const options = {
-        height: '310',
-        width: '510',
-        start: timeStampToSeconds(props.timestamp),
-        playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-            autoplay: 0,
-        },
-    }
     return(
         <CardView style={{width: '100%' }}>
             {/* <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} /> */}
@@ -39,7 +28,7 @@ const ResultCard = (props) => {
                     <ThemeLink target="_blank" href={props.linkWithTime}>({props.timestamp})</ThemeLink>
                     {props.text}
                 </CardView.Description>
-                <YouTube opts={options} videoId={videoId} />
+                
             </CardView.Content>
         </CardView>
 
@@ -146,13 +135,31 @@ export const SearchAndResults = (props) => {
     const {to, staticContext, activeClassName, ...rest} = props
 
     const [results, setResults] = useState([])
+    const [selectedTimestamp, setSelectedTimestamp] = useState("00:00:00.00")
+    const [videoId, setVideoId] = useState("")
     let classId = "18.S096"
     let lectureNum = "1"
     if (props.location.state) {
         classId = props.location.state.classId
         lectureNum = props.location.state.lectureNum
     }
-    console.log(results)
+
+    useEffect(() => {
+        if (results !== []) {
+            setVideoId(results.link)
+        }
+    }, [results])
+
+    
+    const options = {
+        height: '310',
+        width: '510',
+        start: timeStampToSeconds(selectedTimestamp),
+        playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+            autoplay: 0,
+        },
+    }
     
     return(
         <React.Fragment>
@@ -177,8 +184,10 @@ export const SearchAndResults = (props) => {
                     }}>Professor View</Link> 
 
             </header>
+            
             <Box className="dashboard">
-                {results.map(result => <ResultCard {...result} />)}
+                <YouTube opts={options} videoId={videoId} />
+                {results.map(result => <ResultCard setSelectedTimestamp={setSelectedTimestamp} {...result} />)}
             </Box>
         </React.Fragment>
 
