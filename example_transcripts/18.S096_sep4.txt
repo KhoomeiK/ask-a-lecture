@@ -1,0 +1,653 @@
+Ankur Moitra
+00:00
+All right, everybody. So welcome back to class. So today, we're going to start on lecture two on the geometry of linear equations.
+00:08
+So the first thing that I want to do is some quick announcements about the course logistics so
+00:14
+We have these post lecture quizzes that we just started doing so, you know, these are things which you can find links to on canvas. Also we posted a link on Piazza
+00:24
+So these are going to be things that do not count towards your grade, but they're just a quick way to make sure that your understanding some of the key takeaways from the lecture.
+00:34
+Because remember, our P sets are going to be bi weekly. So we want to make sure that you know you've understood the concepts from the past lecture or at least know which things you want to brush up on before the next one.
+00:44
+So please do fill them out. Sometimes it might seem a little confusing because in grade scope, we might list them as one point or something just to keep track administratively what's going on.
+00:55
+But I assure you that one point will not buy you anything. You know, it's like unicorn points of counts for nothing. So recitations are going to start this coming Tuesday.
+01:05
+And we're, we, we actually shifted around the recitation times just a little bit in response to the polls.
+01:11
+So all the recitation times are basically staying the way that they were except for the nine to 10 recitation.
+01:17
+Is now 830 to 930 we did that because there were a few students who were in parts of Europe and, you know, other places where it was inconvenient timezone wise the rest of the patients that we had offered
+01:29
+So the way this that this will work is, you know, after lecture, we're going to enable sign up and you know we'll post a message about that on Piazza and then you should allocate yourself to a recitation that works for you.
+01:43
+So some more administrative things. So we now have office hours up on the canvas website.
+01:48
+So corral will be giving office hours, nine to 10 on Mondays. Renee will be giving office hours, four to five on Wednesdays, he will be giving office hours, three to four on Thursdays.
+01:59
+So Pablo, and I will do office hours by appointment so don't be shy email us and we can set up a time to meet
+02:05
+But the other thing that we're going to do is we're periodically going to drop in on different recitations so that we can check up on how you guys are doing and interact with you.
+02:14
+Because a big part of what we hope to get out of teaching this pilot courses to get a sense for you know how well the material is working. And the best way to do that is by interacting with you.
+02:23
+And some other logistics, as we mentioned, you know, there's a guide on canvas for installing and getting used to working with Julian.
+02:32
+So also some other classes around campus use Julia, or sometimes tutorials on Julian actually Steven Johnson will be giving one
+02:40
+On September 8 on Tuesday, four to five. Now that does conflict with one of the recitation time slots, we have. So we're going to ask Stephen four slides afterwards and post those on the course website.
+02:52
+So it's an awesome opportunity if you don't feel comfortable just following the guide and getting used to Julie on your own.
+02:58
+To be able to see that tutorial and interact with Stephen and get some of your other questions answered and will also provide our own opportunities within the course where you can ask us questions about getting used to Julia.
+03:10
+Alright, so I think that about does it for the administrative things. The other thing that I just want to reiterate is
+03:15
+You know, we're all new to this online teaching. So we're going to try and experiment with a few different ways to get you guys involved like in today's lecture, I'll be running some kinds of polls to ask you guys questions.
+03:28
+So you'll be able to navigate to those things pretty easily when I get to the questions that I want to ask you.
+03:32
+If at all possible, it's great if you can turn on your cameras because then I think it feels a little bit less like you're, you know, watching TV passively and
+03:41
+You know, then you can actually look at the screen and pay attention. I mean, this isn't even a problem, just the remote teaching. I remember back when I used to teach one of the intro discrete math classes.
+03:52
+There was one semester where you know we were teaching in a giant room 26 100 was about 450 students. And I remember very distinctly. It was the semester that Pokemon Go came out.
+04:04
+Because I could see at the very back of the room, everyone was just shaking their phones and I knew that there were like pokey stops in class.
+04:11
+And that's always the hardest thing is to get students, you know, even when you're in the physical room with them to pay attention and listen.
+04:17
+Back then, when we were actually physically in person. I just walked one time around the room to let students know that I could
+04:24
+And and that was enough to stop all of this Pokemon Go business, but I'm not entirely sure what to do this time. So we'll try different things. I thought
+04:33
+You know, certainly it's it's good to try and get to know each other. So I'll tell you a little bit more about myself. I'm sure Pablo will do the same and the tears will definitely do this during recitations so I grew up for the most part.
+04:45
+in upstate New York.
+04:46
+Actually, before I became a mathematician, I tried basically every topic under the sun. So, you know, I worked on Wall Street. I was a plasma physicists
+04:57
+I even tried my hand at psychology and believe it or not, my first major was not anything in STEM instead what I was, was I was a philosophy major, and you can see how well that worked out for me.
+05:09
+In fact, you know, my rebellion was really because my parents are both computer scientists. So I really showed them by being in a math department, but still teaching computer science courses. So, you know, I got the last laugh on that one.
+05:21
+Now, so let's get started with some of the technical material today. So today we'll be talking about the geometry of linear equations.
+05:28
+And really there's an overall arching theme in here, which is, you know, we want to develop different ways to think about systems of linear equations. So that's the main thing we're going to talk about today is we're going to explore many different ways.
+05:47
+To think especially geometrically about systems of linear equations.
+05:58
+Now we're going to start simple. With all of these things because we'll start with just two by two examples, there'll be two equations and two unknowns.
+06:06
+In fact, let's do a thorough running example where we can think about this one example through many different vantage points.
+06:12
+And really, you know, linear algebra is about developing these different ways of thinking about it precisely so that you know
+06:19
+You know what these examples really mean and the different ways to think about systems of linear equations. And the way that they arise.
+06:26
+So one of the running examples that we'll start off with before we move to larger systems as well. Just look at two x minus three y is equal to zero and x plus y is equal to five.
+06:38
+So there's nothing hard about this. If I asked you to solve it, you could definitely solve it. No big deal.
+06:44
+But let's start off with connecting this the some of the notation that we introduced last time.
+06:50
+Because really this classes for the most part, going to be about matrices and vectors. So how can we think about this system of linear equations in matrix vector notation.
+07:00
+While we can write the constraints as a matrix. This is called the constraint matrix. So, we get this nice two by two matrix two minus 311
+07:11
+And then now we have a vector x and y. And then we have an equal sign. And we have another vector on the other side, which are the constraints from my linear equations.
+07:22
+So here it's a little bit different. We're just using the matrix vector product which we talked about last time and we gave different rules for thinking about it.
+07:30
+And you should. Now, the difference is that the vector is really a vector of variables because I want to solve for the X and Y that make this equation true
+07:39
+More generally, I want to understand properties of systems of equations when there is a unique solution when there isn't and ways to think about this geometrically.
+07:49
+And it's a two by two system because there are two constraints and two variables.
+07:53
+So this is just a notation for describing it. You want to get comfortable going back and forth between these different representations
+07:59
+How to think about it. On the one hand, as the original equations and then the other hand, thinking about this matrix vector notation is just a different way to write something that you're already familiar with.
+08:10
+So now we're talking about a vector of variables and let's start off with the easiest and most intuitive view of what's going on. Geometrically, and I'm going to call this the row few
+08:20
+So the way to think about this is that this matrix vector product is really like taking an inner product. So what do I mean by that.
+08:30
+Well, what I mean by that is that if you take the first row of this linear system.
+08:35
+And this first row. What does it look like it looks like the vector to minus three. It's a row vector because that's one by two and then we have our vector variables x and y.
+08:47
+And now we have a one by two matrix times a two by one matrix. So, what we get out is a scaling. In fact, what is that scale or it's just two times x.
+08:56
+Minus three. Why because, for any choice of the variables x and y. This is a scaling and this is the thing that is supposed to be equal to zero.
+09:05
+So the way that's really at the heart of this review is, you think about each row in your matrix vector notation as corresponding to a linear constraint. That's all that's happening.
+09:17
+But now the advantage is that when we think about each of these rows in this matrix vector system as a linear constraint we can visualize it.
+09:25
+So let's draw out what this thing looks like. So we can start off with the equation two x minus three y is equal to zero. So I get my intercept here at 00
+09:37
+And I'm going to get another intercept up this location three two and I can talk about
+09:46
+And so this is my linear equation. The first one in my linear system two x minus three y is equal to zero. Now, I have the other linear constraint which starts off that zero comma five and ends at five comma zero.
+10:01
+So if I draw this properly, I get this linear constraint right here. And then I get x plus y is equal to five. That's my other linear constraint.
+10:10
+So already, just from this visual we can learn a heck of a lot, right, because one of the first questions we care about the linear systems is a lot of times the
+10:19
+Way that you encounter them as they're things that you'd like to solve. So the first question is just, that is, you know, can you give me a solution.
+10:32
+And the answer to this one is pretty easy because I've drawn it right here. It's the solution three comma two.
+10:39
+Right now I do want to add the caveat that you know I chose this linear systems so that it is easy to draw and read off from it what the solution is.
+10:47
+But a lot of times it's not so easy to read off the solution from actually drawing it out, but that is something that you do get from the visual in most cases.
+10:56
+And what are the other questions we can ask, which is now, you know, slightly more qualitative question as well. Three, two, was a solution. We could ask the question, is the solution unique
+11:09
+Because the truth is that in linear algebra will be interested, not just in solving linear systems.
+11:15
+But in property is about the set of solutions. So we want to understand things like yeah you gave me a solution, but as the, the only one.
+11:22
+How do I generally describe the set of all solutions and how do I understand geometrically. What goes wrong when there is no solution.
+11:31
+So these are exactly the issues that we're going to tease apart in this lecture through a few different geometric vantage points.
+11:38
+So here is the solution unique. Well, it's pretty easy to see that it is because you just have these two lines and they only intersect in one spot they intersect in this point three comma two.
+11:51
+And so this is in a sense what you typically expect to happen because, you know, if you have a two by two system of equations where you have two equations and two unknowns.
+12:01
+Well, if these lines looked kind of random you would expect them to hit in exactly one location. So you wouldn't expect zero solutions and you wouldn't expect more than one solutions, either.
+12:12
+So typically, you know, when you try things out, for example in Julia.
+12:16
+Unless you have some other structure that's changing whatever is going on. If you have the number of variables equals the number of constraints, you should expect it to look like you know this picture or higher dimensional version of it.
+12:29
+So let's try and tease apart these things a little bit more, we can ask the question, you know, what would it look like if there was no solution.
+12:38
+So here I'm asking an inverse problem, right, because, you know, in the beginning, I started off with a system of linear equations and then we proceeded to draw it in the plane.
+12:47
+And look at what visually, it looked like to tease out properties of the set of solutions, but you know what would happen if I took a system of linear equations that had no solution.
+12:58
+And I drew the lines. How would that you know what would happen geometrically. So here's a nice example of something that could go wrong.
+13:06
+You could have something like this, where the lines are actually parallel to each other and they don't actually intersect.
+13:15
+This could happen. For example, where you have x plus y is equal to five, and you have another equation which is x plus y is equal to three.
+13:24
+Right. So the real issue with this type of picture. You know, when you look at this picture, the way that you should translate this back to your system of linear equations. Is that what this picture really tells us is going on is that the two equations that we have
+13:41
+Are contradictory.
+13:47
+And the way that this manifests geometrically is that they're parallel. And they never intersect. So there are no common solutions to the solutions to these individual linear constraints.
+13:59
+Now we can ask, you know, what other kinds of things can happen in the space. So, you know, what would it look like if there was actually more than one solution.
+14:09
+So what if we had two linear equations, but instead of having them intersect and exactly one location.
+14:16
+What if instead of having them intersect and zero locations, because they're parallel. What would it look like if there was not one, but many different solutions to the linear equations.
+14:27
+Now I should mention that, you know, what happens here is actually a bit more specialized on the case where we talk about just two by two linear systems.
+14:34
+So in fact, here's a nice example that you should keep in mind about what could happen that could cause you to end up with, you know, more than one solution.
+14:43
+We could have something like x plus y is equal to five. And we could have two x plus two y is equal to 10
+14:53
+So at first clients, these might look like different linear equations because they have different coefficients. For example, in front of the X and in front of the Y and different constraints on the right hand side.
+15:05
+But the point is that they're actually the same constraint, because you get one from the other by multiplying by two.
+15:13
+So in fact, the things which satisfy one of these equations are exactly the same as the things that satisfy the other equation.
+15:20
+And the way that this manifest geometrically is that when you draw out these equations when I take x plus y equals five. Can I draw out the line connecting them.
+15:31
+Then I got the set of things on this line, but when I want to draw out the second equation to x plus two y equals 10 then it actually lands right on top of it.
+15:41
+Because the same exact set of points x comma y satisfy those two things. So in this case, what we say is that these constraints are actually redundant.
+15:55
+The constraints are redundant. And as we go to higher and higher dimensions more complicated things are going to happen.
+16:05
+In terms of creating redundancy won't be so easy to just look at the equations and see visually that the redundant.
+16:12
+But they'll be more complicated ways that we can think about what happens when we produce a redundancy. So in this case, they're redundant and and happens in a very simple way just because the two equations are multiples of each other.
+16:25
+So now let's try out our first virtual poll. Let's see if this thing works.
+16:32
+So let's see. I'm going to stop my share on this and I'm going to post an item poll link.
+16:50
+And I'll post it in the chat and then I'll share my screen so you guys can navigate there either on on your computer or on your phone.
+17:00
+And I have one thought question for you guys to think about, which is like let me actually just share my screen again.
+17:22
+So hopefully you guys all see it or you can see it when you actually navigate to the site.
+17:26
+So in a system of linear equations and over the reals, because these things are more subtle. When we talk about other fields which we're not really going to in this class.
+17:34
+So you should just think about things happening in the plane like withdrawn out. Now, we talked about situations where we had systems of linear equations, even when we just had to linear equations and to
+user avatar
+Pablo A Parrilo
+17:46
+Your compressed go live.
+user avatar
+Ankur Moitra
+17:48
+Go Live. Oh, sorry. There we go.
+17:51
+And begin accepting answers. Okay, so I think we should all be set.
+17:55
+On this now. So if you just navigate to this item pool poll, you know. Alright, awesome. I start seeing some answers already
+18:03
+So, you know, we've encountered situations where the number of solutions is zero because the two constraints are parallel to each other.
+18:11
+The system of linear equations was inconsistent. There are cases where there is one unique solution. And there are cases where they were overlapping and we had infinitely many solutions. So can anything else happen.
+18:28
+So I'll give you guys a minute or two to finish up, but it looks like most people have gotten their answers in
+18:58
+Alright, so it looks like we're mostly stabilized. So let me finish and reveal the answer. So the answer is no, because the way that you should think about this. Let me go back to sharing my tablet, one second.
+19:22
+Okay. So the way to think about this. So the answer for this as no
+19:27
+But let's think about some of the intuition and then these are exactly the kinds of things that are going to come out of sort of the general definitions from linear algebra that we talked about in the properties of linear systems.
+19:37
+That we're going to tease out over this and some of the next couple of lectures.
+19:41
+But the way to think about it is that, you know, even if you're just in two days. So you have two variables and you have two equations then each equation looks like a line.
+19:50
+So once you have those you know if those two lines don't intersect, then that means that there is no solution because nothing lands on both of those lines.
+20:00
+Now, if you have one point that in the intersection. As soon as you have any other distinct point and those two points are both on both lines.
+20:10
+You have no choice, because in 2D two points. The terminal line. So that means that the two lines actually have to be the same. And we have to be back in this initial scenario where the two lines land on top of each other. And then we get not just those two solutions, but an infinite number
+20:25
+So this is why you can only have these kinds of scenarios where there is 01 or infinity. That turns out to be the case. Also in higher dimensions.
+20:34
+And will develop some different ways of thinking about it. In fact, what I claim is that many questions in linear algebra exactly like this question five that I just gave you
+20:42
+Even if you don't have intuition for this right now.
+20:45
+Once you develop different ways of thinking about a geometrically, it'll turn out that you can go back and forth between them. And sometimes it's much easier to answer these questions viewing in a different way.
+20:55
+So this is a nice segue to, you know, the next way that we want to develop a thinking about things, which I'm going to call the column view.
+21:05
+So now instead of thinking about the system of linear equations, based on looking at it row by row and thinking about each row as a linear constraint.
+21:13
+We're going to think about it as column by column right and this ties back in with some of the equivalent ways that I taught you last time to think about matrix vector products.
+21:24
+Because you can think about a matrix vector product. Not only is this inner product between a row in the matrix and the column vector that you're multiplying life is a vector of variables, but you can also think about it as a linear combination
+21:38
+So let's introduce that formal definition. So a linear combination and all of this depends on what field you're working with. And we're going to talk about the reels, for simplicity
+21:48
+So linear combination over the reels of some set of vectors v1, v2, up to the m is just a some of these vectors multiplied by some scholars
+21:59
+So you create some scholars. Some see survives like see one is a real number like route to you take root two times V one and then you add to that, see two times v2.
+22:10
+And you add to that each one of these things CI times VI and so on. This is called the linear combination
+22:17
+And remember that last time what we talked about was another equivalent way to think about a matrix vector product is as a linear combination
+22:28
+So this actually gives us a different way to think about the same linear system that we were given
+22:33
+Because what I claim is that we can think about that linear system that we started off with, let me just write it again, just so that you remember it up here.
+22:42
+The system of linear equations. We started with us to minus 311 all times the vector x, y is equal to the vector 05
+22:55
+Well, we can think about this system of linear equations instead in the following way, really what we're asking is not. Is there a point that's common to all of these linear equations, but instead is is there.
+23:10
+A linear combination
+23:18
+The columns of my constraint matrix was in this case are the vectors to one and the vector minus three one.
+23:28
+That exactly equals
+23:33
+The vector on the right side zero comma five
+23:37
+So this is a completely equivalent way to think about what this linear system is asking us, instead of looking at it row by row and saying you want to satisfy this equation, you want to satisfy this equation and so on.
+23:49
+You can think about this matrix vector product as we don't know what x and y, we're going to want, but you can choose whatever x you choose that defines the coefficient, the scale or coefficient in front of the vector to one.
+24:02
+And whatever you choose for y defines the scale or coefficient in front of the vector minus three one.
+24:08
+And what you're looking for our scholars choices for x and y, so that that linear combination you know specified by the vector x, y.
+24:17
+equals the vector 05 which is the vector on your right hand side. So you want to go back and forth between all of these different ways of thinking about it.
+24:26
+And, you know, let's try and ask some other qualitative questions to figure out, you know, what good this different vantage point is
+24:35
+So let me ask another question, which is, you know, is there a linear combination of two one and minus three one.
+24:42
+That equals this crazy vector on the right hand side. Right. So you'll see that the first entry in this vector is pi. Right. And the second one. That's actually a zeta. So this is the remote data function evaluator got three
+24:58
+In fact, there's a really deep function. I bet you didn't think that I bet you didn't think we'd be talking about the remote data function today, but we are
+25:05
+And there's a really deep theorem of Apiary which says that the zeta function evaluated three is actually irrational so much like pie, it's irrational.
+25:15
+In fact, this theorem is famous and math because it was proven by you know someone who is an outsider at math. So when he announced these things no one actually believe to prove in the thing
+25:24
+That sounded like an April Fool's joke. Now thankfully, you know, this actually turns out to not be relevant to the question at all.
+25:32
+So this was a little bit of a red herring. In fact, it doesn't even matter. The fact that the zeta three is irrational doesn't even matter what I put in this other entry in pie.
+25:42
+Because the answer is always the same. There is always a solution to the system of linear equations. So thankfully, this theorem, who is proof is quite hard and I don't know.
+25:54
+This is not relevant at all.
+26:00
+So that's a kind of neat property that I'm asserting verbally that you know whether or not this linear system has a solution doesn't actually matter at all.
+26:14
+Based on what vector I choose on the right hand side. So that's already something abstract that's powerful about some of these ways that we're we're figuring out to think about linear systems.
+26:26
+Because when we started off, I gave you a particular linear system and you solved it just by plotting
+26:32
+But it turns out that properties of the constraint matrix just that two by two matrix that I started off with
+26:38
+can already tell you answers the questions like, is there always a solution. And is it always unique without even looking at what the right hand side is
+26:46
+And without knowing anything about the properties of what that vector, it's
+26:51
+So I think that's one of the things that's really powerful. You know about this linear algebraic viewpoint for thinking about systems of linear equations.
+26:58
+So again, what we're gonna do is we're going to visualize it, but this time we're going to take the column view.
+27:04
+To think about things. So really, I'm going to ask a more general question instead of just, you know,
+27:10
+What do these linear constraints look like until they intersect and what is the point at their intersection. I'm going to ask, well, what does the set
+27:19
+Of all vectors that we can get out as linear combinations of two one and minus three one look like now. The way to think about this is that back to our original linear system.
+27:31
+What I'm really asking for is if we think about this right hand side is some vector be so it's really a one bite to make a two by one matrix.
+27:42
+Then I'm really asking, what is the set of all B's for which this linear system has a solution. So let's think about that geometrically now.
+27:52
+And we're going to build up to understanding the set geometrically and pieces.
+27:57
+Because, you know, linear combinations of two vectors are kind of complicated. I have to figure out, you know, all of the things that I can get when I choose x and y differently.
+28:05
+So let's make our problem simpler. Let's start off with what are all linear combinations of a single vector to one.
+28:12
+So all I'm asking for a linear combination of a single vector, all I get to do is I get to choose the scale or coefficient in front of the vector two one
+28:20
+So in fact, what ends up happening is that if I choose the coefficient one in front of the vector to one, then I get out this point right here at the location to comma one.
+28:30
+But as I very whatever that scale or coefficient is then I actually sweep out an entire line.
+28:38
+So if I look at the set of all vectors that I can get out of linear combinations of the single vector to one, then it looks like all of the things on this line. So that's a little bit of a different geometric picture.
+28:51
+And now I can ask the same type of question, but for the other color.
+28:55
+Alright, so what is the set of all vectors look like that. I can get as linear combinations of just the single vector minus three one. So the second column in my constraint matrix.
+29:07
+So same thing happens here. I can certainly get this point, you know, minus three. One, I can also get this anti portal point right here. But the key point is that I get everything on the line connecting them.
+29:20
+And this is the set of all things that I get out as linear combinations of this other vector minus three one.
+29:27
+So now, actually, the entire problem is I just put together these two different pieces.
+29:34
+Because the way to think about it is that I can certainly get anything on my original line when I started off with a vector two comma one.
+29:45
+Because I get everything on this line. And that's just the linear combinations of the first vector I started off with
+29:52
+But after I choose one point on this line that I can reach because I can reach any point then after that I can navigate anywhere along this line.
+30:01
+And I can get anything along that line. In fact, I could have done this for many other starting points on my original baseline. And I can get everything in between.
+30:11
+So actually, what's happened is, I've shown you visually that I can get all of the entire plane are too because I not only get these lines that I've drawn here but I get everything in between as well.
+30:23
+So that's the intuition for why it doesn't actually matter what I put on that right hand side in this particular case any vector be that you give me there is a solution. In fact, it's unique to
+30:34
+Because any point be that you draw on this plane that you want to reach like the point here.
+30:41
+Than there actually is a unique way in this new coordinate system of getting to that point, I have to navigate some distance along this first line and then go some distance along the other line.
+30:52
+And so there's always a solution. And it's always unique
+30:55
+So the way to think about this, conceptually, is that you know if I'd asked the same questions about, you know, whether there's a linear combination that gives me pie and zeta three
+31:04
+That would have been a lot easier if the columns and my constraint matrix had been much simpler if they'd been what's called the standard basis vectors. So, if I had the basis vectors zero comma one, and one comma zero.
+31:18
+Because then the grid that I would get out would actually just look like the standard grid.
+31:22
+And it'd be very easy to figure out what the actual solution looks like the fact that it's unique
+31:28
+The important point is that linear algebra, at least in non degenerate cases where you don't have redundant or contradictory constraints.
+31:35
+That's actually exactly equivalent to what's going on. It's just that the grid has been skewed in different ways.
+31:41
+So in the next lecture. Looking ahead, what we're going to do is we're going to go over some of the standard ways to solve linear systems by hand.
+31:49
+And how to tease out this idea that what happens with the standard basis vectors, really, is what's happening for more general linear systems.
+31:57
+So for now, while content myself to say that, you know, these are really powerful, different ways of looking at it. Either the row or column view.
+32:06
+For answering these succession of questions I've asked you about you know what the set of linear solutions looks like. Even when I do things like I change the constraint.
+32:17
+So now let's get into some more qualitative questions.
+32:21
+So let's ask, you know, some more questions from the column.
+32:26
+So what if I create a two by two linear system that looks a little bit different. Right. So, I still have two columns which are both, you know, vectors of dimension to
+32:36
+And I can ask the question, are there are there two dimensional vectors v1 and v2 that don't produce this kind of thing where you can actually get everything in the plane as a linear combination of them.
+32:48
+So that's another nice question to think about. In fact,
+32:52
+This question is kind of a mouthful. To be honest, because we actually haven't introduced the right definition yet. So let me introduce you to another key definition that'll make it easier to phrase this and related questions, which was the notion of the spam.
+33:08
+So the span.
+33:13
+Of vectors.
+33:16
+V1, V2, up to VM, all it is is all the vectors.
+33:29
+That you can obtain
+33:38
+As linear combinations
+33:47
+Of these vectors V1 up to VM that I started off with. So this is the key definition, the notion of the span. This is something that we were really alluding to before with our geometric picture of the column view.
+34:02
+Because what's really going on in this particular example. When I asked the question.
+34:07
+Whether I could get out every single possible vector in the plane as some linear combination of the vectors to one and minus three one.
+34:16
+Really, what happened was that those two dimensional those two, two dimensional vectors span the entire plane.
+34:23
+That's something that I drew for you pictorial and argued about why you can actually reach every possible point in the plane as a linear combination of them.
+34:32
+And now this question seven that I'm asking about whether there are things that can go wrong, whether their systems of linear equations.
+34:39
+With two columns where I can't actually get out every possible thing from them. The equivalent way to think about it is that I'm asking
+34:47
+Are there to two dimensional vectors v1 and v2 that don't span the entire plane.
+34:53
+That's the same type of thing that happened, what do we had systems of linear equations when we looked at the row view when we got linear equations that were contradictory.
+35:03
+But this is just a different way of looking at things.
+35:06
+So of course we know their systems of linear equations that don't have a solution that are in feasible. So of course, the answer to this question is yes because we've
+35:15
+You know already argued about why that's the case. The key point is just to interpret the examples that we've already talked about in this language.
+35:24
+So what do they look like, you know, you could have vectors that look like to one.
+35:30
+And
+35:32
+Four to two
+35:34
+Now, what goes wrong here is I can do the same type of exercise where I take my plane. And I asked what are all the linear combinations of the first factor.
+35:45
+And I get the same line right here. But now when I asked what are all the linear combinations I can get out of the second vector for to the answer is that it's exactly the same thing.
+35:56
+The line lands on the same exact thing. The columns are the same.
+36:00
+And so I don't actually get this grid because everything that's off of this line. If I give you any vector be that's off of this line.
+36:08
+Then the linear system doesn't have a solution, because I cannot obtain be as a linear combination of the columns to one and forth
+36:16
+So these are just 1000 different ways of thinking about what it means. Geometrically for a system of linear equations to, you know, have a solution to not have a solution.
+36:27
+Right. And really, what happens here is that the second line falls on top so you don't get this grid anymore and and it becomes the general
+36:35
+Now things are pretty simple and two by two matrices, they become a little bit more complicated when we have larger linear systems, but actually not that much more complicated.
+36:45
+So let's work up towards it. Let's study the next most general case, which is you know what happens when we have a three by three.
+36:53
+system of linear equations. So there are three equations or three variants. Now that's, you know, admittedly a little bit harder to drop, but we can still get some intuition for this.
+37:04
+And let's revisit some of these earlier questions that I asked like question three were asked what does it look like if there are no solutions.
+37:13
+Now in the case where I only had two by two matrix seeds. The only way that I got no solutions was if the lines were parallel to each other.
+37:21
+It turns out that actually things are more subtle. Here you can have scenarios where the constraints are not parallel to each other. But there's a different type of contradiction. That's a little bit more indirect to see
+37:34
+And I also want to mention that, you know, we are going to stress this computational viewpoint. So let me just mention that in Julia three by three matrix. These the dimensions are represented as
+37:44
+You know this parentheses three comma three. So we'll try and use both types of notation, either in lecture or in problem sets, just to make sure that your fluid with thinking about both of them, but
+37:57
+You know. So the way to think about what becomes more subtle.
+38:01
+Is that you know there were no solutions only if two rows were the same after rescaling right
+38:10
+And we got situations like this where you know when you start off with this linear system above where I have 2211
+38:18
+And that's my constraint matrix. This system of linear equations is inconsistent. In fact, one way you can think about it is that if I
+38:26
+Re scale this first row, including the actual that entry in the constraint vector by a half. Then I don't actually change the set of solutions.
+38:39
+And then you can see that these constraints are actually the same thing in terms of what their dependence on x and y is but they have a different right hand side, one is five, one is three.
+38:49
+This is also foreshadowing for what we're going to do next time because when we actually talked about solving system of linear equations.
+38:56
+What we're going to do is we're going to do all kinds of operations that don't change the set of solutions and that will be the way that we move a complicated linear system.
+39:06
+Into something that's easier to read off the solutions. So we'll describe that later. But I like adding these little breadcrumbs of how these things are related to where we're going, just in a lecture to. So now what I was alluding to is the fact that things are more complicated in general.
+39:23
+So let's actually see an example of why these things are more complicated.
+39:28
+Let me start with this example right here. So imagine that we had this three by three system of linear equations. So we have a vector of three variables. It's a three dimensional vector x, y, and z. Now, right.
+39:41
+And the same way that I can take the matrix vector product and write this out as a system of three equations with three unknowns.
+39:50
+And, you know, the first question that you should think about is are there rows that are scale or multiples of each other.
+39:58
+Well, it will take just a moment to check that they're not, you know, you can't obtain
+40:05
+Any of the second or third rows of scale or multiples of the first one because they have different coefficients that are zero, a non zero and the second and third rows are definitely not scale or multiples of each other. It's pretty easy to check
+40:19
+Now it's harder to draw in 3D. And actually, this is what's so powerful about linear algebra is that
+40:25
+You know it's damn near impossible to draw things and 10 D but linear algebra gives us some language for talking about what happens in these higher dimensional spaces.
+40:35
+But what I claim is that even without having to draw this in 3D. There's actually still a simple way for me to convince you that there is no solution with a system of linear equations, despite the fact that no constraint is directly in contradiction with any other constraint.
+40:54
+So actually, first let me make sure that you know everyone's on the same page. We'll do another actually, I guess. Yeah, let's do another short poll. I want to make sure that everyone has is
+41:06
+You know, is able to translate the system of linear equations. This matrix vector products into how to think about it as linear equations. So let me again, stop sharing my screen. And let's do a new poll. So it should be at the same link.
+41:25
+And let me begin accepting answer. So, same exact link as in the chat before and I'll give you guys a minute to solve it. And let me actually just share my screen. One more time, so that you can see the actual question.
+41:45
+Okay, so. What equation does the first row correspond to and remember that it was the vector to minus three, zero and the first entry in the constraint matrix.
+41:59
+And the constraints actor was one
+user avatar
+Pablo A Parrilo
+42:07
+Of course we can. You can you send them that window in the screen.
+42:11
+Sorry.
+user avatar
+Ankur Moitra
+42:13
+Is this matter. Unfortunately, I can't quite
+42:42
+Alright so let me finish and reveal. So the answer is two x minus three y is equal to one. So most people got it right. The vast majority and let me actually just go back to my notes and then I'll just make sure that we're on the same page for this.
+43:03
+Okay, so the first row in this constraint matrix is this one right here.
+43:09
+And the way to think about it. You got to develop a good way to visualize what a matrix vector product looks like.
+43:14
+The way that I like thinking about it is that you're going to take this vector of variables x y AMP z.
+43:19
+And you rearrange it so that it actually becomes horizontal, but it looks like x y AMP z. And then the X goes with the to the Y goes with the minus three. The Z goes with zero
+43:29
+And you pick out the first entry in this be vector. So, you know, you should make sure and practice these kinds of skills about translating back and forth between all of the different ways of thinking about it that I gave you today.
+43:41
+You know, first starting from the linear equations, going to the matrix vector notation, going to the row view and going to the column view because
+43:48
+The more dexterous you aren't going back and forth between them, the easier it'll be when you start to understand the types of manipulations that we talked about last time.
+43:57
+So now what I claimed was that, you know, there is an easy way to convince you that there is no solution.
+44:05
+So in fact, what I'm going to do is I'm going to take the first constraint which remember is two x minus three y
+44:12
+Is equal to one. And I'm going to add the second constraint which is x plus y plus two z is equal to one.
+44:24
+So when I add up these things like at the new constraint three x minus two y plus two z is equal to two.
+44:33
+This is not a constraint that was directly in my original system of linear equations, but it's something that's implied by the equations that I have
+44:42
+Because if you satisfied the row, the first row or the first constraint you satisfied the second row, then you must satisfy this new constraints that I get from adding the two of them.
+44:52
+I've created a linear combination of the constraints and derived a new constraint.
+44:58
+So that's the idea. But the real problem is that now it really is in contradiction with something else. The problem is that the third row is a different constraint which has exactly the same coefficients in front of these different variables. So, we also have the constraint.
+45:19
+That's three x minus two y plus two z is equal to three. And we have two different right hand sides, one is two and one is three, so there's no possible way.
+45:33
+That we can simultaneously satisfy the first and second constraint and the third one, because if we satisfied the first and second one we would also satisfy this new derived constraint.
+45:43
+And that contradicts the third one. So that's one of the magical things about linear algebra. So I can no longer convince you that there's no solution, just by drawing it.
+45:52
+And that's definitely not true, even in higher dimensions like an attendee, but there is always a way to use some of the tools that we're talking about things like linear combinations and spans.
+46:03
+And a way to create some short succinct proof that the thing is not solvable. If there really is no solution.
+46:11
+So we had three equations and three unknowns and yet there was a vector, be on the right hand side of three dimensional vector which we could not get as a linear combination of things.
+46:22
+So what went wrong from the column perspective now not thinking about these rows of constraints. Well, what I claim is that
+46:33
+The columns.
+46:39
+Of the matrix, the three by three matrix that we started off with
+46:44
+The issue is that they do not spam.
+46:49
+All of three dimensional space, so they do not spam.
+46:54
+Our three the entire 3D plane.
+46:59
+And you can also ask, is there a way to see this. See, now what I'm asserting by going back to the column view is that they don't span all of our three
+47:07
+And actually there is a cool way to see this to even from the perspective of just Colin's. See what I claim that went wrong from the columns perspective is that the column.
+47:21
+022 if you remember back in my original linear system that was the third column right here 02 to the problem is that this column is itself.
+47:36
+A linear combination
+47:45
+Of the other two columns 213
+47:50
+And
+47:53
+Minus three one and minus two.
+47:57
+So that's the issue. And you can think about this intuitively that, you know, if we had three three dimensional vectors, but the third vector could be expressed as a linear combination of the first year.
+48:09
+That means I can't get all of our three out as linear combinations of those three factors because I started off with the first vector 213 and I asked what all things. Can I get from linear combinations from it. I get aligned
+48:21
+And then I asked what all things can be linear combinations of the first two vectors 213 and minus three, one minus two.
+48:29
+And then I get a plane because I get the skewed grid, but when I add this third vector zero to two into the mix that's already a linear combination of the first two, so I don't get anything new.
+48:41
+And my plane doesn't grow it stays as a plane.
+48:44
+So that's really what went wrong. And this leads us to one of the central definitions for linear algebra. We're going to talk much more about this later, especially when you talk about abstract vector spaces and a couple lectures.
+48:56
+But the key definition that's really at the heart of what we're talking about is the notion of linear independence.
+49:01
+So a set of vectors v1, v2, up to VM is linearly independent. If none of the V eyes can be written as a linear combination of the authors.
+49:11
+And when the vectors aren't to linearly independent. We call them linearly dependent. So from the column perspective, that's what went wrong, the three dimensional vectors were linearly dependent
+49:22
+So there were be vectors that we could not get out and did not have a solution to the system of linear equations.
+49:28
+So we'll talk much more about this next time when we talk about how to actually mechanically solve systems of linear equations by hand.
+49:35
+And we'll tie back into these insights, but I want you to have this geometric picture, especially this multiplicity of different geometric perspectives before we really, we really get into that. So I'll stop there and take any questions you guys might have. Thanks.

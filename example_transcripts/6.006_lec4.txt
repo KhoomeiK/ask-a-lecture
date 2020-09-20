@@ -1,0 +1,603 @@
+Silvio Micali
+00:03
+Good.
+00:06
+Good morning everyone and welcome back to six, six. Let me. Great job.
+00:15
+In
+00:16
+Memory and started sharing right away way. Let's see if I can
+00:25
+Share now. All right, ladies and gentlemen, it is my distinct pleasure to introduce you to Ashley and let me tell you right away.
+00:37
+Vegas very
+00:40
+Ashamed is a great idea. Okay, just in case we have some confusion if you don't think is a good idea. You and I are not Olds or I didn't do a good job.
+00:50
+So what is the goal. Here they go. Think of it is that you want to efficiently maintain a set of numbers.
+00:57
+Season maintaining I said the numbers. I have a better things to do. We beat the techie. Well, just remember that everything is a number because you can encode anything as a number right away, but he's asking English, everything becomes a number
+01:10
+Pictures, or whatever you good. So in other words, we have a
+01:15
+Set S and we want to support of this operation over insert, delete, and find. And when I say fine. I mean,
+01:25
+Membership in a test, right. So what is a test is a set of objects, you want to know about an object is in or out. You would sometimes we want to put another object you want to take an object out
+01:36
+And when you forget well is objects envisat have right now and when whether what the fine does. So altogether.
+01:45
+They so we call it a high tech data structure. So far we talk about and all
+01:51
+Sorting and other other performance. This is a data structure and essentially I did a structure. Think of it like I said in a bunch of operations with you want to support them assets.
+02:01
+And so these are in terms of sites are inserted delete and paste and find really web based the bread and butter or what the 70s, but you should appreciate
+02:11
+Other operations. Right. You have a set set this dynamic at any point in time. You want to say, oh, what is the minimum number in my set, what is the max or whatever you please. Right.
+02:23
+And so you must realize that data to optimize your data structure, you must use a different data structure, depending on whatever operations. We are going to you're going to be interested in supporting so today. These are the operation bread and butter on a set
+02:43
+So let's jump up in the way, how can we efficiently implement these operations, because of this course is about the algorithm and efficiency.
+02:51
+I'll do officially implement so well elementary water so I implemented as a link least right
+02:58
+Here is my set and all of a sudden decided to insert x into. I said, all right, done right.
+03:05
+When I want to insert. Why, where do I insert a do head over least right big solve it. I don't keep two pointers, but only one pointer. Wonderful. I want all and somehow now insert Z done
+03:19
+Okay, so I've done some inserting and finally say, okay, good, you know, tell me if why w is envisat right now yes or no. Alright so let them eat that. So I go ahead and I said, and when I start scanning my list. Okay. Not yet. This is not the blue.
+03:40
+And the scanner. Again, not yet.
+03:44
+Not yet, not only not yet, but because the. Now, I realized that the mandible LEAST I CAN NOT WITHOUT already say who is not here in beset. All right.
+03:55
+About the delete. Well, what is the candidate going to do you know to delete and our in our, in our link least you'll find the item and once you find that you by scanning police you bypass it and that's how you
+04:07
+Implement
+user avatar
+Silvio Micali
+04:11
+Claim you have beer. Let's talk about complexity.
+04:16
+As you know, when every time you have a complexity.
+04:18
+You have to say, well, the complexity as a function of what as a function of n. Well, thank you very much. What is it well in is the number of elements inverse it right. Okay.
+04:30
+So you inserted delete and find how long does it take to insert an element. Are you giving me that is order one because I got an edible East and inserted there. Right. And when an update and all another pointer done
+04:46
+Are you delete it. Well, this time. If you have any elements invested and if you're lucky, you to scan the entire set until you find whatever you want to delete and to find the an element. Well, again, you have to his order hand because in the worst case is kind of entire
+05:07
+List because of your item is not isn't the end or
+05:12
+Or is not there at all. Okay, so very fast. Insert and leave here time delete and find guess what we are greedy and we want to do better.
+05:27
+Okay, I'll do better. The first technique is a direct access. And so, when can I use the x axis.
+05:36
+I can use direct access when I have a good estimate or tea or what have a maximum conduct an integer envisat can maybe capital and that's what's the maximum number in my sight of it can be
+05:52
+Okay, you may know what I do in order to to maintain myself I create an array with us as maybe elements as have a maximum candidate cabling right 123 up to capital and
+06:07
+All right, let's play. Now when I say I assume that they want to insert my number three in my site.
+06:14
+I find the third element in Belgrade and they put one to say this element is in
+06:21
+Well, gee, see we have it took very little time, of course, because what is good about our days and our random access at all machines is data elements in our library can be accessed in order one time in Constantine
+06:38
+So assume, but I want to insert the seventh of the first step I shoot myself in location 723 and I write one, I assume, or they want to insert the end
+06:48
+I go there. And inside that. Okay. So after a while I decide I want to find to is to invest it I bought I shoot myself in the location to I don't find anything here so I can authoritatively report not here.
+07:06
+All right, now assume that I want to delete the 723
+07:09
+No problem. I but I showed them myself. I find the one I raised it and now my element is the data from the set. Okay, so is it is represented, but all those elements in the array, but contain one
+07:23
+So what is the complexity insert
+07:28
+Well he's older one because I shoot myself in cost on time and I write one whatever I Island to delete is although the one I bought I shoot myself there and I replace it with zero or I hate it. And the fine in his older one
+07:48
+Wow, I mean it is fantastic, right. So we have hold the one I inserted delete find it is very hard to beat. Who can do better than base.
+08:01
+When as
+08:05
+Astronauts famous also note that said we have a problem. And so, and what is the global beta in order for direct access to work and to be so efficient.
+08:17
+We must know what the visa maximum candidate in element is that is, but it's not only about knowing, but it better be small enough, because this
+08:28
+Capital N, the maximum candidate in the integer in so could be enormous. Let them he demonstrated assume I said as
+08:37
+I am an amateur biologist and once in a while. I read on the paper or in some specialized
+08:44
+Publications as a landslide something, say, Oh, a new gene has been discovered. So when it says, I'm very excited, say, oh, I put to know. I live in about this gene. I want to put it in my set. And of course, as you know, genes are written and alphabet AC GT
+09:02
+And so, and what is the possible length of a of a G. So, are you kidding, I'm a computer scientist, I have no idea. So let me look it up in Google.
+09:13
+I actually typed. How long is a typical gene. And that's what the Google tells me, blah, blah, blah, blah, will make sounds complicated things
+09:21
+But what I read this letter the other Julian is 256 bass, bass, bass, so possible length is greater than 256 because what is the average length. So the maximum length could be much better, much bigger. And so I've got the least that I should expect 236 a GCT
+09:45
+So,
+09:48
+The maximum into joke when I can express myself on it. I'm a four elements and mouth, but I have a two to 256 is for two by 256 and if I want to put her in binary. I am to two by two to the power 256, also known as to 272
+10:09
+So here is my other day as starts with one I want to get the possible jeans velocity element in the array is two to the power 472
+10:20
+Are you kidding me, you just remember what I said. The last time No integer in our university is really a physical interpretation, if it is greater than two to 300 because of no not enough.
+10:32
+LM elementary particles in the universe. How do I construct of his idea is on Adams forget items. I don't even ever Nuff elementary particles. Okay, so that is a two to 472 is unimaginable large number
+10:48
+Okay, so that is in general by promo but I wanted to straight for jeans here, but in general the potential
+10:58
+Elements of a sector, leaving a very large universe capital view in my actual set is more than you. So victoriously so you had a visit blue
+11:12
+Points which you can be very large numbers, but the ones that I'm going to ever
+11:17
+Booked in my sake I actually much fewer number of activities or read points here. So in our peers example. The universe is
+11:28
+Base pairs. And this is the human genes. Another example is whether you are all possible computer words. And of course, as is going to be a smaller set when you why, because remember award.
+11:44
+Typically is a fairly two bytes, which is equal to 256 bits and therefore I can represent two to 256 integers, which is so close to 200
+11:58
+Fact of it is essentially a gigantic universe. So, of course, any set of it. I'm going to collect elements from is going to be less than that. So example of the example universe can be huge. They said as much small
+12:14
+What do we do with the problem because director says access cannot possibly work because I cannot locate an array, but as, as long as the maximum number over at maximum MMA element in that in my set so
+12:33
+The idea is beta wave. I know.
+12:37
+A national function. So what is that action function is something that takes a
+12:43
+maps of the universe. This should be a capital you, I can see that I made a mistake here into
+12:50
+02 n minus one. In other words, and to say I have an affordable array. But then, you know, I have a budget, I can only afford another day. But as m elements zero to a minus one.
+13:05
+And so now order I do you remember that before in direct access. I was storing one another's x. Now instead, I'm going to insert X about that age of x. So,
+13:20
+By the way, why do I store X in a moment that will become clear why store. Excellent. Other than one. Okay.
+13:28
+So I don't store X in an address x because sector my address is, is only em, but I i first compute h of x, which now is a number, by definition, between zero and A minus one and I started x
+13:45
+There. Let me do it the pictorial Lee year is my larger view blue universe.
+13:52
+Era is my set as, of course, I said this is showing you my speech, a little bit segregated from the rest of you, but you have to think about intermingle and so and so all of a sudden, what I want to do is what I want to insert X one. So I am going to insert x one in location HR. Next one.
+14:14
+I want to insert x two in location.
+14:18
+He likes to insert text me in location, a trophy. Okay. And at some point is going to happen, but I try to insert the Explore I go into location age of explore, but this is a location with coincide with edge of extreme best case and there is already something like there, I get a collision.
+14:43
+By the way, you should realize that these collisions are actually guaranteed EV sides of a second, n is greater than me besides over a right because you notice like can all be john principles. Right. So if you have a seven.
+15:03
+Seven pigeons and and six cages, you know, one cages or two other two pages. There's no way I and, moreover, this actually can occur quite frequently. If n is roughly
+15:17
+More or less as big as I am. And there's going to be rare if n is much smaller than me. Okay, so if I want to do action by storing X in location A checks. A must respect collisions.
+15:35
+Fair enough, what to do. Okay, now we have to cope with collision.
+15:42
+They first idea is to choose your hash function that maps any possible element into a number of individual location between zero and n minus one to be on colliding.
+15:55
+So do us a favor, can you choose an uncle lighting father. Good luck is like saying is better to be beautiful, rich
+16:04
+I don't know, and young and old ugly and poor and this is easy to say, but you're safe this dynamic out you know that an all I'll can you choose a age when I say it is going to change. No afterwards so that to be on colliding. I have no good ideas there but ups you do
+16:22
+The second idea and which is they want to discuss today is changing.
+16:29
+And a third idea.
+16:32
+Is open addressing and if time allows. It will discuss it today. Otherwise, you should see roughly area in India problems that we are going to explain and having a problem about open undressing after explaining, of course, good. So today. Our topic is changing.
+16:55
+Your is change.
+16:57
+Anybody's following say
+17:01
+Your day is not the way you're going to store the elements of a set, but the yard. Hey, is an array or link the least
+17:10
+And anytime that you want to insert say x one, you don't store expanding location. HE LIKES ONE BUT YOU PUSH x one in a link the least that starts at HR. Next one. So in other words, let me see if I can get
+17:27
+My point of work like I don't even set the x one here, but I put him in a link the least
+17:35
+And so I've done what I've done before. I've been said that at swan. I've been said that you know extort inside the extreme
+17:41
+And so finally, I'm going to have a, like a before I'm going to have another collision.
+17:46
+But now what do I do with this coalition, I simply insert exploring this link least which I can do all either to do in certain different done
+17:56
+Okay. So this time I can always store things new things that come. I mean, if we've collision or we could. We thought collision. I don't care. I can always insert in a link list.
+18:09
+All right. Every solve a problem.
+18:12
+Well, let's see.
+18:16
+To find the number, right, because remember, I can not only insert. They've also to find something, I must scanner veil least see if I want to see if to see if is there or not.
+18:30
+And if my involvement from my least link least is L to find a number in a link to lease them a lane family is going to take and comparisons.
+18:43
+So if all numbers ash to the same bucket vein Luca cost is going to be
+18:52
+All my golden, right.
+18:55
+Well, that is really the worst case that I use. He always he somehow convergence to a single point. And he's going to take an order and but I think about is going to be. We want to be more optimistic and what is optimism here.
+19:14
+We assume with the number in my set as are equally likely. After hashing to land in every bucket. Right.
+19:23
+Independent aware other number nice might have Elaine did before. Right. But let's video and so visa, we call it simple uniform fashion.
+19:37
+Because after all, why should they be all elements in my s h of x should always be the same. So they're going to spread out independently or wherever, Queensland.
+19:47
+And simple in the flashing is exactly that. Let's remember beta simple really. For mashing is an assumption. And so even assumption is reasonable, when
+20:03
+When we can actually analyze the average case over she
+20:09
+Under Sue, ha. So simple uniform hashing assumption.
+20:15
+Okay, let's analyze it.
+20:18
+We have
+20:20
+N keys to distributed or hand numbers to discourage story, but the number of in in buckets.
+20:27
+So the other edge number of keys per bucket is an overhead and we this faction and over him.
+20:38
+We call it alpha and this is going to important to one another analysis. The National because we go to the Lord factor right
+20:46
+So, given my sides of the array. And how many numbers you have in your set alpha represents that I convey average number of teasing them in my inbox longer is the link the least over there. Okay.
+21:00
+So now what is the time to find the expected time to find one key. Well, first of all, let's say, either at least one because I to part
+21:12
+Why, because I'm assuming that the my hash function is computed in one step. And I can go in one step in the NBA. So I have been there. And once I mean the way I should look for my item.
+21:27
+1234 we must follow very, very re evaluate the link least as a member is going to take alpha. Okay, so let's so so that means Victor if I choose
+21:44
+My m to be essentially order of and I'll actually all my goal in that which means that alpha is order one.
+21:55
+In other words, in expect that constant time. I can find an element using chaining. We are showing under simple uniform rushing assumption.
+22:09
+And that's actually is pretty damn good, right, because that means a bit and all. If I know roughly what is the number N of elements inverse that
+22:22
+Just choose an IRA that as roughly elements M is equal. And if you want to be feel rich. If you have a little bit more space choose it twice, an
+22:36
+element in the array and you're done, you're going to expect to find something in in in order one time. Okay. But this is under the assumption. Right. So I remember one thing and he is a function. So whenever you once you
+22:55
+Once you find x you are obliged to Bhutan in in in bucket eight 812 X in the vertical axis, the developments in
+23:05
+In your state. Remember not to be around tomorrow.
+23:09
+So the idea is let's say well if they if they
+23:15
+My elements are not random.
+23:18
+Sam, oh I want with my deterministic function is random enough. I'm speaking of two sides of my mouth right because the minister, things are not quite, quite random
+23:30
+But that you guys have you know by now with the various such a thing like you know pseudo random number generation which is I'm deterministic programs that spits out number with
+23:42
+The fact or as good as as random or at least is a good the artistic. So what you want is it to whoever hash function.
+23:53
+Survey to no matter what axes. He makes should be random enough for a being, looking at random. Moving enough and now becomes an all. Where do I find a visa candidate hash function. Good news is that there are several popular candidates in the literature.
+24:15
+In fact that we are so many that we can afford only to talk about the one and perhaps a will in reservations and discuss and all others.
+24:24
+And so here is a popular one is the division hash function which is simply maps x into x modern. So if you think that x is a complete fits in a computer reward division is is quite fast can take an order one time and so it seems to be very fast.
+24:48
+Okay. Oh, we're under music go well.
+24:52
+If m is a power or two when he makes
+24:57
+Simply ease velocity out of it. So, x
+25:01
+So,
+25:04
+Taking the last bits of x is a super duper fast hash function, but it's not necessarily random right so depending on what your keys are right.
+25:14
+So for me the reasons people actually say I like the ash function. The division as function, but do you mind if I actually choose
+25:27
+They function to be me to be a prime instead. Well, you know, I can choose the array of any size I want, I want to choose the way I do a raffle it to be as many as many number in my said, I expect to be in my set
+25:45
+So Brian's are quite dense right so I can find a time in between x and twice x right so i think
+25:55
+I feel good about it. I can find a prime and I can choose my array to have time and no one you pick a number, x and divided by a plan, you break a lot of correlation
+26:08
+Letizia you're a stick right and but somehow in practice. He works. And so if chaining using hash function to be division mock mod p, where Peace Prize and he works, who complains about something and works.
+26:27
+Use it.
+26:30
+We must a waiver realize, wait, whenever
+26:35
+We had to be cash function massage function has to be very quick so that you can shoot yourself in bed right element in the array, and he has to be random enough.
+26:48
+But you must save it. Whatever you choose for us function varies anniversary can always construct a set, Ed, as that is bad for your specific hash function.
+27:01
+Just to do as an exercise ever friends or just a function. And when you to construct a set as much of it. The message function will not spread out the ashes all over there. Very but it will somehow concentrate on some work.
+27:20
+Okay, we must be going through some of this fat, but hopefully this bad set is not your set right i mean
+27:28
+Sets are not all not all states are chosen by a diverse very vague existed beforehand, the end the chance or high beta
+27:37
+Model the P is a good dash function and in any case perfection is when you're over good so good luck with your hash function. So is this what is clear about what ash function is I want to
+27:51
+Map x into each of X and that I wanted ash function but ideally looks random and I say more dippy XML up to me is random enough. Go ahead and try if you run into trouble. Well, change P backups or
+28:09
+Look forward for a different hash function. But, you know, in practice, we all know that somehow
+28:16
+unless unless it is determined by your anniversary your favorite eight me or you are my favorite. I mean, you have your hand if
+28:26
+You are not going to have as such you know elements is going to be spread out good. So now we have
+28:33
+A picnic, which is
+28:37
+Ashley and we store X in Berlin, he linked leaks to the start up a 12 X in Bel ray and let's say, congrats what bashing nice
+28:51
+All right.
+28:53
+How about now, we started looking at some examples, something were to take the benefits of ash.
+29:01
+And I want to start with the setting dissection problem. And what is visible and given two sets of N numbers.
+29:11
+Call it a and b, a one for n and be one for a year. And what I want to do. I want to find the intersection of resets what's actually some, some, a very useful thing clue.
+29:24
+So I'll do i do it well remember booth force always works and what is booth for car is I'll go with someone
+29:33
+Namely, if you want to find the intersection between capital A, capital B take for each element in a compare it with every element in be
+29:43
+If it is equal to one of them putting them into section of advice, choose the next element or capital A and keep on going. All right, how many comparison, the way to do here. Well, order n square right because I'm elements and each one has to compare against the elements and square
+30:03
+Okay, can we do better.
+30:07
+Well, yes. And in fact, that we can do as I'll, I'll go on to better. And the idea is sort of a
+30:16
+And then
+30:18
+Search. A for each element in be
+30:22
+That sounds a pretty good idea because sorting a text or the analog in
+30:29
+And then to compare each element in be to try to search for each element in being in, in, in a way, now we're a sorted
+30:40
+If. How long does it take well searching in another order array takes log in and I have to search each of the
+30:49
+Elements in Cabo be so he's an login again. So he's a login to sort a in another analog end to search for each element in OB in a twice and Logan is an order and logging. Wow. But so much better. And by the way,
+31:08
+It may be look at a tree, the logo ism, but I think it's actually is that clever. I'll go into right because you start to using some idea sorting, but does nothing to do set intersection. So I find that it actually, it becomes a very natural to you had taught you are getting exist before.
+31:31
+For outgoing so
+31:33
+All right.
+31:35
+But here is another better let them.
+31:40
+I'll go on to his performance.
+31:43
+Harsh copy boy. What do I mean
+31:47
+Take each element of capital A and I should you know Ray T capital T or sides and
+31:57
+So much fun, but I'll do it again. Now I take, I should be I think every element to be and I put in, you know, a in the same array of capital T.
+32:10
+Ball. By the way, I can find collision. Bingo. Anytime I collision, what does, what does this mean
+32:19
+When, when I started I know my mom. My mom, my collision. I have to
+32:26
+I have I is very easy to deduce what a intersect the BS right because
+32:34
+I'm, I'm not talking about funding coalition. When I asked capital A, I may have some conditional may do some
+32:41
+Ma'am, I'm a user and chaining to to resolve the Gulf region.
+32:47
+I'm talking here. Once you try to insert the elements of capital B anytime and now you'll find that collision. You're only to remember. I find that collision with an element of A or I find the collision with an element of be so anytime. But you find a collision between
+33:05
+Elements of different sets you record this element. And once you're done. Always. You have the intersection of asset. Right. I hope that this
+33:16
+Is is clear to everybody. Good. How long does this take so first of all I have to say. And that takes all the time, right, because he's order one machine with chaining, no matter
+33:33
+Elements. So he's ordering. Overall, then I have to, I should be but be as any elements but takes order him.
+33:42
+Also, and anytime that I find that collision. I'm asking the equation or your collision between an element of A and 11 to be. If so, put it, that is a
+33:52
+Is a is an easy comparison I do keep a little bitter one bit the regular, you and I, mentally or not. And I collect them and said, this also is or the end because, at the most, and or a is equal to be so three times or domain is order him. Okay.
+34:11
+I mean, that is a really amazing, right. So you take this promo set intersection and you solve it by Hashem better
+34:22
+On the face of it hashing has nothing to do with set intersection are all but the you see a little bit this easy way to store elements of a set
+34:34
+And to retrieve them. I'm not even using the feature of deleting here and I solve a set intersection in linear time. Wow. That is really cool idea.
+34:47
+And it's not the way only application. The machine I'm saying I should let them be predict is going to remain your friend particular if you continue in computer science because it's really everywhere, okay, is a very cool.
+35:03
+All right. In fact, that to get the most benefit to all the hashing. You must a little bit to generalize the problems in how do we generalize it with generalizing with your set now consistent now or two fields element.
+35:20
+So key field in the data field and what the escape game is a unique identifier for us. And so if you think about a dictionary. What is a dictionary. The key would be the word in English and vadera is, what does it mean
+35:41
+To be an element in the set. So another example. You
+35:48
+You have been all English words and French translation. So the unique identifier is the English word and the data associated is what is the equivalent in in French.
+36:01
+Let's put it pretty cool example of a key and data.
+36:07
+Fields, you can actually ever misspelled words, these are your keys and the you and the data is the correct spelling
+36:17
+And you're going to have actually username and then the data is phone number address and what have you. Right. And so you can see whether this point.
+36:27
+We want visit structure set which has a key and a data as to feel the elements is pretty much a very big windows and such a safe to we call the a dictionary. Right.
+36:41
+So essentially a dictionary is a set of key data bears.
+36:47
+Right. But that's it. And by the way, we are interested in dynamic dictionaries, because you want to add the user, you want to subtract a user typical thing so big and because you have a dynamic dictionaries. Usually you want to have
+37:04
+Pointers are very good because appointed things have changed. Whenever things changes you look up, you use pointers. So we want to have directly. They said to be not
+37:15
+They said two pairs, but my Seto pointers to key. The debaters right then now you have a very good thing. By the way, don't tell anybody.
+37:27
+In order to have dynamic dictionaries. I may actually add another element for manipulating the sets for making my life easier. Right. But originally, that's what I have a set is represented by a set of pointers, whose elements are key data bears. Oh, good. Let me
+37:48
+Start working on changing on a again. Now, I have here a universal keys to be service unique identifiers
+37:57
+These are all the possible case I'm going to have all the possible usernames, but then of course the keys that I actually have to deal with capital K is much smaller. And so what do I do
+38:12
+I put visa.
+38:15
+Each each each key k one, I can I go into the link to least ah ok one and I inserted element there the element is K one data one k to data to right and
+38:30
+So if I have a collision I about a link the least over to and so on so forth. Okay, so if we remember the pointers. Our exes now upon those two elements, the operational insert x means in set the X at the head of a least
+38:49
+Which is embarrassing position he have a key of x, right.
+38:55
+And delete means that delete the
+38:59
+element x, but these are the least
+39:02
+In age of your mics and find the means of finding a an element would kick a
+39:09
+Even scanning Vic, at least, or imposition. Ah. Ah, OK. OK. So the same thing, essentially. So now we can do user ashes and changing to endo sets of numbers, or we can actually use to endo a set of pointers to keep database to dictionary, it's
+39:33
+Okay and this point, we have a few legitimate questions.
+39:39
+And let me go one by one.
+39:42
+Well, first, the legitimate question is, if S is dynamic.
+39:48
+I may not know in advance the value of an
+39:52
+So, ushering loop works pretty well if they if m have a number of elements in the array is roughly roughly the same size, or at least have the same size of them. But if I don't know. And what do I do. Good question.
+40:11
+What is another question. Well, arrays are very simple objects, but that raise a link. The least you know is something more to program to keep around with the pointers of a
+40:25
+may create some impediments
+40:28
+A fair the legitimate questions very well does really, these are mod po po to Sylvia your life on base to be a good punch, etc, etc. These are legitimate questions but so let me tell you a little bit rate varies a lot more to rushing
+40:46
+Then we can do it in one lecture I remember that six the double six is an introductory course and this lecture is the introduction to Russian either introductory course to algorithm. So visa, if you
+41:01
+Continue in computer science or if for our homework or recitations we may answer some of these equations. So if you have a question in your mind.
+41:13
+You are on the right track. You should ask this question, so they're all legitimate questions. And in general, we believe in all questions being legit.
+41:24
+Well, if we like questions to ask ourselves some quick equations as well.
+41:33
+Who needs sorting. If we can both store and search in order one. So, gee, that's pretty quickly. Well, I'd only
+41:41
+Well, what do I mean by that.
+41:44
+So they often say, is that the same. Either way, I needed sorting because I may want to find
+41:51
+The case for larger element in percent. We also could be a bit like way.
+41:57
+But they also
+42:01
+Also also when he's a quick question also as a quick answer.
+42:09
+All people like me if I have to use to to consult the phone books to find the phone number or somebody because of its was about the chronology. We had that time.
+42:18
+When I add your age.
+42:21
+And so, what was that technology was an ink and glue to make him his phone books so sorting was absolutely necessary. Even though my, oh my, only thing I want to do is to look up the number of a particular user
+42:38
+If they gave me a bunch of a, of an array around a random access machine I give you, I would sort of a woman by Russia.
+42:49
+So sorting was made the very prominent. It was prominent in the past due to activate that technology.
+42:58
+I mean, was very primitive, but there was a distributed to everybody. So perhaps it could be that we are going to sort less because we don't need to sort anymore. If we have a random access to machines.
+43:14
+If our power is in storing and retrieving information right because hashing does way better than searching, searching sorting and when do binary search
+43:27
+Here is another quick equations. Well if memory serves, about storing and searching any fashion. You're telling me is the best way to store and search, does the brain hash.
+43:43
+That's pretty quick, too. But you know what's an interesting question because what did we say
+43:50
+We said the best algorithms are everywhere and somehow organisms creatures who are alive, they must up by evolution process or something come up with an efficient algorithm.
+44:07
+Otherwise, it will be too much computation to decide what to do or I'm angry. What the hell am I going to do it. So I'ma let me let me invoke have a hunger solving alcoholism. If it is an all
+44:21
+In Cuba and ever so many sales is good luck. So the brain.
+44:27
+And be surprising but brain ash at. In fact, there is a lot of people, women, computer scientists to say to tell the biology. So, you know, we must look for ushering in the brain.
+44:39
+And in fact, actually. So far, we haven't figured out, so about a few do it if was of you or biologist.
+44:48
+Pick it up to say fashion so good. Can it be the blame for brainwash. Absolutely. And if you solve this. Well, Stockholm awaits you. Okay.
+44:59
+Well, why store calm, because that's where Maggie, the Nobel Prize. Right. So think of six available or six and your noble Express. So you are going to gain
+45:09
+A very spatial edge against any other researcher who has not taken in whatever field as not taking see down below six because algorithm are really the true key idea to understand to understand the word
+45:24
+And I really would like to to spend a little bit more time on this because I really believe of it. There may be rushing in the brain. Because think about it.
+45:35
+The brain as always tend to be 10 neurons better they actually randomly linked to each other. So the notion that you want to ask a condom location. Well,
+45:45
+At birth for your heavier, but over the finger Gundam wired. Anyway, so it actually is not so bad.
+45:53
+And I never think that they want you to notice is that when you get older, you have noticed with in your parents, your grandparents, and if you're lacking Gun, gun parents may seem to have a little bit of difficulty recalling things
+46:08
+Let's go back to Ashley, when does ashen work well, very well when my array is not totally fool.
+46:16
+So, right. So when the number of things that I want to store you so much smaller than they are great. But the more I store for now it to go forward this link leaves the, where do I put to be sad or somewhere, somewhere, somewhere. Of course, if we age you accumulate memory. That's a good
+46:35
+Mix hashing a retrieval much harder. So, I believe, a very maybe something there. We cheese.
+46:42
+All I wanted to say about about Russia. Let's remember rushing is a great way to maintain a dynamic set of numbers, or even a dynamic dictionary and numbers represents of a world and dictionary even more variable is a key data payers seem to be everywhere.
+47:04
+And we have the idea to have chaining to resolve a collision. And so we are going to exploit the order one access to our random access memory that I think is some technology advantage and ushering takes advantage of this particular part of the technology and we should be very, very
+47:28
+Useful and the collision, we said that we can actually do by
+47:34
+By changing, but because I see what we have in a few minutes. I'd like to give you
+47:41
+A very general idea about another way to resolve collisions, which I mentioned that is open addressing
+47:53
+And very i is data before we
+47:57
+Forget the link to least if a bad bucket is occupied various to find another bucket. And by the way, for opening addressing to work. A must be greater than or equal to aim and preferably twice as n
+48:12
+So would you do to insert don't go into a single location and put it there but probe a sequence of bucket until you find an empty one
+48:23
+OK, so the idea, and we are not going to ever more space of in the just the main idea is beta when you want to
+48:35
+End the lakes. You are going on. Do
+48:39
+You want wave of your hash function that maps to the universe of
+48:45
+End one way into one twin. So you have a universal keys and appropriate number and a bucket. So you tell me what attempt. I'm trying to put x into into VR, Ray. Your turn is a third attempt, I give you a location if I can put it there. I put i can I do if I can't
+49:05
+They are should function tells you for West x and the for for trial I give you a different bucket trying to best back. So here is my idea I want to insert say keep a data K is my array.
+49:20
+I go into the first trial which he have a key one is some random element of vessel re
+49:27
+If it's empty. A puja very element there if I find the other data store there. I have a collision. Very good. What do I do not changing here right i do is wait now I gosh, okay. In the second trial. Number two, and I got into another part of eBay.
+49:48
+If it's empty, I put my data there. If it's not, then I have another collision. I go over there, fair trial. Ah, OK. Free is a random location represent the my third trial if it is ok.
+50:04
+Another collision doin one last time final is empty free spot I put my data there. So, but these Melbourne undressing right
+50:12
+So inserting is your blog until you find an empty bucket.
+50:17
+Search, but all been till you find an item and returned with success or find an empty bucket, which means the item is not there. And why is not there, because if item is inserted. I would use a bit empty bucket. So, and delete is that the world but till you find the item.
+50:40
+And if you remove
+50:43
+You leave it empty.
+50:46
+That is the only problem with Felicia. Right. But the problem is that if you insert X even said to I suppose the proper sequence for why
+50:56
+Possible X bucket, then you will store why elsewhere. So if you want to now to delete X and leaving a whole where you deleted.
+51:06
+And then you search for why the pub sequence. It's again, he bucket, but this time he finds the bucket empty and therefore, you've got her go ahead incorrectly conclude that advice, not in the table.
+51:18
+And what is the solution is beta when you delete X deleted in Bitbucket and my market deleted Buddha like IP. Rest in peace. He was dead. So fuser chairs of excess
+51:32
+Returns X know found if they found the rip and otherwise insert z and override it because if somebody is is written is another way to know that you have not. You don't waste space that you make errors.
+51:49
+Thank you for the expectation MRs are happily idea and I think it was worthwhile for later without an all in things. And let me stop sharing right there.
+user avatar
+Collin R Warner
+52:08
+Thanks.
+user avatar
+Silvio Micali
+52:14
+Alright guys, right. So, so it's hashing and
+52:20
+You must start the meeting with is pretty cool right he lets you do strange things in a very quick way.
+52:27
+set intersection, all kinds of things information storing and Retrieving, deleting methods of your, your ticket to efficient algorithms.
+52:36
+No matter what you do, you must enter lashing at some point and and that's all we wanted to do and the rest that will put in some homework and but is a cool idea. So it varies and not
+52:49
+And the other particular thing and I wish, as usual, but an excellent day and thank you for getting up participating. So in the morning.
+53:01
+Like guys's keep
+53:02
+Keep a little. Yep.

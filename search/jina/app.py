@@ -6,10 +6,11 @@ import os
 import click
 from jina.flow import Flow
 
+import json
 
 def config():
     os.environ["JINA_DATA_FILE"] = os.environ.get(
-        "JINA_DATA_FILE", "data/test_size_3_rolled.csv"
+        "JINA_DATA_FILE", "data/test.csv"
     )
     os.environ["JINA_WORKSPACE"] = os.environ.get("JINA_WORKSPACE", "workspace")
 
@@ -19,14 +20,20 @@ def config():
 def print_topk(resp, sentence):
     for d in resp.search.docs:
         print(f"Ta-Dah🔮, here are what we found for: {sentence}")
+        results = {}
+        characters = []
+        dialogs = []
         for idx, match in enumerate(d.matches):
-
             score = match.score.value
             if score < 0.0:
                 continue
             character = match.meta_info.decode()
             dialog = match.text.strip()
-            print(f'> {idx:>2d}({score:.2f}). {character.upper()} said, "{dialog}"')
+            results[character] = dialog
+
+        print(json.dumps(results, sort_keys=True))
+        print(sorted(list(results.keys())))
+            # print(f'> {idx:>2d}({score:.2f}). {character.upper()} said, "{dialog}"')
 
 
 def index(num_docs):

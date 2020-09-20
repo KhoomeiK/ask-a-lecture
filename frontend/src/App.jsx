@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Routes } from './routes'
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
     return (
