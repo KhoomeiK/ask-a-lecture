@@ -12,8 +12,6 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 
-// images
-// import n from '../linear_algebra.png'
 
 const baseUrl = "./images/";
 const useStyles = makeStyles({
@@ -51,7 +49,7 @@ export const ClassCollapsible = (props) => {
                 </CardContent>
             </CardActionArea>
         </Card>
-        <Collapse isOpen={isOpen}>
+        <Collapse isOpen={isOpen} >
             {Object.keys(classObject.lectures).map(lecture => {
                 const lectNum = classObject.lectures[lecture]
                 return(
@@ -98,16 +96,6 @@ export const StudentDash = (props) => {
                     variant: 'styles.header',
                 }}
                 className="header">
-                <Heading>Niidl</Heading>
-                <div sx={{ mx: 'auto' }} />
-                <Link {...rest} to="/professor"
-                    sx={{
-                        color: 'inherit',
-                        '&.active': {
-                            color: 'primary',
-                        },
-                        marginRight: '10px'
-                    }}>Professor View</Link> 
 
             </header>
             <div className="dashboard">

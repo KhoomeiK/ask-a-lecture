@@ -22,8 +22,8 @@ const ResultCard = (props) => {
     const videoId = getVideoId(props.link)
 
     const options = {
-        height: '390',
-        width: '640',
+        height: '310',
+        width: '510',
         start: timeStampToSeconds(props.timestamp),
         playerVars: {
         // https://developers.google.com/youtube/player_parameters
@@ -156,32 +156,26 @@ export const SearchAndResults = (props) => {
     console.log(results)
     
     return(
-        <React.Fragment>
-            <header
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    variant: 'styles.header',
-                }}
-                className="header">
-                <Heading>Niidl</Heading>
-                <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
-                <div sx={{ mx: 'auto' }} />
+        <header
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                variant: 'styles.header',
+            }}
+            className="header">
+            <Heading>Search</Heading>
+            <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
+            <div sx={{ mx: 'auto' }} />
             
-                <Link {...rest} to="/professor"
-                    sx={{
-                        color: 'inherit',
-                        '&.active': {
-                            color: 'primary',
-                        },
-                        marginRight: '10px'
-                    }}>Professor View</Link> 
+            {/* <Link {...rest} to="/professor"
+                sx={{
+                    color: 'inherit',
+                    '&.active': {
+                        color: 'primary',
+                    },
+                    marginRight: '10px'
+                }}>Professor View</Link>  */}
 
-            </header>
-            <Box className="dashboard">
-                {results.map(result => <ResultCard {...result} />)}
-            </Box>
-        </React.Fragment>
-
+        </header>
     )
 }
