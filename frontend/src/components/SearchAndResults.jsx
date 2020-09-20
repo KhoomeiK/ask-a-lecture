@@ -3,26 +3,49 @@
 import _ from 'lodash'
 import React, {useState} from 'react'
 import { Search } from 'semantic-ui-react'
-import { Card, Heading, jsx, Text} from 'theme-ui'
+import { Card, Heading, jsx, Box} from 'theme-ui'
 import { Link } from 'react-router-dom'
 import {Link as ThemeLink} from 'theme-ui' 
-import { postSearch, timeStampToYouTube } from '../utils'
-
-import '../App.css'
-
+import { postSearch, timeStampToYouTube, timeStampToSeconds, getVideoId } from '../utils'
+import { Card as CardView, Icon, Image } from 'semantic-ui-react'
+import YouTube from 'react-youtube';
 const initialState = {
     loading: false,
     results: [],
     value: '',
 }
 
-const ResultCard = ({text, timestamp, videoURL}) => {
+const ResultCard = (props) => {
+    const updatedText = props.text.slice(0, 100) + "..."
+    // let time = props.timestamp.split(".")[0]
+    console.log(props)
+    const videoId = getVideoId(props.link)
+
+    const options = {
+        height: '390',
+        width: '640',
+        start: timeStampToSeconds(props.timestamp),
+        playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+            autoplay: 1,
+        },
+    }
     return(
-        <Card>
-            <Text>
-            Card
-            </Text>
-        </Card>
+        <CardView>
+            {/* <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} /> */}
+            <CardView.Content>Lecture Entry
+                <CardView.Header>{props.timestamp}</CardView.Header>
+                <CardView.Description>
+                    <ThemeLink target="_blank" href={props.linkWithTime}>({props.timestamp})</ThemeLink>
+                    {props.text}
+                </CardView.Description>
+                <YouTube opts={options} videoId={videoId} />
+            </CardView.Content>
+        </CardView>
+
+    // <Card key={`${timestamp}-table`} className="searchCard">
+    //     {updatedText} <ThemeLink target="_blank" href={linkWithTime}>({timestamp})</ThemeLink>
+    // </Card>
     )
 }
 
@@ -34,7 +57,7 @@ const fetchResults = async (search) => {
         // return data;
         if (data !== []) {
             const { link, title } = data;
-            return data.results.map(value =>  ({...value, linkWithTime: timeStampToYouTube(value.timestamp, link), title}));
+            return data.results.map(value =>  ({...value, linkWithTime: timeStampToYouTube(value.timestamp, link), title, link}));
         }
         return data;
         
@@ -66,7 +89,7 @@ const resultRenderer = ({text, linkWithTime, timestamp}) => {
         <Card key={timestamp} className="searchCard">
             {updatedText} <ThemeLink target="_blank" href={linkWithTime}>({timestamp})</ThemeLink>
         </Card>
-        )
+    )
 }
 
 function SearchExampleStandard(props) {
@@ -129,28 +152,35 @@ export const SearchAndResults = (props) => {
         classId = props.location.state.classId
         lectureNum = props.location.state.lectureNum
     }
+    console.log(results)
     
     return(
-        <header
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                variant: 'styles.header',
-            }}
-            className="header">
-            <Heading>Niidl</Heading>
-            <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
-            <div sx={{ mx: 'auto' }} />
-            
-            <Link {...rest} to="/professor"
+        <React.Fragment>
+            <header
                 sx={{
-                    color: 'inherit',
-                    '&.active': {
-                        color: 'primary',
-                    },
-                    marginRight: '10px'
-                }}>Professor View</Link> 
+                    display: 'flex',
+                    alignItems: 'center',
+                    variant: 'styles.header',
+                }}
+                className="header">
+                <Heading>Niidl</Heading>
+                <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
+                <div sx={{ mx: 'auto' }} />
+            
+                <Link {...rest} to="/professor"
+                    sx={{
+                        color: 'inherit',
+                        '&.active': {
+                            color: 'primary',
+                        },
+                        marginRight: '10px'
+                    }}>Professor View</Link> 
 
-        </header>
+            </header>
+            <Box className="dashboard">
+                {results.map(result => <ResultCard {...result} />)}
+            </Box>
+        </React.Fragment>
+
     )
 }
