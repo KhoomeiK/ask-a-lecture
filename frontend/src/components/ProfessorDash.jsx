@@ -33,7 +33,6 @@ const uploadTranscript = (e, transcript) => {
         return
     }
     const lecture = {transcript, lectureTitle, classId, lectureNumber, videoLink}
-    console.log(lecture)
     popToast("Successfully sent!")
     postLecture(lecture)
 }
