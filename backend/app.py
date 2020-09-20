@@ -1,7 +1,11 @@
-from my_app import app
-from flask import render_template, request, redirect, jsonify
+from flask import Flask, session, render_template, request, redirect, jsonify
+from flask_cors import CORS
+
 from my_app.parse import parse_file
 from my_app.search import Model
+
+app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
 
 model = Model()
 
@@ -30,3 +34,6 @@ def search():
     # results = sorted([x['timestamp'] for x in results]) # todo: get rid of sorted?
     
     return jsonify(results)
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000, debug=True)
