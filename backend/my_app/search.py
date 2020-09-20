@@ -28,6 +28,7 @@ class Model:
 
   def generateIndex(self, chunks, lectureDir): # generates whoosh lectureDir from parsed chunks
     schema = Schema(timestamp=TEXT(stored=True), text=TEXT(stored=True, analyzer=StemmingAnalyzer()))
+    
     os.system('mkdir ./%s/%s' % (self.indicesDir, lectureDir))
     ix = create_in('./%s/%s' % (self.indicesDir, lectureDir), schema)
     writer = ix.writer() # create writer for index

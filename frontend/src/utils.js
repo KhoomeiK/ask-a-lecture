@@ -32,8 +32,9 @@ export const timeStampToYouTube = (timestamp, videoURL) => {
     let times  = timestamp.split(":")
     let hours = parseInt(times[0]) * 60 * 60
     let minutes = parseInt(times[1]) * 60
-    let seconds = times[2].split()
-    const totalTime = hours * 60 * 60 + (minutes * 60) + seconds
+    let seconds = parseInt(times[2].split(".")[0])
+    const totalTime = hours + minutes + seconds
+    return `${videoURL}?t=${toString(totalTime)}`
 }
 
 /**
