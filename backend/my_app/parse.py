@@ -63,7 +63,7 @@ def read_chunk(lines, start_index):
     """Parse a chunk (one sentence) of vtt lines"""
     id_ = int(lines[start_index+1].strip())
     time = lines[start_index+2].strip().split('-->')[0].strip()
-    text = lines[start_index+3].strip().split(':')[1].strip()
+    text = lines[start_index+3].strip().split(':')[-1].strip()
     # return (id_, time, text)
     return (time, text)
 
