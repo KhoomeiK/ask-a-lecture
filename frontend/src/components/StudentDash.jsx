@@ -32,13 +32,13 @@ export const ClassCollapsible = (props) => {
 
     return (<React.Fragment>
         
-        <Button className="maxButton" style={{width:'100%'}} onClick={toggle} style={{ marginBottom: '1rem' }}>{classObject.className} {classObject.classNumber}</Button>
+        <Button onClick={toggle} style={{marginTop: '1rem', width:'100%'}}>{classObject.className} {classObject.classNumber}</Button>
         <Collapse  isOpen={isOpen}>
             {Object.keys(classObject.lectures).map(lecture => {
                 const lectNum = classObject.lectures[lecture]
                 return(
                     <Card >
-                        <CardBody>
+                        <CardBody style={{padding: '10px'}}>
                             <Link {...rest} to={{pathname: "/search", state: {...classObject, lectureNum: lectNum}}}
                                 sx={{
                                     color: 'inherit',
@@ -95,6 +95,7 @@ export const StudentDash = (props) => {
                 {/* <StyledDropzone setText={setText} setLoading={setLoading} /> */}
                 <Box
                     style={{marginTop: '30px'}}>
+                    <Label htmlFor='classId' style={{fontSize: '30px'}}>Classes</Label>
                     {classes.map(obj => <ClassCollapsible classObject={obj}/>)}
 
                 </Box>
