@@ -79,7 +79,7 @@ export const StudentDash = (props) => {
                     variant: 'styles.header',
                 }}
                 className="header">
-                <Heading>Ask-A-Lecture</Heading>
+                <Heading>Niidl</Heading>
                 <div sx={{ mx: 'auto' }} />
                 <Link {...rest} to="/professor"
                     sx={{

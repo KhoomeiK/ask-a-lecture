@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import {Link as ThemeLink} from 'theme-ui' 
 import { postSearch, timeStampToYouTube } from '../utils'
 
+import '../App.css'
+
 const initialState = {
     loading: false,
     results: [],
@@ -57,10 +59,14 @@ function exampleReducer(state, action) {
     }
 }
 
-const resultRenderer = ({text, linkWithTime, title}) => {
+const resultRenderer = ({text, linkWithTime, timestamp}) => {
     const updatedText = text.slice(0, 100) + "..."
+    timestamp = timestamp.split(".")[0]
     return (
-        <Card key={title}>{updatedText}, <ThemeLink target="_blank" href={linkWithTime}>Video Link</ThemeLink></Card>)
+        <Card key={timestamp} className="searchCard">
+            {updatedText} <ThemeLink target="_blank" href={linkWithTime}>({timestamp})</ThemeLink>
+        </Card>
+        )
 }
 
 function SearchExampleStandard(props) {
@@ -102,9 +108,9 @@ function SearchExampleStandard(props) {
         <Search
             className="searchBar"
             loading={loading}
-            onResultSelect={(e, data) =>
-                dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
-            }
+            // onResultSelect={(e, data) =>
+            //     dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+            // }
             onSearchChange={handleSearchChange}
             results={results}
             resultRenderer={resultRenderer}
@@ -132,7 +138,7 @@ export const SearchAndResults = (props) => {
                 variant: 'styles.header',
             }}
             className="header">
-            <Heading>Ask-A-Lecture</Heading>
+            <Heading>Niidl</Heading>
             <SearchExampleStandard setResults={setResults} classId={classId} lectureNum={lectureNum} />
             <div sx={{ mx: 'auto' }} />
             

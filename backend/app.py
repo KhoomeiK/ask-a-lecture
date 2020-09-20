@@ -39,6 +39,7 @@ def search():
     question = post_info["question"]
 
     lectureId = '%s-%s' % (classId, lectureNumber)
+    print(lectureId)
     results = model.search(question, lectureId)
     # results = sorted([x['timestamp'] for x in results]) # todo: get rid of sorted?
     
@@ -47,8 +48,16 @@ def search():
     c.execute('SELECT video_link, lecture_title FROM lectures WHERE class_lecture=?', (lectureId,))
     info = c.fetchone()
     conn.close()
-    
-    return jsonify({'link': info[0], 'title': info[1], 'results': results})
+
+    if info == None:
+      return jsonify({"RESPONSE": "lecture has not been indexed"})
+    else:
+      if 'youtube' in info[0]:
+        link = 'https://youtu.be/%s' % info[0].split('=')[1]
+      else:
+        link = info[0]
+
+      return jsonify({'link': link, 'title': info[1], 'results': results})
 
 @app.route("/api/list_lectures", methods=["GET"])
 def list_lectures():
