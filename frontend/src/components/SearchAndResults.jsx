@@ -6,8 +6,7 @@ import React, { Component } from 'react'
 import { Search } from 'semantic-ui-react'
 import {Card, Heading, jsx, Text} from 'theme-ui'
 import {Link } from 'react-router-dom'
-
-const initialState = { isLoading: false, results: [], value: '' }
+import {postSearch, timeStampToYouTube} from '../utils'
 
 // TODO: This should be replaced with acutal data
 // const getResults = () =>
@@ -17,92 +16,164 @@ const initialState = { isLoading: false, results: [], value: '' }
 //     image: faker.internet.avatar(),
 //     price: faker.finance.amount(0, 100, 2, '$'),
 //   }))
-
-const getResults = () => {
-    
+const initialState = {
+    loading: false,
+    results: [],
+    value: '',
 }
-
-const source = _.range(0, 3).reduce((memo) => {
-  const name = faker.hacker.noun()
-
-  // eslint-disable-next-line no-param-reassign
-  memo[name] = {
-    name,
-    results: getResults(),
-  }
-
-  return memo
-}, {})
 
 const ResultCard = ({text, timestamp, videoURL}) => {
-    return(<Card
-  sx={{
-    maxWidth: 256,
-  }}>
-  <Text>
-    Card
-  </Text>
-</Card>)
-
+    return(<Card>
+        <Text>
+            Card
+        </Text>
+    </Card>
+    )
 }
 
-class SearchBar extends Component {
-  state = initialState
-
-  handleResultSelect = (e, { result }) => {
-    this.setState({ value: result.title })
-    // this.props.setResults
+const fetchResults = async (search) => {
+    const filteredResults = await(postSearch(search));
+    try {
+        const data = await filteredResults.json();
+        // return data;
+        return data.map(value =>  ({...value, title: timeStampToYouTube(value.timestamp, "https://youtu.be/hFQL7BS6lrs")}));
+    } catch (e) {
+        console.log(e)
+    }
 }
 
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value })
+function exampleReducer(state, action) {
+    switch (action.type) {
+    case 'CLEAN_QUERY':
+        return initialState
+    case 'START_SEARCH':
+        return { ...state, loading: true, value: action.query }
+    case 'FINISH_SEARCH':
+        return { ...state, loading: false, results: action.results }
+    case 'UPDATE_SELECTION':
+        return { ...state, value: action.selection }
 
-    setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState)
+    default:
+        throw new Error()
+    }
+}
 
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-      const isMatch = (result) => re.test(result.title)
+const resultRenderer = ({text, timestamp}) => {
+    return <Card>{text}, {timeStampToYouTube(timestamp, "https://youtu.be/hFQL7BS6lrs")}</Card>
+}
 
-      const filteredResults = _.reduce(
-        source,
-        (memo, data, name) => {
-          const results = _.filter(data.results, isMatch)
-          if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
+function SearchExampleStandard(props) {
+    const [state, dispatch] = React.useReducer(exampleReducer, initialState)
+    const { loading, results, value } = state
 
-          return memo
-        },
-        {},
-      )
+    const timeoutRef = React.useRef()
+    const handleSearchChange = React.useCallback((e, data) => {
+        clearTimeout(timeoutRef.current)
+        dispatch({ type: 'START_SEARCH', query: data.value })
 
-      this.setState({
-        isLoading: false,
-        results: filteredResults,
-      })
-    }, 300)
-  }
+        timeoutRef.current = setTimeout(async () => {
+            if (data.value.length === 0) {
+                dispatch({ type: 'CLEAN_QUERY' })
+                return
+            }
 
-  render() {
-    const { isLoading, value, results } = this.state
+            const re = new RegExp(_.escapeRegExp(data.value), 'i')
+            const isMatch = (result) => re.test(result.title)
+
+            const search = {"classId": props.classId, "lectureNumber": props.lectureNum, "question": data.value}
+            console.log(search)
+            const source = await fetchResults(search)
+            console.log(source)
+
+            dispatch({
+                type: 'FINISH_SEARCH',
+                results: source,
+            })
+        }, 300)
+    }, [])
+    React.useEffect(() => {
+        return () => {
+            clearTimeout(timeoutRef.current)
+        }
+    }, [])
 
     return (
-      <div className="searchBar">
-          <Search
-            category
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true,
-            })}
+        <Search
+            loading={loading}
+            onResultSelect={(e, data) =>
+                dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+            }
+            onSearchChange={handleSearchChange}
             results={results}
+            resultRenderer={resultRenderer}
             value={value}
-          />
-      </div>
+        />
     )
-  }
 }
+
+
+
+
+// class SearchBar extends Component {
+//   state = initialState
+  
+
+//   handleResultSelect = (e, { result }) => {
+//     this.setState({ value: result })
+//     // this.props.setResults
+// }
+
+//   handleSearchChange = (e, { value }) => {
+//     this.setState({ isLoading: true, value })
+
+//     setTimeout(async () => {
+//       if (this.state.value.length < 1) return this.setState(initialState)
+
+      
+//         const search = {"classId": this.props.classId, "lectureNumber": this.props.lectureNum, "question": this.state.value}
+//         console.log(search)
+
+//         // Array of JSON comes back
+//         const filteredResults = await fetchResults(search)
+
+//         console.log(filteredResults)
+
+//       this.setState({
+//         isLoading: false,
+//         results: filteredResults,
+//       })
+//     }, 300)
+//   }
+
+//   render() {
+//     const { isLoading, value, results } = this.state
+
+//     return (
+//       <div className="searchBar">
+//           <Search
+//             category
+//             loading={isLoading}
+//             onResultSelect={this.handleResultSelect}
+//             onSearchChange={_.debounce(this.handleSearchChange, 500, {
+//               leading: true,
+//             })}
+//             results={results}
+//             value={value}
+//           />
+//       </div>
+//     )
+//   }
+// }
 
 export const SearchAndResults = (props) => {
     const {to, staticContext, activeClassName, ...rest} = props
+    let classId = "18.S096"
+    let lectureNum = "1"
+    if (props.location.state) {
+        classId = props.location.state.classId
+        lectureNum = props.location.state.lectureNum
+    }
+    
     return(
         <header
             sx={{
@@ -112,7 +183,7 @@ export const SearchAndResults = (props) => {
             }}
             className="header">
             <Heading>Ask-A-Lecture</Heading>
-            <SearchBar />
+            <SearchExampleStandard classId={classId} lectureNum={lectureNum} />
             <div sx={{ mx: 'auto' }} />
             
             <Link {...rest} to="/professor"
