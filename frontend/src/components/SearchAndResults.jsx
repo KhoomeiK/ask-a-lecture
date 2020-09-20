@@ -1,12 +1,12 @@
 /** @jsx jsx */
 
 import _ from 'lodash'
-import faker from 'faker'
-import React, { Component } from 'react'
+import React from 'react'
 import { Search } from 'semantic-ui-react'
-import {Card, Heading, jsx, Text} from 'theme-ui'
-import {Link } from 'react-router-dom'
-import {postSearch, timeStampToYouTube} from '../utils'
+import { Card, Heading, jsx, Text} from 'theme-ui'
+import { Link } from 'react-router-dom'
+import {Link as ThemeLink} from 'theme-ui' 
+import { postSearch, timeStampToYouTube } from '../utils'
 
 // TODO: This should be replaced with acutal data
 // const getResults = () =>
@@ -36,7 +36,11 @@ const fetchResults = async (search) => {
     try {
         const data = await filteredResults.json();
         // return data;
-        return data.map(value =>  ({...value, title: timeStampToYouTube(value.timestamp, "https://youtu.be/hFQL7BS6lrs")}));
+        if (data != []) {
+            return data.map(value =>  ({...value, title: timeStampToYouTube(value.timestamp, "https://youtu.be/hFQL7BS6lrs")}));
+        }
+        return data;
+        
     } catch (e) {
         console.log(e)
     }
@@ -59,7 +63,8 @@ function exampleReducer(state, action) {
 }
 
 const resultRenderer = ({text, timestamp}) => {
-    return <Card>{text}, {timeStampToYouTube(timestamp, "https://youtu.be/hFQL7BS6lrs")}</Card>
+    const updatedText = text.slice(10) + "..."
+    return <Card>{updatedText}, <Link href={timeStampToYouTube(timestamp, "https://youtu.be/hFQL7BS6lrs")}>Video Link</Link></Card>
 }
 
 function SearchExampleStandard(props) {
@@ -99,6 +104,7 @@ function SearchExampleStandard(props) {
 
     return (
         <Search
+            className="searchBar"
             loading={loading}
             onResultSelect={(e, data) =>
                 dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })

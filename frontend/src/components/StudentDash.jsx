@@ -37,7 +37,7 @@ export const ClassCollapsible = (props) => {
             {Object.keys(classObject.lectures).map(lecture => {
                 const lectNum = classObject.lectures[lecture]
                 return(
-                    <Card >
+                    <Card key={lectNum}>
                         <CardBody style={{padding: '10px'}}>
                             <Link {...rest} to={{pathname: "/search", state: {...classObject, lectureNum: lectNum}}}
                                 sx={{
@@ -96,7 +96,7 @@ export const StudentDash = (props) => {
                 <Box
                     style={{marginTop: '30px'}}>
                     <Label htmlFor='classId' style={{fontSize: '30px'}}>Classes</Label>
-                    {classes.map(obj => <ClassCollapsible classObject={obj}/>)}
+                    {classes.map(obj => <ClassCollapsible key={obj.classId} classObject={obj}/>)}
 
                 </Box>
                
