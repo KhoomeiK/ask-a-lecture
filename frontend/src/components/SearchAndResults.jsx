@@ -34,9 +34,8 @@ const ResultCard = (props) => {
         <CardView style={{width: '100%' }}>
             {/* <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} /> */}
             <CardView.Content>Lecture Entry
-                <CardView.Header>{props.timestamp}</CardView.Header>
+                <CardView.Header><ThemeLink target="_blank" href={props.linkWithTime}>{props.timestamp}</ThemeLink></CardView.Header>
                 <CardView.Description>
-                    <ThemeLink target="_blank" href={props.linkWithTime}>({props.timestamp})</ThemeLink>
                     {props.text}
                 </CardView.Description>
                 <YouTube opts={options} videoId={videoId} />
