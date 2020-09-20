@@ -36,8 +36,8 @@ const ResultCard = (props) => {
             <CardView.Content>Lecture Entry
                 <CardView.Header>{props.timestamp}</CardView.Header>
                 <CardView.Description>
-                    <ThemeLink target="_blank" href={props.linkWithTime}>({props.timestamp})</ThemeLink>
                     {props.text}
+                    <ThemeLink target="_blank" href={props.linkWithTime}>({props.timestamp})</ThemeLink>
                 </CardView.Description>
                 <YouTube opts={options} videoId={videoId} />
             </CardView.Content>
@@ -130,14 +130,15 @@ function SearchExampleStandard(props) {
     return (
         <Search
             className="searchBar"
-            loading={loading}
+            // loading={loading}
             // onResultSelect={(e, data) =>
             //     dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
             // }
             onSearchChange={handleSearchChange}
-            results={results}
-            resultRenderer={resultRenderer}
-            value={value}
+            showNoResults={false}
+            // results={results}
+            // resultRenderer={resultRenderer}
+            // value={value}
         />
     )
 }
