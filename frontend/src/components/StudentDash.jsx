@@ -92,14 +92,11 @@ export const StudentDash = (props) => {
 
             </header>
             <div className="dashboard">
-                {/* <StyledDropzone setText={setText} setLoading={setLoading} /> */}
                 <Box
                     style={{marginTop: '30px'}}>
                     <Label htmlFor='classId' style={{fontSize: '30px'}}>Classes</Label>
                     {classes.map(obj => <ClassCollapsible key={obj.classId} classObject={obj}/>)}
-
                 </Box>
-               
             </div>
         </React.Fragment>
     )

@@ -2,7 +2,9 @@ import {toast} from 'react-toastify'
 
 export const classes = [
     {className: 'Special Subject in Mathematics', classId: '18.S096', lectures: {'lecture 1': 1, 'lecture 2':2}}, 
-    {className: 'Algorithms for Parallel Computing', classId: 'CS6320', lectures: {'lecture 1':1, 'lecture 2':2, 'lecture 3':3}}
+    {className: 'Algorithms for Parallel Computing', classId: 'CS6320', lectures: {'lecture 1':1, 'lecture 2':2, 'lecture 3':3}},
+    {className: 'Deep Learning', classId: 'CS3892', lectures: {'Gradient Descent': 1, 'Stochastic Gradient Descent':2, 'Neural Networks':3}},
+    {className: 'Error Correcting Codes and Cryptography', classId: 'MATH3320', lectures: {'Error Detection': 1, 'Perfect Codes':2, 'Hamming Bounds':3}}
 ]
 
 export const classKeywords = [
@@ -34,7 +36,6 @@ export const timeStampToYouTube = (timestamp, videoURL) => {
     let minutes = parseInt(times[1]) * 60
     let seconds = parseInt(times[2].split(".")[0])
     const totalTime = hours + minutes + seconds
-    console.log(totalTime)
     return `${videoURL}?t=${totalTime.toString()}`
 }
 

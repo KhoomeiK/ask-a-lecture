@@ -45,7 +45,6 @@ export const ProfessorDash = (props) => {
     const [loading, setLoading] = useState(false)
     const [text, setText] = useState("")
 
-
     return (
         <React.Fragment>
             <header
