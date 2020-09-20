@@ -22,8 +22,8 @@ const ResultCard = (props) => {
     const videoId = getVideoId(props.link)
 
     const options = {
-        height: '390',
-        width: '640',
+        height: '310',
+        width: '510',
         start: timeStampToSeconds(props.timestamp),
         playerVars: {
         // https://developers.google.com/youtube/player_parameters
