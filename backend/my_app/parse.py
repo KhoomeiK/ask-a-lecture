@@ -21,8 +21,8 @@ def parse_file(script, grouped=True, n=3):
 
 def group_sents(sents, n=3):
     results = []
-    for i in range(0, len(sents), n):  
-        chunk = sents[i:i+n] 
+    for i in range(0, len(sents), n):
+        chunk = sents[i:i+n]
         text = ' '.join([sent[1] for sent in chunk])
         results.append((chunk[0][0], text))
     return results
@@ -31,7 +31,7 @@ def parse_vtt(lines):
     """Parse lines from vtt file"""
     results = []
     lines = lines[1:]
-    
+
     start_index = 0
     while start_index+4 < len(lines):
         results.append(read_chunk(lines, start_index))
@@ -49,7 +49,11 @@ def parse_copied(lines):
             continue
         if index + 1 >= len(lines):
             break
-        time = standardize_time(line)
+        try:
+            time = standardize_time(line)
+        except:
+            index += 1
+            continue
         text = lines[index+1].strip()
         results.append((time, text))
         index += 2
@@ -78,4 +82,3 @@ def standardize_time(time):
         return "00:00:" + time + ".000"
     else:
         raise ValueError("Cannot recognize timstamp format")
-
