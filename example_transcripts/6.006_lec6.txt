@@ -1,0 +1,669 @@
+Julian Shun
+00:04
+Hey everyone, welcome to lecture six of six Tableau six. Today's going to be the first of two lectures on binary trees. So most of you have seen binary trees and many other context, for example in this class we used binary trees to
+00:23
+Prove a lower bound for comparison story. In fact, in the previous lecture.
+00:28
+But there are many other cool things that you can do with binary trees and in today's lecture. And next week's lecture will be talking about some of these cool things you can do.
+00:38
+Before I start talking about binary trees. Let's just do a quick recap on the data structures that we've seen so far so
+00:47
+We've looked at data structures for representing sequences as well as sets. So for a sequence, we could use an array A linked list or a dynamic array.
+00:59
+And the operations that we want to support for a sequence include getting the ice element setting the ice element and then inserting things
+01:12
+at different locations in our sequence. So inserting at the beginning, the end deleting the beginning the end and then inserting just had any arbitrary location I
+01:25
+So if we use an array to represent our sequence getting and setting the ice element is easy. Since we can just directly access that location.
+01:35
+But inserting things and deleting things from the array was hard since the array is
+01:41
+A fixed size objects. So if you want to add or delete something you're gonna have to change the size and that's going to take you linear time. The worst case.
+01:49
+For a linked list. Um, it was easy to insert or delete things at the beginning, since you had a pointer to the head of the list, but getting or setting the ice elemental is hard because there's no way to get to the ice location in your list without reversing it from the beginning.
+02:09
+And then suddenly inserting and deleting things that some location is hard. You can modify the link bliss to store tail pointers such that inserting into leading things at the end is constant time, but
+02:22
+Still inserting or deleting things that the iPhone location was difficult. So we talked about dynamic arrays, which allowed you
+02:29
+To insert things at the end in constant amortized time and again you could also make a version that allows you to insert things and delete things at the beginning as well.
+02:41
+But I'm inserting or deleting at the ice location is still hard and the goal of the next two lectures is to use a binary tree says that we can support.
+02:52
+All of these operations here in logarithmic time. So this login time might not be as good as some of the
+03:00
+Other data structures for certain operations. But the nice thing is that for all of these operations. It takes order login time, whereas for the existing data structures. There's at least one operation that takes linear time.
+03:14
+That we we have various data structures for representing sets. So for us, that you want to be able to find a key k and sort of delete things from this set and finding the minimum or the maximum as was given a key k, find the previous key.
+03:29
+In this sorted order. And the next key have this sorted order. So it's, it was hard to do all of these things with an array, it would take linear time.
+03:38
+In the worst case, if you had a sort of already you can do by and research and get some of these operations down to
+03:44
+Login or even constant. If you're finding the main or the max, but the sorted or a was hard to modify it would take you linear time in the worst case, if you wanted to sort or delete something
+03:55
+Then we talked about direct access arrays and hash tables which allowed you to do finds inserts and deletes in constant time.
+04:04
+For hash tables. This wasn't an expectation, but the order operations was still pretty hard. It would take us linear time to
+04:14
+Find them in or the max element in the worst case, and for a direct access a rate. This is linear in the number of
+04:21
+Possible cheese and the universe and for hash table we got that down to order and but it's still pretty slow to support these operations. So with a binary tree. Eventually, we'll see how to support all of these operations in order log and
+04:36
+Time. Today, we're not going to quite get to the order log and bound
+04:40
+We're going to be showing that you can get these operations in order h time where he is the height of the tree and then in the next lecture will see how we can guarantee that the higher age is order login
+04:56
+Okay, so let's start talking about binary trees now. So let's draw a simple example.
+05:13
+Here I have a binary tree with six nodes in it, and each node in a binary tree stores and item.
+05:23
+It also has a parent pointer.
+05:27
+As well as a left child pointer in a right child point
+05:35
+Some of these pointers could point to a no value. For example, if you're no doesn't have a parent that that field would be no and similarly, if you don't have a left or right child and the corresponding field would be no
+05:49
+So in this case,
+05:53
+The node A doesn't have a parent because it's the root of the tree and then the notes at the bottom.
+06:01
+F, G and C don't have any children and we call these leaf nodes.
+06:08
+So let's actually write down the value of these four fields for the nodes in our example.
+06:16
+So to represent a note, I'm going to draw a circle around it.
+06:25
+And then to get the item that's just
+06:30
+The letter that I wrote on the notes, A, B, C, D, E, F.
+06:39
+I'm
+06:42
+The parent of a is no as we said
+06:46
+The parent of be is going to be a parent of see is also a the parents of D is be
+06:56
+The parent of ESB and the parent of f is d
+07:03
+Now let's look at the left and the right pointers. So as left child is B. And it's right child is see these left child is d and is right child is he see he doesn't have any children. So both of these fields are no
+07:22
+D has a left child of f and then
+07:27
+It doesn't have a right child. And then he an alpha or leave notes so they don't have any children. So these are the fields for our simple example here.
+07:39
+Okay, so let's go over some
+07:43
+Additional definitions. So we're gonna be talking about the ancestors of a note.
+07:55
+The ancestors of a node are basically all the notes that you can reach from the node x by following just parent pointers. So basically, all of the notes above this node x
+08:13
+So,
+08:15
+In our example here. They ancestors have no d r BNA because those are the two nodes we can reach by following period pointers.
+08:25
+The ancestors of node. See, that's just going to be a and then the ancestors of note eight is empty set, since he doesn't have any ancestors. It doesn't have any notes that you can reach by falling parent foreigners.
+08:40
+Because similarly defined the descendants of a note.
+08:53
+To be all the notes that you can reach by following children pointers from a particular node x. So,
+09:01
+Informally, it's going to be able to notes below acts of the tree.
+09:06
+So in our example, the descendants of node B are going to be D and F since those and those we can reach by following children pointers.
+09:17
+The as the descendants of note note A is going to include all of the nose, except a and then finally the descendants of a leaf node. For example, He is the app descent, since he doesn't have any other notes you can reach by following children forums.
+09:36
+Okay, so
+09:39
+Another definition that will need is
+09:43
+A sub tree.
+09:47
+So the sub tree of a node X. It's going to be the tree that's rooted X and contains accent all of its descendants
+10:05
+So free router that x containing
+10:10
+X and all of us, the sentence.
+10:19
+So, for example, the sub tree of B is going to be
+10:25
+This tree here we have be D, E and F, the sub tree of A is going to be the whole tree and the tree of a leaf no dish is going to be that least note itself.
+10:41
+Let's also define the depth of a node.
+10:50
+So the depth of a node x is the number of ancestors that has the tree, the portfolio. So, number of edges in the path from node x to the root.
+11:07
+So it's the number of ancestors that has or number of edges.
+11:13
+On path.
+11:17
+from X to rate.
+11:22
+So in our example here, the depth of node be it's going to be one, since it only has one ancestor. And you can also see that the path from the to the root cause one edge the depth of no d is going to be to since as to ancestors, and then
+11:42
+For athletes three key is to see is one in a is zero.
+11:52
+Okay, so let's now talk about the height of a tree.
+11:58
+Or let's first define what the height of a note means
+12:03
+So height of node x
+12:08
+It's the number of edges in the longest downward path from x
+12:28
+So I want to know the height of be well what's the longest downward path from be it goes from B to D to F. So the length of that is to
+12:39
+And therefore, the height of BS to some drawing the heights in green here, the height of D is going to be one, the height of leaf nodes. It's going to be zero because there are no Downloader has from the leaf nodes.
+12:52
+And then the height of a is going to be three. And we also say that the height of a tree is equal to the height of the roots of the tree.
+13:11
+And I'm going to be denoting the height of a tree by age, since we're going to be analyzing the time for operations as a function of the tree right
+13:27
+Okay, so those are a bunch of definitions that we needed to get through, um, let's also talk about the reversal order of the nodes.
+13:48
+So the reversal order of the notes will satisfy the following property. So for each
+13:57
+Node x
+13:59
+All of the nodes in Access laughs on tree have come before x
+14:14
+And all of the nodes and access rights. I'm sure you come after X.
+14:30
+So what's the first order of the nodes in our example tree here.
+14:38
+So that's first order is going to be AF d be the
+14:45
+A and C.
+14:49
+So we can verify that this property here holds for all of the nodes in our tree. So if we take note be, for example, well, all the nodes in its left sub tree.
+15:01
+That's going to be D and F. They come before be in this order and all the notes in these rights of free he in this case comes after be in the order and you can verify that this property holds for all of the other nodes as well. So this is the reversal.
+15:27
+This this traverse order is all. It's also known as the in order to reverse the order of your tree.
+15:42
+Um, and it's called an order. Well, because the notes are in in order so that's that's the name of this reversal order.
+15:53
+And based on the definition of this reversal order, we can come up with a simple recursive algorithm to compute the universal order of nodes in a tree.
+16:03
+So here's the algorithm. So call this editor. It takes us input a tree node x and then it's going to check if X has a left sub tree. And if x has the left side three then we said that all of those nodes in the left stuff you have to come before us. So if x
+16:24
+Left is not know, then we're just going to recursive. We call it or on x dot left
+16:33
+And after we do that, then we'll output X.
+16:38
+And then finally we're going to see if X has a right cell free
+16:44
+And
+16:47
+If it does, that will recursive. We call it or on the right sub tree.
+16:55
+So this simple recursive algorithm is correct, just based on the definition of reversal order, we have all of the nodes in X left coming before x, then we have x and then we have all the notes in x dot right coming after X.
+17:16
+Okay, so what's the running time of this algorithm, let's actually take a poll
+17:24
+So a
+17:27
+This is order ah time be this is order and time see order and log and and the
+17:39
+Order and squares. Let's start the poll
+18:00
+So here, and is the number of nodes in the tree.
+18:05
+Alright, so let's end this poll
+18:08
+And share the results.
+18:13
+Alright so we got 43% for be I'm 37% for C 17% for a and 3% for D. So turns out that a B is the correct answer that takes order and time lingered in the number of nodes.
+18:34
+And why is this the case. Well, you can observe that each node is going to be the argument to the editor function exactly once.
+18:45
+And then what it is argument to the inner function we're doing a constant amount of work inside if we don't count the recursive pulse here.
+18:54
+We're just doing two checks and then we're out, putting x. So each node is going to do a constant amount of work. So in total. That's going to take us order anymore.
+19:09
+Okay, great. So, um, with this reversal order, we can use it to represent sequences and set so far sequence to reversal water is just the extrinsic order of the elements that were representing and for a set the reversal order is going to be the sorted order of the keys.
+19:31
+So let's talk about some additional operations we can do in the in the binary tree.
+19:41
+So,
+19:43
+Let's define sub three first
+19:51
+And some tree first takes us input a node X and it returns the first node in Dutch reversal order of access sub tree.
+20:25
+In our example here.
+20:28
+If we call sub tree first on a b. That's going to give us F, since in this sub tree F is the first one in the reversal order.
+20:41
+So sub tree first
+20:47
+Be is F and sub tree first of see what's that going to be well this sub tree rooted I see just contains see itself so
+21:01
+Just going to be see itself.
+21:10
+Okay. So in general, how do we find the first note in this first order for a sub tree.
+21:24
+Okay, so
+21:26
+In general, we're just going to keep going left in this country, as far as possible. So we're just going to keep following the left pointer until we can't go left anymore and the Left most node that we find is going to be the first node index reversal order.
+21:45
+So the idea is to go as far left as possible.
+21:57
+And by going left, I mean setting x to be the right child of x.
+22:06
+And then you keep doing this until X doesn't have a left child and then you return the last note that you see.
+22:20
+And this is going to be the first node in the first order if there was something earlier than this know that we found. Well, it would have to be the left sub tree.
+22:29
+Just based on the definition of reversal order. So we're guaranteed that this procedure here will always give you the first note in this option.
+22:42
+Right, so how much time does this take
+22:49
+Let's actually do another poll
+22:52
+So A, it takes order age time the order and see order and log and and D order.
+23:04
+And squared.
+23:14
+So here, remember that and is the number of nodes in our tree and he is the height of archery.
+23:21
+All right.
+23:23
+Let's end the poll looks like most people chose a
+23:29
+Which is the correct answer.
+23:34
+So it takes order age time because we're just going to go down the tree one step at a time. And each time we go down one step. It takes constant work. So therefore, in total, the maximum number of steps we can take is just the longest path in our tree. And that's the height of archery.
+23:58
+Great. So this is a sultry first function, you can define a symmetric function called sub tree last and that would give you the last few digits first order and for that you just keep going right as far as possible until you can't go right anymore.
+24:20
+Alright, so that's sub tree. First let's now look at another function. I'm going to call this the successor function.
+24:38
+So successor of X is going to return us the node immediately after X index reversal order.
+25:08
+Okay. So in our example down here.
+25:13
+Successor
+25:17
+Of B is going to be He, because he is the node right after be
+25:25
+The successor, he is going to be a
+25:34
+Again, a is the note right after D.
+25:38
+Okay, so in. So how do we actually find this accessory. We don't actually have the reversal order written down, we just have our binary tree structure.
+25:51
+So to get the successor of be while I'm be has a right child, he and we know that everything in the right sub tree of be will come immediately after be just based on the definition of the reversal order.
+26:10
+So in this case, the right stuff. The only has he and therefore return D.
+26:18
+But how do we find the successor of he that's actually harder. He doesn't have a right child. So we can't take we can't fall. We can't go right if you're
+26:30
+So, well, we'll go up, we get to be well be is not the successor. He is the predecessor of he will go up again and then we get to a. And in this case, a is a successor of he
+26:44
+So, what, what was the difference between going up to be in going up to a well when we went up to be. We actually followed the right branch of be and when we follow the right branch up. Well, that means we're going to be after our parents in the reverse order.
+27:04
+And then when we went up to a we follow the last branch up and
+27:10
+When we follow the left branch of while we know that we're going to be before our parents in Dutch reversal order.
+27:18
+So let's write down more generally how our algorithms going to work.
+27:30
+OK. So the easy case was when we had a right child.
+27:36
+So if x dot right is not know. Then we're going to return the first node in access rights up tree.
+27:59
+How do we get the first node and access rights up tree. Well, we actually just talked about a another function that does that.
+28:09
+And it's actually written here it's sub 31st. So we're going to call a sub tree first on x dot right
+28:30
+Okay, so that's the easy case. Um, the harder case is, if X doesn't have a righteous child. And in that case, we said we're going to keep going up the tree until we get until we follow the left branch of our parent. So we're going to walk a tree.
+28:51
+What this means is setting x equal to x dot parent
+28:59
+Until
+29:01
+Until we follow the last branch of our parents.
+29:15
+And what does going up the left branch me and what it means that before we modified x we had x equal to x dot
+29:25
+Parent dot left
+29:33
+Right, so that's when we know that we've went up to the last branch. And once we go up the last branch of our parent, then we're just going to return.
+29:42
+That parent node.
+29:46
+So in this case, return
+29:49
+return x, but we could also keep going up the tree and never traversing the left branch of our parent. And in that case, we actually don't have a successor. So, or we get up to the board. We don't have a parent.
+30:11
+Which means we got to the root.
+30:14
+And there we return none.
+30:18
+In this case, x doesn't have a successor
+30:24
+So let's actually draw some pictures to make this clear so
+30:31
+I have three cases here. The first case is, if I have a right child.
+30:37
+So if I have it right child. Then I'm going to get the first node in the right sub tree of x. And that's this
+30:46
+Now if I don't have a right child.
+30:49
+Then I'm going to go up my free taking the right branch of my parents until I take the left brain shut my parents at some point. And let me call this note here asked. And I claim that this node ass is the successor of x.
+31:10
+So why is that, well, first, we can see that asks, does appear after X because X appears in the left sub tree.
+31:21
+Of apps. So by the definitely condition of a reversal order all the notes in the left sub three of us have to appear before it.
+31:29
+And then how do we know that there's nothing in between x and as well if there was something in between x and as well that would have to be in the right child of the right subset of X, but we're already in the case where we don't have a right child. So this can't happen.
+31:50
+So therefore, we know that as is indeed the successor of x.
+31:58
+And then in the last case, we just keep going up and then we never take the left branch of our parents, we get to the root node of the tree. We can't go up anymore. So in this case, x is not going to have a successor
+32:16
+If it did have have to have a successor. Well, it would either have to be in the right sub tree, which I don't have or I would have to go up the left branch at some point which I can't do
+32:31
+Okay. So, any, any questions on this successor function.
+32:44
+Okay, cool. So what's the running time of this successor function here.
+32:53
+Well, it's going to be ordered. Ah.
+32:58
+Why is that, well, if I'm in the first case here.
+33:02
+I'm just going to call sub tree first and I know that takes order each time by our earlier analysis.
+33:09
+Otherwise, I'm just going to go up the tree. And every time I go up one step I'm doing a constant amount of work.
+33:16
+Eventually, I'm going to get to the root or I'm going to take the left branch of my parents and exit and the maximum number of steps I can go up is founded by the tree height which is he so my running time is order. Ah, for this.
+33:32
+This is the successor function, I can define a symmetric function called predecessor and the algorithm is just symmetric to our successor algorithm.
+33:45
+So, so far, we've done a bunch of reversals on our street but we haven't actually talked about how to modify our tree. So let's now talk about how we can insert things and delete things for Marjorie
+34:09
+So there are three functions that we want to support for our dynamic operations. The first one is insert after. So this takes two arguments, an existing node.
+34:24
+And a new node and then it's going to insert a new node immediately after the existing note in our reversal order.
+34:35
+So insert
+34:38
+You know,
+34:40
+Into the tree.
+34:43
+Such
+34:45
+That
+34:47
+D was immediately after existing in reverse order.
+35:11
+And then I can define an analogous function called insert before where I just insert the new note immediately before the existing note in my reverse order.
+35:24
+So that's going to be symmetric and that finally, I want to be able to delete some node x from my tree. And if I delete a node X. I want to also make sure that the reversal order of the remaining notes is the same as they were before I deleted x
+35:43
+So I'm going to remove
+35:46
+X from
+35:49
+My tree, such that
+35:54
+Such reversal order.
+36:00
+Of remaining notes.
+36:04
+Is preserved.
+36:14
+Okay, so let's do an example. Let's first look at insert
+36:21
+And let me draw my tree again.
+36:24
+So A, B, C, D.
+36:30
+E and F.
+36:35
+Let me also write down this reversal order again. So, that's f g
+36:41
+B. C.
+36:45
+And now let's say for example I want to insert
+36:51
+The note G.
+36:55
+After he
+36:57
+So that means G is going to go in this location in my reversal order right after you
+37:07
+Okay, so how am I going to update my trees such that g appears immediately after he in my first order.
+37:17
+So this case he doesn't have a bright child. And we know that all of the notes and notes right century come immediately after that note. So in this case, I can just make she the right child of he and this would give me the desired traversing order.
+37:35
+So that's actually the easy case, the harder case is, for example, I want to insert age.
+37:43
+After a while in our example here, he already has a red child. It also has a love child. So I can't make he a child of a otherwise I could have three children, and it's no longer valid binary tree.
+38:01
+So where am I going to put age, such that it appears immediately after a reverse order.
+38:12
+Well, if I may get the first node in the right sub three, then that is going to be the note that appears immediately before immediately after a in the first order.
+38:26
+Right, so, um, several students to make this make ah the left how that see which is correct.
+38:38
+So now he is going to be right after a my traverse will order.
+38:45
+Um, but in general, how do I, how do I update my trees such that the note I inserted immediately after the existing though. So in general, I want to make it
+38:59
+The left child of the first node in this right sub tree here. If I make it a left how that the first node will that no one has to come before the first note in my original right so free
+39:15
+And then we know that it also comes after page. So it's going to be the immediate successor
+39:22
+Let's write down the pseudo code for the algorithm. So
+39:27
+Insert after I have an existing node.
+39:32
+And a new node.
+39:36
+And the easy case is if I don't have a right child.
+39:44
+For the existing node.
+39:47
+So if existing dot right is equal to none.
+39:52
+Then, all I have to do is I make the new note the right child in
+40:11
+The other case is if I do have a right child.
+40:18
+Then I want to make it the left child of the first node in my rights up tree. So how am I going to do that.
+40:28
+So we just saw a function for doing this. It's the sub three first function. So what I'm going to do is I'm going to make
+40:40
+New the left child.
+40:45
+Of the result of sub tree first
+40:53
+On existing dot right
+41:05
+Okay, so I'm more generally, if this was my existing node.
+41:12
+And I had a right child. Well, I'm going to
+41:18
+I'm going to find the first node in my rights up free. Let's say this. Notice my first node in this reversal order, then I'll make the new note the left child of this first node.
+41:33
+And I'm guaranteed that the first note I find doesn't have a left child because if it did, that means I could keep going more to the left and find an earlier noted express order, so I can always make the new note the left childhood of the first note into suffering that I find
+41:52
+So how long does this take well insert after also takes order ah time in the first case, it just takes constant time.
+42:01
+Since we just make the new note the right child if the existing though. And then in the other case we're calling sub three, first, which we know take know takes order and each time. And then we'll do a constant amount of work after that to make the you know the left child.
+42:17
+So this takes order h time
+42:21
+Okay so great. So we know how to insert. Now I talked about insert after insert before is symmetric.
+42:31
+Next, I'll talk about deletions. Before I do that, are there any questions so far.
+42:45
+Great, let's talk about deletions, then
+42:53
+So the delete function takes us input some node x
+42:59
+And let me draw my sample again. In fact, it's going to be a slightly different example just to make it more interesting.
+43:14
+So seven notes, instead of six now.
+43:18
+And let's say I want to
+43:22
+Delete F and then afterwards.
+43:27
+Delete a, um, and I'm also going to write down this reverse order. So if d be G.
+43:38
+A safe.
+43:41
+Alright, so what do I do if I wanted to leave F while preserving the reversal order of the rest of my notes.
+43:53
+So this is pretty easy because after the leaf node, I can just detach it from its parent
+44:00
+And the structure of the rest of my tree is unaffected. It's still the same as before, and therefore the reversal order of the rest of my notes is the same.
+44:11
+Right so great. Matthew got it right. Just remove the reference to f. So that's the easy case.
+44:19
+The harder case is, if I want to delete. Oh no, that's not a leaf nodes. So in this case, I wanted to leave a if I just erase it from my tree. I'm left with two two trees. Now they're not connected and this is not a valid binary tree. So I can't just simply delete a from the tree.
+44:43
+But what I can do is I can try to make it so that a is a leaf node in my tree.
+44:50
+And then once I make it so that as a leaf note, I can just delete it, like how I just deleted f
+45:03
+Okay, so how can I make a leaf node. I'm going to do this via a sequence of success of swaps with other nodes in in my tree and, in particular, I can actually swap a with his predecessor, or a with a successor
+45:21
+And this will not affect the universal order of the remaining notes he is going to be out of place, but I'm going to delete a the end anyway, so I don't care if he is out of place.
+45:32
+So in this case, let's say I swapped a with his predecessor, he
+45:38
+Then what I would get is now the root node contains he
+45:44
+And A is in the note that he wasn't before
+45:54
+And now after I do the swap my first order looks like the following. I have DB G, A, B, C, and notice here that although he is out of place the other nodes have the same relative order as they did before I did the swamp.
+46:14
+So A is still not a leaf nodes. So what am I going to do while I'm going to swap again I'm going to swap a with its predecessor.
+46:24
+And this is the tree audit.
+46:33
+And much reverse order is going to be dB A G C and now is a leaf nodes. So I can just delete it from the tree. And notice here that the reversal order of the remaining notes is the same as they were before. If I exclude a
+46:52
+Right. So this question why data we swap a with see so you can actually swap a with see that would actually
+46:57
+Terminate more quickly and traveling, you can swap with either your successor, or your predecessor, and in this case I chose to swap with the predecessor, just to make the example more interesting.
+47:11
+Let's write a the
+47:14
+pseudo code for this.
+47:20
+So,
+47:22
+If x is a leaf. Nope.
+47:25
+Then I'm just going to detach it from its parent
+47:37
+And otherwise I'm going to try to swap with either my predecessor, or my successor. So first, let's try swapping with the predecessor and to have a predecessor, I need to have a left child.
+47:52
+So in this case, I'm going to swap axes key.
+47:59
+With its predecessors key.
+48:07
+And then I'm going to recurs on the predecessor.
+48:19
+Okay if I don't have a love child. Then I don't have a predecessor. So then I'll try swapping with my successor
+48:27
+And in fact, I know that I'm going to have a ride child if I if I don't have a left child because I said that x is not a leaf node. So in the other case, I'm going to swap access key.
+48:41
+With successors key.
+48:47
+And then recurs on successor
+48:58
+Okay, so that's the delete algorithm, what's the running time. Well, the running time. Again, it's going to be order h, like most of our other operations.
+49:11
+And you can argue this by arguing that
+49:15
+Every time you go down one step in your tree, you're doing a constant amount of work and our algorithm is just going down the tree, starting from
+49:26
+The note that we wanted. Delete. So, in the worst case, we're going to go down. Ah, levels doing constant work per level. And that's where we get the order h time
+49:38
+Okay, so those are the dynamic operations on binary trees.
+49:43
+I mentioned earlier that you can use binary trees to represent sets and sequences. I won't talk about sequences.
+49:52
+Since that requires augmentation will learn about that next week, but four sets the reversal order is going to be the sorted order. And that's known as the binary search tree property.
+50:10
+Binary
+50:12
+search tree property and I can actually implement this set using the operations that I learned today.
+50:22
+So recall that we wanted to support finding a key k and these order operations finding men finding bags, finding the previous and next, and we already talked about how to insert and delete. So I'll just quickly.
+50:38
+outline how you can do find and you'll learn about the other operations to find next and find previous in recitation.
+50:47
+So basically, if I want to do fine. I'm just doing a binary search on my tree. So let's say my tree looks like this. My traverse will order is a sorted order. So this is going to be this is going to have the binary search street property so that I can easily do binary search on it.
+51:09
+Okay, so with this trade, um, let's say I wanted to do.
+51:17
+Find of six. Well, I would start at the root. I see that sex is less than seven. So I go down to the left that I come here with three six is bigger than three, I go to the right.
+51:29
+Sex is bigger than five. I know that if six were in my tree and would have to be in the right sub three or five five doesn't have it right sub trees. So in this case I return false.
+51:41
+And then similarly, I could find some key that's actually in here. So if I do find one. I'm going to start at the root seven
+51:50
+One is less than seven. So if one worry my tree. I would have to find it in the left stop street so and I go to three, one is less than three I go left. I get to one and there I see one. So I just returned. True.
+52:06
+Okay, great. So again, this takes order each time, like most of our other operations and
+52:15
+Today I didn't talk about how we can bound age, but in the natural Lex next week we'll see how we can guarantee you that he is order log and by balancing the tree. So this is next lecture.
+52:31
+Okay, great. So that's it for today. If anyone has any questions, I'm going to stick around and I'm happy to answer these questions, and I hope everyone has a good day.
+user avatar
+Rona Y Wang
+52:43
+Thank you.
+52:45
+Thank
+user avatar
+Matthew D Leonard
+52:46
+You. Thank you.
+user avatar
+Hannah Kim
+52:48
+Thank you.
+user avatar
+Anmol Maini
+52:49
+Thank you.
+user avatar
+Robert Cordes
+52:51
+Thank you.
+user avatar
+Julian Shun
+52:57
+Alright, so if you have a question, you can feel free to speak up. So
+user avatar
+Unknown Speaker
+53:01
+What we did was we created a binary tree for us a set without repetition.
+user avatar
+Julian Shun
+53:07
+Right, so
+53:09
+For for representing a set in this class. We're going to assume that there are no duplicate keys.
+user avatar
+Unknown Speaker
+53:18
+And then it takes how long does it take to create the binary tree from the set
+user avatar
+Julian Shun
+53:25
+Yes, so let me actually show the the table of operations.
+53:37
+So to create the binary tree for my sat data structure, it takes and log on time and I can get that just by inserting the keys, one at a time and in the next lecture will see white insert inserting keys takes quarter login time today. I just said it takes order he
+54:06
+Great, any, any other questions.

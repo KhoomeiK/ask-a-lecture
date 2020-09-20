@@ -1,0 +1,625 @@
+Pablo A Parrilo
+00:13
+So the starting point is what you've seen last time sub spaces and and try to remind you the kind of things have ankle, they find it, which was this idea that if I have a matrix eight. So let's say that a in here is a matrix.
+00:29
+Perhaps with em rows and columns.
+00:34
+I could define these two interesting subspace associated to the matrix A. One was recorded the notes base, which was exactly they said of vectors x that satisfy a yak sequence of cedar, so x such an x equal to zero. So this was the non space.
+00:53
+Away.
+00:55
+And the other interesting substantial see column space, which was a span of all the columns away. And there's a number of different ways of writing it. Let me write perhaps if my matrix A in here has columns, the one
+01:09
+groves columns. The end.
+01:12
+Is exactly right. The other way to call them space obey is a sum.
+01:18
+Of all the lambda supervise visa vie is exactly the lead all the possible linear combinations of the columns of it.
+01:27
+Right. And we've seen also the geometric picture of nice. It was actually quite interesting that geometrical about suffering, since we're entertaining the plane.
+01:35
+What either in the case of a plane or a point, the origin or what lines that going from the origin or was it called space and these were really in the in the in the data plane all the possibilities for what supplements can be
+01:48
+So we want to understand today is subspecies emotionality read want to understand subspecies. How do they look like in our end and what kind of properties.
+01:57
+We need in order to talk for instance about how big is substances or have smaller substances. So exactly what they want to try to understand these properties. For instance,
+02:08
+What actually distinguishes in the case of a plane of the case of the origin, the case of a line and the case of a plane.
+02:17
+But we have an intuitive notion of course outline organic one the line, for instance, this is one day mentioned on the plane is to the mansion.
+02:25
+But we want to actually formalizes we want to see how do they find this in the general case they log into one perhaps we have millions of a mentioned
+02:33
+And try to understand lane or mathematically. How do we characterize it. And in particular, we also want to emphasize
+02:38
+Once a utility of this. I mean, why do we, why do we care about this and I'll give him a couple of examples of infamous about this.
+02:46
+Winter for the starting point is something that you've seen already lectured to if you remember at the end of lecture to Uncle talked about this definition of these very important notion of linear independence or eliminating manual perhaps the definition that he gave
+03:04
+Was this was exactly this idea of, if I have a set of vectors, the one to be in
+03:09
+These factors are want to be independent. If no visa vie can be written as a linear combination of the other subjects and us exactly definition that we
+03:18
+Wrote in there and liner and want to elaborate today on that, on that definition and perhaps try to understand all the implications of this image.
+03:29
+Right. So for these. Let me write these definitions definition of linear independence and typically I want to use Li us
+03:40
+is shorthand for linear independence.
+03:42
+And let me right exactly same definition is not only from the vision, the same but reading the way that I know it's a lot closer to the kind of things that we've been doing. And it's quite useful to have this information in this form.
+03:52
+And he said, for me, if I have a set of vectors v1, v2 to BK I'm going to say the least of vectors is linearly independent. If they're following is true.
+04:03
+If I have some linear combination equal to zero, sum of lambda. So VI VI vi equal to zero.
+04:11
+Then this is sorry it is a case that all the scales lambda. So, by are equal to zero.
+04:18
+So let's make sure that repulses correctly, all these piece of advice in here, the vectors, right, the lambda supervise in there are scholars. So my numbers wise or
+04:29
+Scale and have real numbers. And what this definition says is that if I have any linear combination of my Regional Vice. Would you say equal to zero means necessarily the case that all the scales manage
+04:41
+Right. So at first it may not be totally obvious that these definitions of the same, but perhaps he tried to understand this, but
+04:50
+So what happens what he says in the gateway have two vectors. Right. Imagine that may set as exactly the form v1 and v2.
+05:00
+right when he said the case that v1 and v2 are Lena Lena Dunham
+05:07
+Right, if I apply the definition, where they need to do to form a linear combination lambda one b one plus lambda to be to
+05:17
+Equal to cedar.
+05:20
+And what has to happen if v1 and v2 earning an independent. This has in these linear combination number one and number two is you certainly have to banish right so let me assume, for instance, let's try to understand this right let me assume that v1 and v2 are not
+05:39
+Linear linearly independent, what should be the case, right, what should happen in this case.
+05:46
+If number one and number two, don't see more dynasty advantage I can always write a linear serum, for instance of lambda one is a one.
+05:55
+That's different than zero, perhaps both of them are different and cedar, but in particular I know at least one of them is even consider
+06:01
+So let me assume that lambda to see different in Syria and then I can rewrite this expression in the following form. I can write the one is equal to minus lambda two divided by lambda one times
+06:16
+Uh, no, this ad for this expression to make sense for this ratio to even be one defining really need number one differentiator.
+06:26
+So we see that in this particular case, in the case of two vectors. No, no, this is it's very clear that this information is essentially the same as what we had before.
+06:34
+If my vectors are not linearly independent, they can always provide one as a linear combination of the other. In this case, we say directors is just a scale of multiple of. Yeah.
+06:46
+So the same argument, of course, will hold if I have more vectors, right, if I have more vectors in here, instead of having the one we do I have v1, v2,
+06:58
+They knock in the BK I can write this plus number k wi K and exactly the same argument is going to be children want to be if they're not linearly independent and going to be able to write one as a linear combination of. Yeah.
+07:13
+Right. But as we're going to see this definition, this particular form of writing definition connects very directly with matrices and the kind of things that we talked about before, ongoing series inches.
+07:29
+Good. And let me also add perhaps a piece of definition just again here we defined a set of vectors being linearly independent
+07:37
+Let me define this is nothing to different let me define when vectors of linearly dependent on. Sometimes I called this LD for linearly dependent if they're not linearly independent
+07:52
+And definitions that are similar, in a sense, this is just a negation of the other ones. But there are some Southern piece in terms of understanding when a set of Legos. You see any penalty dependent and will elaborate on these perhaps in one for check ups.
+08:04
+Right. But then a fusion is very simple. So, in particularly make sure that we understand this, if I have two vectors, right, they're going to be linearly dependent if and only if one is a multi part of their
+08:18
+Great. So why the weaker. They're not going to every time that somebody tells you something. I think there's two questions that you should ask later ones, of course, what does this mean that we understand what this means.
+08:29
+But the other is, why do we care, right, why should I care if I'm interested in learning or enough, perhaps in doing machine learning or politics or
+08:36
+Economics or whatever way they care about this notion. What does this notion actually in and it will tell you about this in in in in a few minutes. But let me also emphasize one of the other things that we really want to
+08:49
+Push again and again in this course is having this Court, we want to understand pretty much every notion that we talked about want to understand it from different viewpoints.
+08:58
+We want to understand it directly. And that means we understand what are the equations that they find this notion, think about exactly
+09:11
+What I was doing before.
+09:14
+It's exactly the definition in terms of, for instance, lambda VI VI VI vi equal to zero. Those equations or they can write none describe exactly what this notion in this case of linear independence.
+09:26
+We also want to understand things geometrically will not understand what does it mean for instance, in terms of the geometry of a problem in and these can be in terms of figures pictures Lonegan have a number of things.
+09:38
+That tells us Lino can have a bogus a set that satisfies the equation. So do you want. So in this case, for instance, want to understand if I have a collection of vectors that are linear independence.
+09:49
+Collection of vectors than a dependent. What is different between them and when see examples of these in just a second.
+09:56
+And the third part is the third leg that I think it's crucial for everything you're doing in this course. So you want to understand things computation.
+10:03
+And what that means is, of course, I will give them some code. So if I gave you, if I actually gave you a list of 1000 vectors in here. How do you decide
+10:12
+How does your computer decide if they're linearly independent or linearly independent
+10:16
+And also we're talking about this and it's very important in your understanding that pretty much every notion that we talked about whether it's solving linear systems, whether it's
+10:25
+Linear independence and the dependency here whether it singular binary compensation. I don't want to do later, we need to understand it from the three different perspectives and they're not completely different of course that complement
+10:39
+That
+10:41
+So let's do some examples just to make sure that learn are going about this is
+10:47
+That we're internalizing this. So this is just a reminder of what the definition of linear independence was the thing that we talked about, just a second ago, that if I have a linear combination equal to zero.
+10:59
+Then it's necessarily the case that all my scar is key loves numbers y equal to zero. So it gives an example it. Think about it for a second.
+11:08
+Imagine that mindset of vectors is to one on one, two, and once you know, right. So we have these two vectors enough to the vector to one and the vector one seat on very convenient link here on drawing them in the plane.
+11:24
+So let's say for instance, this is what I would want this is vital to and I'm drawing in here. The red vector which is exactly the vector one, and under in the one cedar wood is a green vector which is a vector. Yeah, that you seen
+11:39
+Right. So let's try to do this directly. First, let's try to apply the definition and let's make sure that if I forum any linear combination of these. And they said the sequel to cedar. Then I, what I get is,
+11:54
+That all my scale as have to receive
+11:58
+So what do I have to do. I have the right lambda one times to one plus number two times one cedar.
+12:07
+And this has to be equal. And let's be very careful about this when I write this expression, this is not the seed or number, but it's a seed of vector
+12:18
+Right, so you have to evaluate this.
+12:21
+concealer maker. And why does include the Senior Director, because otherwise, his expression doesn't make sense. Well, they have on the left hand side in here is certainly a vector to linear combination of vectors.
+12:32
+So you might setting this equal to something that other something better director. So these executives, you know,
+12:38
+So I can just write this, and please check my arithmetic, because I'm horrible at these kind of things. So we get to number one plus number two and we have in here. Number one, and this is equal to see to see
+12:53
+Right. So now what happens if these the left hand side is equal to the left to the right hand side, looking at the bottom equation I get the lambda one is equal to zero and then solving the top equation by plugging in London one equal to zero, I get that lambda is equal to see
+13:11
+Right, so if I this is exactly what the definition is telling me I need right a linear combination equal to zero. And in this case, nice. He saw me there was no I'll turn that nothing gets from happen my number.
+13:23
+One and number two is equal to zero and that implies that my vectors are linearly independent
+13:30
+Right. And these geometric way of seeing this
+13:33
+So, so yeah you're right way of saying this, we're playing with equations in here. What does it mean geometrically in here. It means that if I try to write CTO
+13:47
+As multiplying the first vector time Sam Skyler and multiplying the second vector timescale, I didn't. The only way that they can do this is if this scale or multiple associate if I don't do anything.
+13:59
+Right. And you can convince yourself that that's occasion here again, there's a number of ways of thinking about it. Let me do a simple way in will learn more sophisticated way. So let me get at least give a possibility argument that if I add
+14:16
+That the red vector is always pushing me up.
+14:21
+So I can only. So if I want to remain at the senior level, which is exactly what I'm doing in here right then.
+14:28
+I cannot multiply the seat of actor. They to one vector by any non zero scale, right, and then I need to we need writing. I guess the same proof in a geometric way of describing this improv is some kind of geometric
+14:42
+Right.
+user avatar
+Pablo A Parrilo
+14:44
+Good. So let me give another example just to make clear of the difference
+14:48
+So now I have three vectors. This is just like before they do one vector. They wanted of actor and I added in here, the minus one minus two vector
+14:57
+And enjoy your blind the same definition try, let me try to understand wording here these vectors Armenian independent or not. So what do I have to. They're just like before, I have to form a linear combination
+15:12
+Plus number three times minus one minus two equal to the seat of it.
+15:21
+And now a claim.
+15:23
+And hopefully I want, I will not do this wrong, that I can choose number one number two and number three which are non senior in such a way that this holds and let me see if I can do this. Right.
+15:38
+I had this solution somewhere else. So this is going to be embarrassing. So a big lambda three equal to one if I big lambda three equal to one. Then, necessarily. I have two big London one. Oops.
+15:54
+Number one.
+16:00
+Number one equal to do and if I pick number one equal to two. I can pick number two equal to one and hopefully this is correct.
+16:12
+This is not correct. I think I have to be a
+16:17
+Minus one minus one.
+16:20
+Minus
+16:24
+Two equals minus three.
+16:31
+Right. And if not, please let me know again.
+16:35
+I cannot quite see you but I think if
+16:41
+I'm hoping the
+16:44
+That uncle will tell me if I'm doing something called horribly wrong. Yes, I can see uncle. Yeah, exactly. That fades
+16:52
+Good. So if I did things right. The limit check very quickly. We have four minus three minus one is cedar and then we're having here to minus two.
+17:01
+Would you see them also. So, what we have in here is non cedar, number one, number two, number three, that they form these linear combination equal to zero and that means
+17:12
+That my vectors are linearly independent right now. One is a geometric picture associated to this is exactly that you can multiply the number one vector by do
+17:23
+I can multiply the lungs. The, the second vector by mine free and I can multiply the third vector by one. And if I add all the three vectors. And again, the picture.
+17:34
+That I have is not quite going to be correct, but it's going to be something like this lambda one multiply by two.
+17:41
+So the one multiply by two may look like something like this. The second vector multiplied by a
+17:49
+Free may look like something like this. And the other vector multiply by one may look like something like this. So they some of these three factors. Multiply very corresponding scales is actually gone giving me a cigarette.
+18:05
+Good.
+user avatar
+Pablo A Parrilo
+18:09
+Now let me go back to the definition which I want to relate these very directly with the kind of matrix algebra that we were talking about after this lecture. But let's rewrite the linear independence condition this condition in a slightly different way.
+18:26
+Right. So what is this condition saying says I want to 4 million combination of factors equal to zero. And then I want to conclude from this that the lambda associated
+18:38
+So if I want to write this in matrix form.
+18:42
+These condition.
+18:44
+Some of the numbers wise visa is equal to zero is exactly the same thing as writing it in matrix form in the following way. Let me define the matrix A horse columns or the visa wise.
+18:59
+Let me put a vector in there with the lambda survives and the equation non time of London wise visa y is equal to zero is exactly the equation a dance is vector lambda equal to zero.
+19:15
+Right to the exactly the equation A times A BIG back to London equal to see this and this, of course, looks like the kind of matrix equations that hopefully at this point, we love. Right. It's a time something equal to see
+19:30
+So what does it mean when we say that I want to write a linear combination of these type and I want to make sure that all the numbers on Syria.
+19:38
+Certainly, give me an equivalent formulation right of this, which is a foreign saying that my vectors be want to be k are linearly independent. I assert that this is exactly the same thing that saying that this linear system.
+19:54
+A lambda equal to zero has a unique solution.
+19:59
+Right. And why do I say your unique solution and not as a solution is, of course, lambda equal to see there is always a solution of this
+20:08
+Right. They don't need to assert or I need to know enough to require that a noun equals zero has a solution visit always has an illusion equal to zero.
+20:18
+So what they're really asking when they say, that'd be one became independent were saying that they wanted system you have a unique solution. Just one just lambda equal to see right and we learned also some fancy language to say this right
+20:34
+The fancy way of saying a lambda equal to see it, or has a unique solution is to say that the non space away is exactly equal to the zero vector. And there's nothing else in
+20:47
+All these three things are equivalent to each other.
+20:52
+And pretty much in everything that they want to do. Depending lane or whenever exactly on our own. And then we may use one or the other characterizations or the hopefully you'll see that these definitions. I mean, the, the, these characterizations are really equivalent
+21:08
+So once again, why is is a case. The first one is really, by definition, be writing some of lambda survived. We survived. Each raving a lambda equal to zero.
+21:20
+So saying that it has a unique solution means that the only solution in there is with lambda equal to zero and seeing the knowledge base is the co director is a restatement of this information.
+21:37
+So remember the third leg that I also do this computation. How do we do this computation. If I gave you a set of vectors in here. And I asked, and I asked, you know, can we do this.
+21:49
+Can you tell me if these happening and independent or not. No. No. Good enough. Perhaps it's not totally obvious, but of course we learned one great computation and tool so far in this course, which is
+21:58
+Of course, our girlfriend gals right then goes and elimination right. So I served on the line. Okay, no, I guess, at this point, hopefully you can see
+22:07
+That the saving this condition, for instance, deciding whether my linear system has a unique solution or they signing were announcements always equal to zero or they signing whether nine organ of my a
+22:20
+set of vectors with linearly independent should be easy, right, there's really two facts that again, Uncle mentioned in the previous lecture. So let me remind your face.
+22:29
+So the first one is if you have any convertible eatery if you have, if you're trying to understand the cardinal obey the non space away right. Would you sort of trying to understand what we wanted this over the non spacey cedar or not. We've seen that
+22:44
+Understanding and non space away was exactly we went into understanding the non space of t times A WORD HE WAS ANY inbound double majors and why was a true. Let me just write it down, doesn't seem very easy proof. They know kind of a vector x is in the space of a
+23:03
+He found only if
+23:05
+X is equal to zero.
+23:08
+So if I have a non singular matrix D. This is exactly the same thing as the x equal to zero and this is of course if underneath.
+23:23
+A x is in the non space of da and this does not mean that your tax a CEO. I didn't realize it's not a joke. Okay, good. So this is a fart. If you want that.
+23:39
+We should always remember whether the non space of A is announcements of TA for any non singularity and this may be, it may seem, why do I care about this. I mean,
+23:50
+Right now what is the matrix, what does he see major come from. But if you remember what we talked about before Gaussian elimination is essentially producing such a deep
+24:00
+That will make the matrix da in a much nicer form the reviews origin on form is actually the understanding of its current release is going to be very soon. But will you an example in just a sec.
+24:10
+But the second key part in here is a statement that I'm writing in here that finding the non space or a matrix in revenues row H1 and form is red.
+24:19
+And white very serious and reduce insulin form always looks like lane again have some stuffing here Lino some entries over here, which are going to be a p words this
+24:31
+Equal to 01 so thanks x equal to zero and somehow week we can very easily a review from this what the non space is going to be you've done to maximize it's about this, but I'll give an example in just a second.
+24:46
+But this is really what I, the way that I want to link the definition of linear independence with the non space of a being equal to zero and through Gaussian elimination, we can relate this directly to a computation and way of doing this.
+25:02
+Right. So that's one example just to make sure that
+25:06
+We understand this. So these by the way this is exactly these are exactly the vectors to one, that one, zero.
+25:16
+Minus one minus two. I think it's the example that I gave you for
+25:23
+A
+25:25
+Yep. So how do I decide if the set of vectors is nearly in the tango those my recipe I tried to put those into a matrix. This is going to be a matrix A in here.
+25:37
+And I tried to put that matrix in radios origin and form. I'm not going to
+25:42
+Do it in here. I assume that at this point you know it all you're doing like I'm in which is just take this matrix on plugging into Julia. No, no, no. And they will get the reviews regimen for and in this case of reviews, Rachel. Unfortunately matrix is going to look like this.
+26:01
+Right. And let's make sure that this makes sense, right, what did I say before the polling things in Rhode Island form is really equivalent or or
+26:10
+The outcome of pulling a matrix radius written form is going to be to obtain some non singular matrix T in such a way that the product of t times A is this matrix.
+26:25
+And we can verify in here that later. For this particular example. This is a matrix D the Gaussian indignation will brothers or though we want need
+26:34
+And I'm just not emphasizing that the relationship between A and what the road before STA is exactly multiplying on the left by some notes in your matrix D and that matrix arises from government
+26:49
+So now when I clean before is that we want to be able to understand very easily. What is a knowledge base of a
+26:56
+By understanding the non space of the. In fact, it's going to be exactly the same thing.
+27:02
+So how can I understand the null space of
+27:07
+The I guess I gave you in here, the answer directly, but let me try to derive it
+27:13
+So the matrix is one
+27:15
+Cedar minus two.
+27:18
+And cedar one, three and now these are very, very important part of, of having, having put these major you can radios Rachel and form is having here.
+27:29
+Or perhaps spread through the economy of your matrix, you will see something that looks like an identity matrix.
+27:36
+Right. And that allows us to back sold for those vitamins in a very simple way. So in this particular case, for instance, we want to write the this what I want to understand the knowledge base of this matrix or right these times x one, x two, x three.
+27:52
+Is equal to zero. And I write all these equations are this equation is x one minus
+28:01
+Two x three equals zero and this equation is x two plus three.
+28:10
+X three
+28:12
+Equal to zero.
+28:15
+And normally something here. I can solve for x one x two as a function of it free.
+28:23
+So what this tells me is a benign space in here has exactly this form the all the vectors of the forum alpha can put anything for free. And then they fill in x two x one, x two, based on what this equation tells me that I have
+28:41
+An any vector of this forum is going to be in the non space of da in the knowledge base of these matrix, but also it's going to be, of course, in the non space of my original matrix A.
+28:54
+Geometrical what I'm seeing here is that the non space of this matrix is what it's a line right there's a single free parameter alpha
+29:02
+That describing all the vectors in the Nazis and because this is non cedar. There's no one seed of actors in there. Like for instance, just plugging in alpha equal to one.
+29:13
+What do you get these that we already have in there. Is that my vectors of linearly dependent, the same conclusion that we had before, but now instead of looking at the picture, doing some calculation my computer can just tell me that these backups are minimal
+29:27
+Good.
+user avatar
+Pablo A Parrilo
+29:29
+Hopefully this is clear. If not,
+29:32
+You know, the great time to ask a question or no.
+29:38
+Question coming up.
+29:40
+But, so let me perhaps continue and let me define know an ocean liner you've seen already. So, so it just if you want a different word for something that we've seen already, which is if we have a subspace. Let me imagine that they have some Subspace S.
+29:57
+Let me find the notion of what's called the generators or or instead of generators of mine subspace, which again, we've seen a different in different terminologies ad of spice spanning set for my
+30:12
+For my supplies and what are the Phoenician I will say that we say love vectors V1 to be K. They're going to be generators of s.
+30:21
+If every vector in the space can be reading as a linear combination of the visa wise.
+30:29
+Right.
+user avatar
+Pablo A Parrilo
+30:30
+So we give examples again in just a second but ideas of my set of vectors we want to be K. They're going to be generators are going to span.
+30:40
+S if any other vector in be can be written in this form and then notation that want to use just like they said before.
+30:46
+Is either these notation that says that he spanned by be be one to be gay or that'd be wanting to generate them something it's obviously says
+30:54
+Or these days, and perhaps simpler to just say that S is a span of the vectors V1 to be again, we've seen this notation already. So, yeah. And just to be clear about how to do a simple example.
+31:11
+Imagine that during the plane learn. Okay. No, and I have
+31:18
+All these factors in here. Let me imagine that I have six factors in here and I ask what is a subspace spanned by basics vectors.
+31:29
+And what we have, of course, is that the subs respond by this is vectors. You want to be a claim this every other vector in the plane can be written as a linear hops known uniquely as a linear combination of the six factors. On the other hand, for instance, if my vectors.
+31:47
+Perhaps look like this. They suck. So in here, the subspace pond is everything in the plane. In this particular case, the subspace banned by these vectors is just going to be the line.
+32:03
+But normally spread, but this is important. This is one that I really don't put any restrictions on how many vectors I come in here.
+32:11
+Right. And we're working in a sense of what this notion informally, they mentioned that will make precise inches.
+32:20
+I guess geometrically. I have the examples right in there. In the case that we talked about before, is what we have is
+32:28
+The span of a free vectors that I have in there just the same picture of default this is going to be the whole plane. And what does this mean, how would we very famous
+32:37
+Other but not by drawing a picture with bacon and they're sending I would need to verify that if you give me any vector x one x two anatomy to the vector x one x two.
+32:47
+I can write it as lambda one times to two plus number two times minus one, three plus number three times minus three, one, and I have, I have to show that for a x one x. Do I can only solve for lambda one, number two and number three as a function of
+33:09
+Excellence.
+user avatar
+Pablo A Parrilo
+33:12
+Something to think about that this point, how would I write this matrix form, just like we did before. Right.
+33:20
+And this is perhaps the same example I talked about before. Now, if I have my three vectors or this one, this one and this one, which I've drawn in here in read
+33:30
+What I claim is up the span of this is exactly the line in here is the only vectors that I can write as a linear combination of V1, V2, and be three.
+33:42
+They're going to be exactly the ones that live online. There is no way that I can leave these line by writing any linear combination of things.
+33:51
+Again, we've seen this notion before of spanning or spanning set. So why do we care. Right. And let me again.
+34:01
+Try to illustrate this with a couple of applications. One is a question that I think essentially we've seen in in in a slightly different form in God.
+34:09
+Uncle talked about at the end of the last lecture one, a very natural application of it is things that have to do with data feeling and interpolation. Right. So just like before. Imagine that you have some a
+34:22
+Collection of points, but a Cubs, just to be clear line of enough. These may be x and these may be some other viable, you know, again,
+34:32
+Let me call it why and then actually let me not call them x and y, so you don't get confused with some hardware vendors and the plane. Let me call perhaps learn. Okay, now this is somebody herbal tea and in here. I'm trying to predict the value of some other thing they just call it
+34:48
+Right, so I'm trying to predicting here, or I'm trying to interpolate the values of this of this function here.
+34:55
+So what we can do like Cancun defined last time, perhaps I can try to use some kind of focusing on nominee interpolation or line of science and corsage interpolation. So I may want to write lane or some function f of tea or some linear combination of some given functions.
+35:15
+And what they would like to understand in this case is what is a set of all functions that I can obtain in here right I'm exactly trying to understand all the span of nine organ of all the possible of the Fc device. So the Fc worries are given functions.
+35:36
+Or given vectors, if you want. And I'm trying to understand what is the span of these once a set of all possible combinations I can update
+35:43
+And why would that be useful, because what may happen. Perhaps he said the span of my functions. Let's say you only contains very small functions very nice and
+35:53
+smooth functions, but perhaps a functionary want to interpolate it's actually a function which is very complicated, right now, perhaps my function actually looks like this.
+36:02
+And if this function is not in the span of the things that they want. Then I'm going to have trouble.
+36:09
+With them perhaps just so it's clear. I should add some other points with this is really what they wanted it. But if they spun that I'm using Lonegan novice all only very small functions and I'm not going to be able to do what I want.
+36:24
+Then example with Larry not enough comes from robotics and control and line open. I think many situations of these type
+36:30
+Let's imagine that line. I'm trying to control some physical systems and dynamic system, let's say, in this case, for instance, it's a drone.
+36:37
+Or something. And of course, depending on the choice of what your morning assumptions when we can write many different models for gelei not gonna forgo going
+36:45
+On internally but more than that worked in many situations or, or at least in the southern region of parameters is to adopt like simple linear models.
+36:53
+So what do I mean by this. So I have a certain input in here. Something controlling input that I can apply to my system thing for instance about like a
+37:02
+Water, we saw your dogs and Lean organization acceleration. So, or velocities. I want to input to my vehicle in there. And on the other hand, they have some position outputs. Right. This is what's actually happening in the system.
+37:16
+So they said of inputs in here. What do I command at any particular point in time. So this may be time in here.
+37:24
+I can certainly in represent as a vector right nine again among commanding lane or five Newton, a time one seven year to nothing to whatever, whatever. So I have some sequence in here of numbers and when they actually see
+37:37
+The position that they will see at the end, it's going to be looking at time one. I mean five meters away time to on seven meters away whatever
+37:45
+Right, so under the right circumstances, I can describe this mapping exactly by matrix multiplication. I can think of the final position really corresponds to some matrix some complicated matrix some big matrix G that multiplies myself of inputs you and gives you some output.
+38:07
+So again, the some assumptions are going on in here and we can talk about those later on the exercises, but they these under the right circumstances, many, many of these
+38:18
+Systems a rocket the plane line again have a drone whatever you want. You know, they can be more than in these kind of
+38:27
+So what are we interested in here, why we would credit for instance about the span of the columns of G so badly telling me is what is a set of all possible trajectories in here that my drunken
+38:41
+Right. They said, of all wise that I can obtain all vectors. Why that I can obtain is exactly the span of the columns of G.
+38:51
+Right.
+user avatar
+Pablo A Parrilo
+38:52
+So in this particular case.
+38:56
+This has a name. This is usually called unreachable subspace of the dynamical system and there's any natural question that you may want to ask is, how big is it
+39:05
+At the very small set or this is a very large set
+39:09
+And main question. The question that you would walk into one central Sunday kind of quantify this, what do we mean exactly when we say that the substrate is very small, or the substance is very large.
+39:19
+What number. The we associated is in the plane. Of course, we have a very intuitive notion of this you know the origin is a very small subspace. A line is a little bigger. And the plane is the biggest one.
+39:29
+But then again, the moon told substance in they mentioned the thousand that whatever. Right. How do we understand this and how do we characterize is computationally what number that we associated
+39:43
+So what's a way around this or what it's not going away. Way to begin understanding this.
+39:49
+Is a genuine, you know, some kind of fine, but they can be wasteful right line again. So like in the example I gave you before we were in the plane learner. I gave you all know.
+40:00
+Imagine I give you 17 vectors in here and the 17 backgrounds are going to generate the playing of course I cannot get out of a plane.
+40:08
+Online. Oh, you know, it seems a little bit wasteful for me to give you the one to be 17
+40:16
+If I want to generate the whole plane or similarly if I just want to generate the line I may give you in here for vectors, let's say, and it seems and read on them, you have to build like a way of producing
+40:30
+Perhaps the smallest possible number or something along those lines, right, a representation. A generating said that's more efficient, perhaps, and I know just some random so
+40:41
+So let me define for this in ocean. It's a beautiful definition. When see why it's actually so beautiful in just a second. But the idea of a basis. So in here, what are they finding. They do have a basis of a substance right and
+40:56
+The way that you're thinking definition is essentially by combining the two things that I talked about in this lecture.
+41:02
+Will want to say they said of vectors be one to be k is going to be a basis of the substrate says if, on the one hand, they generate the subspace.
+41:14
+And on the other hand there Liam independent. So if they have these two properties they generate and there are linearly independent or want to call this a basis of myself.
+41:26
+Let me give an example, example first lady, not enough example like you know already, and it's perhaps the simplest possible one that usually way. It's called canonical
+41:36
+Canonical basis of Aryan
+41:42
+We didn't know them with us is notation before we even know this as a one to one.
+41:48
+So what does this mean, let me, perhaps not read this. So we do this on the fly.
+41:58
+So, what, what do you mean on the right, he wanted. So he won two yen or the vectors that that all zeros, except for one on the ice component
+42:07
+So in here, if I'm thinking about the basis of our end I will have end components in here I have n vectors in here.
+42:17
+And he survives exactly the vector that has a single one. For instance, he one is a vector with a single one on the first component end is a vector little single one in the app component and they claim.
+42:28
+That this is actually a basis of our end because on the one hand, it's very easy to see that it generates Rn.
+42:38
+That means that I can write any vector x one, two exam as a linear combination of those are just by writing x one times x one that thinks he one x two times he do, unlike this way.
+42:51
+So I came this if I have the vector x which is x one, two exam. This is true if and only if x is equal this some of X or Y ISA what we exercise our scanners. So it's clear and they generate Rn. And it's also clear that the linearly independent
+43:12
+Vs. If I could write any linear combination of my vectors equal to see the
+43:18
+Main system of equations is identity times lambda equal to zero. And that means that lambda is equal to zero.
+43:25
+Right. So these property checks these checks. So this is actually a basis. Okay.
+43:33
+Good. So let me draw some pictures but it helps us again. It's kind of important that we understand your matrix really
+43:40
+KNOW WHAT IT, BASIS means. So these are an example for reasons of different basis of
+43:46
+The first basis. I have in here is exactly the canonical basis you want into which is a basis of our to let me be very precise.
+43:57
+In here. So in this case, my two vectors are nice and unfold and we haven't really talked about the finale despondent talk later. But I guess many of you are familiar with this notion
+44:07
+This is an example of another basis of it. I have again two vectors are not aligned with the coordinate axes of just two vectors in the case, they also happen to be or four one and again that basis.
+44:20
+Right as a director can be written. They not a linear combination of those two and also line again after linearly independent
+44:30
+Now this is an example.
+44:34
+Of Ansari basis. Right. They have two vectors in there. They're not the same loan have enough. They're not have fallen and they don't have the same length, but
+44:43
+They generate or two and the menial independent. So in this case, this is also a base so basis can look quite different, but they're not going in the case of the plane for instance basis. Well, to know these are essentially what they look
+44:59
+Now, many examples of things that are not basis.
+45:03
+So for instance, I may have three vectors like and having here.
+45:08
+I mean claim that this is not the basis was one of the properties is going to fail.
+45:13
+So what property will fail. Certainly, in this case they generate and let me again. The precise of our two
+45:23
+So in this case, they do generate the space they generally are two but they're not linearly independent. So they're certainly not a basis in here.
+45:34
+So not linearly independent
+45:38
+So I claim that this is not a basis of our two
+45:43
+I have a single vector in the case and it's on the basis of our two is it does not generate or two.
+45:53
+Those vectors. For example, this one that cannot be written as a
+46:00
+Linear combination of the vectors in there and exactly the same thing is true, even though I have two vectors. This is not generate
+46:12
+Or two, so this is these factors are supposed to be clear. So, this will does not generate
+46:21
+corporately it's clear. The difference between this and this, if we're talking about basis.
+46:29
+Let me make a bond don't get confused by this, if I were to talk for instance about, is this a basis of the subspace.
+46:38
+Then in that case this would be a basis and this would not be a basis.
+46:45
+Right, but don't confuse a notion of being basis of the whole space versus being basis of a particular subspace. Right. Then we'll elaborate on this later. For now, if this was confusing completely ignore
+46:59
+What they wrote
+47:03
+Good.
+47:04
+So this is very nice but learn again of the maybe perhaps a problem like know what happens if we have one base link here something beautiful happens right all my basis. They know how to
+47:16
+Elements so natural questions what may have can Captain that we have one basis with three elements, let's say, and another basis with it. This would be a little problematic.
+47:27
+Turns out that this is not a problem. It's a beautiful theory, in fact, is exactly the basis. And that's no pun intended, of the definition of the mention
+47:39
+That all basis over space. They have exactly the same calling the same number of factors. So if I look at our to on basis, regardless of how we come up with it, they will always have two vectors.
+47:52
+And these Hebrew is exactly the notion of the mention of the subspace. And we define the they mentioned on the subspace, as in cardinality of any basis.
+48:03
+Right. So from now on, every time that it always be succinct, as I mentioned 17 or word means that any basis of that space will have been mentioned 17 and that doesn't depend on Apple TV and you tell me intrinsic environment of your subspace.
+48:21
+Okay, I don't really want to ride over time. So let me perhaps a two things. Why do we get again with understanding this. I mentioned will allow us to
+48:30
+A main conclusions that will want to refine later in terms of, for instance, how big a class a certain set of functions is or how how efficient the particular control system or a particular strategies.
+48:43
+And again, we'll give details of that later. But let me try to leave you with a question that he will want to answer, perhaps more detail next time.
+48:53
+Remember my three legs. I want to make sure what happens with computation and the questions are falling. How do the computation we determine the very mention of assessments.
+49:00
+If I gave you like in the case before Lino 17 vectors. And I asked you to understand what is it a mention of the self service at this base but
+49:12
+How do you do this right with the tools that we can somehow we should kind of be able to understand this.
+49:18
+Is perhaps not this one price the Gaussian elimination is going to give us a way of doing this. They know getting the band as a challenge.
+49:26
+May not just to make sure that you understood everything that he said try to do this, try to compete live. I mentioned of the subspace spawned by these form factors.
+49:36
+Why do having carry some subspace in our for. So in our free my victims or three dimensional to account for vectors in our free lifespan is hurting subspace, and they would like for you to try to think and tell me next time. What did I mention of the subspace that they span.
