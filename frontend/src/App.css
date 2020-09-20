@@ -38,6 +38,12 @@ body,
   grid-area: head;
 }
 
+.searchBar {
+  grid-area: head;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .upload {
   height: 100px;
 }

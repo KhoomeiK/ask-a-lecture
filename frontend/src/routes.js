@@ -11,7 +11,7 @@ import {
 import {jsx, Heading} from 'theme-ui'
 import { ProfessorDash } from './components/ProfessorDash';
 import { StudentDash } from './components/StudentDash'
-import SearchAndResults from './components/SearchAndResults'
+import {SearchAndResults} from './components/SearchAndResults'
 
 const PageSwitches = (props) => {
 
@@ -36,7 +36,6 @@ const Frame = (props) => {
     
     return (
         <div className="container">
-
             <PageSwitches userType={userType} setUserType={setUserType}/>
         </div>)
 };
