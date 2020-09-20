@@ -16,15 +16,19 @@ export const postLecture = (lecture) => (fetch(`${process.env.REACT_APP_API_URL}
     }))
 
 // Expects classId, lectureNumber, and question. Should return an array of timestamps
-export const getSearch = (search) => (fetch(`${process.env.REACT_APP_API_URL}/search`, 
+export const postSearch = (search) => (fetch(`${process.env.REACT_APP_API_URL}/search`, 
     {
-        method: "GET",
+        method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(search)
     }))
 
 export const popToast = (message) => {
     toast(message);
+}
+
+export const timeStampToYouTube = (timestamp, videoURL) => {
+    
 }
 
 /**
