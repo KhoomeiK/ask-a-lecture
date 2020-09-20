@@ -4,18 +4,23 @@ import _ from 'lodash'
 import faker from 'faker'
 import React, { Component } from 'react'
 import { Search } from 'semantic-ui-react'
-import {Card, Heading, jsx} from 'theme-ui'
+import {Card, Heading, jsx, Text} from 'theme-ui'
 import {Link } from 'react-router-dom'
 
 const initialState = { isLoading: false, results: [], value: '' }
 
-const getResults = () =>
-  _.times(5, () => ({
-    title: faker.company.companyName(),
-    description: faker.company.catchPhrase(),
-    image: faker.internet.avatar(),
-    price: faker.finance.amount(0, 100, 2, '$'),
-  }))
+// TODO: This should be replaced with acutal data
+// const getResults = () =>
+//   _.times(5, () => ({
+//     title: faker.company.companyName(),
+//     description: faker.company.catchPhrase(),
+//     image: faker.internet.avatar(),
+//     price: faker.finance.amount(0, 100, 2, '$'),
+//   }))
+
+const getResults = () => {
+    
+}
 
 const source = _.range(0, 3).reduce((memo) => {
   const name = faker.hacker.noun()
@@ -29,18 +34,17 @@ const source = _.range(0, 3).reduce((memo) => {
   return memo
 }, {})
 
-// const ResultCard = () => {
-//     return(<Card
-//   sx={{
-//     maxWidth: 256,
-//   }}>
-//   <Image src={images.nyc} />
-//   <Text>
-//     Card
-//   </Text>
-// </Card>)
+const ResultCard = ({text, timestamp, videoURL}) => {
+    return(<Card
+  sx={{
+    maxWidth: 256,
+  }}>
+  <Text>
+    Card
+  </Text>
+</Card>)
 
-// }
+}
 
 class SearchBar extends Component {
   state = initialState

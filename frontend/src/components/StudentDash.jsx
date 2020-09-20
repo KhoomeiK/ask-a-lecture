@@ -23,6 +23,37 @@ import { classes, postLecture, popToast } from '../utils'
 
 import { Collapse, CardBody, Card } from 'reactstrap';
 
+export const ClassCollapsible = (props) => {
+    // Strip out stuff for nav
+    const {to, staticContext, activeClassName, classObject, ...rest} = props
+
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+
+    return (<React.Fragment>
+        <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button>
+        <Collapse isOpen={isOpen}>
+            <Card>
+                {classObject.className}
+                {classObject.classNumber}
+                <CardBody>
+                    <Link {...rest} to={{pathname: "/search", state: classObject}}
+                        sx={{
+                            color: 'inherit',
+                            '&.active': {
+                                color: 'primary',
+                            },
+                            marginRight: '10px'
+                        }}
+
+                    >lecture 1</Link> 
+                </CardBody>
+            </Card>
+        </Collapse>
+    </React.Fragment>
+    )
+}
+
 export const StudentDash = (props) => {
     // Strip out stuff for nav
     const {to, staticContext, activeClassName, ...rest} = props
@@ -60,10 +91,12 @@ export const StudentDash = (props) => {
                     {/* onSubmit={e => uploadTranscript(e, text)} */}
                     {/* <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button> */}
                     <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button>
-                    <Collapse isOpen={isOpen}>
+                    {classes.map(obj => <ClassCollapsible classObject={obj}/>)}
+                    {/* <Collapse isOpen={isOpen}>
+                        
                         <Card>
-                        <CardBody>
-                        <Link {...rest} to="/search"
+                            <CardBody>
+                                <Link {...rest} to="/search"
                                     sx={{
                                         color: 'inherit',
                                         '&.active': {
@@ -71,9 +104,9 @@ export const StudentDash = (props) => {
                                         },
                                         marginRight: '10px'
                                     }}>lecture 1</Link> 
-                        </CardBody>
+                            </CardBody>
                         </Card>
-                    </Collapse>
+                    </Collapse> */}
                 </Box>
                
             </div>
