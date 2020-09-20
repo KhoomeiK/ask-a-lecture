@@ -27,11 +27,11 @@ const ResultCard = (props) => {
         start: timeStampToSeconds(props.timestamp),
         playerVars: {
         // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
+            autoplay: 0,
         },
     }
     return(
-        <CardView>
+        <CardView style={{width: '100%' }}>
             {/* <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} /> */}
             <CardView.Content>Lecture Entry
                 <CardView.Header>{props.timestamp}</CardView.Header>
