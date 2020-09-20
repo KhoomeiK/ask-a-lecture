@@ -1,0 +1,645 @@
+Srinivas Devadas
+00:03
+Yes.
+user avatar
+Silvio Micali
+00:07
+All right.
+00:08
+Good morning, ladies and gentlemen, welcome to six double of six lecture free. My name is Sylvia and is going to be my pleasure to introduce you to the beauty of searching and sorting.
+00:22
+And the by the way this is going to be searching and sorting out of the kingdom over divide and conquer that is this incredible technique of it streaming has already ushered to you and
+00:36
+Let's get started. So when you look at the quintessential a search problem, right. The problem is a searcher an element x in an order a copy the lay of elements, right, and you know to do the complex these any takers.
+00:58
+All their login right and so was everybody knows the way right because the US, what you do is wait a visit a combination of two factors. The first factor is that
+01:09
+You compare in the middle of era, and then you reverse left or right, depending on what you're searching for is a list of in
+01:18
+The middle of the day, which is already sorted in the second point is beta you EVA order one access to be great. So that's what is good about this technology.
+01:30
+And in some sense, you know, I'm, I'm not going to spend a visa search a problem.
+01:36
+To illustrate search because we all knew binary research before six double or six. And in fact, let me give you prove it to you right so anytime that to somebody, nevermind. You knew it because you guys are cool cool why young people, but
+user avatar
+Kelly T Lam
+01:52
+Your parents
+user avatar
+Silvio Micali
+01:53
+Knew it and never mind. Your parents
+01:55
+My parents knew it because anybody read the phone book right and you wanted to look for a phone number.
+02:01
+Say Sri Sri Sri Sri you don't start with a and all A's in Boston. And then all BS in Boston area was because otherwise this is going to take him in
+02:12
+Terms of a Sagan with a million phone numbers you're going to take control first and second, so it's a lot of time. So what we'll do is we'll pick up in the middle and when
+02:21
+They see we may see where it will be land and they go left and right so Michael Amy's we all knew by research.
+02:29
+And actually have a stronger claim because I know and I hope a beta biology's that are present and that the live organisms also rely on a feature toggle reserves whatever a
+02:42
+Our group is going to tell you about efficient algorithm, somehow you as a biological organism know it already proof because in your life. I mean, we have been all
+02:54
+Over that or magazines or 10 to the 10 or whether the new ones are now in T sales or any other type of thing. But if you start to doing running
+03:05
+An angel algorithm. We will die before we we can react to any credit or anything so
+03:12
+Nature nano only biologists who enjoys an algorithm about nature itself computer, he may have been on is going to rely on efficient algorithm. So
+03:23
+They only reason they turn on screen, and I am company.
+03:27
+Want to tell you about on on six number six is where we want to make it more efficient in some sense.
+03:33
+Nature could save at the Bible Lucia has found the gentle go. He's from the after a long, long longer evolution taking this at all my millions of years and we wanted to somehow simplify
+03:45
+Okay, so if I go into the object searching for an element eggs in another a as an example or search list, try to fight to search something
+03:55
+A bit cooler and which is a big finding. I'm going to start to describe what pic finding using one dimension in two dimensions. And you can generalize in three dimensions, etc.
+04:08
+So a picture is worth 1000 Board, which is a landscape and you see my mouse. Right. I want to find the peak memory. I want to find a local maximum either ways or various I can find a local maximum here I can find the someone here, etc, etc. Right.
+04:28
+So in other words, what I like about this program, it's a vector know I have an array in one dimension and they want to find the peak and nothing is order. Look at this array. Does it look order to you know it's not. And so what is a peak peak is an element.
+04:45
+AI. If it is not smaller than he is and neighbors. So what would be a peek. Here I am with eight is a pig because eight is greater than five and is greater than three.
+04:59
+And by the way, 13 is also a pig because it's greater than or equal to 10 and get them and or equal to five. And by the way, if my day were a little bit different.
+05:11
+And so I introduce now I change them. The first element to be 15 column and then when 15 to be a peak as a single neighbor and these are greater than or equal to 14 so that is uptake. Okay.
+05:24
+So, more precisely as a by is a peek you about a free case example. First of all, you say I is different. It's not on on on Bay ages over Ray is not is not one that is not an
+05:40
+End. He has to be greater than or equal to its neighbors, and if it is one on one side has to be greater than or equal to is only neighbor.
+05:48
+Okay. The problem is finding any big. So what I like. Again is vetting of the arrays not sorted. You want to find a local maximum. How the hell do you do it.
+05:59
+Any big finding idea.
+06:02
+So,
+06:04
+First, the booth for service works, right. So what is booth force here is, I'll go into one.
+06:10
+Would you mean you scan way away from left to right and you compare each elements will visit neighbors and your exit. When you find the peak of it that you find that a neighbor of an element of it is a greater menace neighbors.
+06:26
+And the complexity. Well, of course, is a domain. The because of the way I describe it, because in the worst case here to scan all elements because they say they were very was ordered and he had to go all the way to the end until you find a pig.
+06:43
+Okay, so all of that in the booth for so we're not here to teach boot the force algorithm. Right. So there must be something better.
+06:52
+In fact, the ear is available. He's on which is a algorithm to we chant or
+07:00
+Again, you want to compare the middle element with his neighbor. Here I alight for you in the middle element. And I want to compare it to put on the edge with his left neighbor.
+07:13
+Now, case one.
+07:17
+Village neighbor is greater than the middle element when. What do I do I look for a peek.
+07:24
+On the left,
+07:26
+Okay, and what is, in fact, is very instruction.
+07:31
+And anything stayed up the middle ailment is greater than or equal to his left neighbor. Well, I start comparing to bug me no Mo, the writer neighbor.
+07:43
+And if it is
+07:45
+Right neighbor is greater IRA course in right half of every
+07:51
+And the Overwatch in beta, what is written here and otherwise, then what do I do when otherwise I'm holding a peek. So that is really very nice. All right.
+08:03
+123 cases done. So what is right around the time of this algorithm.
+08:10
+Alright, so let's see learning time we have to do some complex analysis we have here.
+08:18
+Again to vein is running time or whatever algorithm I just Skype, but is the time to find the peak in America, your lens and
+08:27
+And when I'm going to claim it is to have a nova two plus order one in the data. One is the time to comparing let me the alignment with his neighbors.
+08:39
+And take over to his vacation, because I'm happening way my by sides of my problem by definition is staying over to. So if we want to have a lover incursion
+08:50
+And by the way, as soon as you will discard. Today's the last time we have Ravel regressions with your b&b to know and when we get something like this that the one that the one that the one that the one login time with for a grand total of data logging.
+09:06
+Okay, so I want you
+09:09
+To really powers and save it obvious. Okay. I want to rediscover the health toward login is much better when an
+09:18
+In fact, I want to call it a step farther and the shape of your secret Logan is always greater than 300 no matter what enemies who said, so I do
+09:32
+And why do I say so. Because to make sure that we understand that things properly, you know, beta two to the power of 300 is greater
+09:45
+Not only of all the molecules in the universe, but it's greater than all the atoms in the universe. But Adams of electrons and protons is given all the protons and
+09:57
+Electrons in the universe and is greater than all elementary particles in the universe photons of protons neutrinos, whatever. So there is
+10:09
+I don't know where you want to search for things that if you search have him in our universe.
+10:15
+To, to be free Android is the top things that exist in the universe, so to speak. And so the log of it free Android is very large number. You ever get a logo or anything in
+10:27
+Not only in our planet, but the in the universe altogether.
+10:31
+Good. If you do a transformer a login is actually Forgotten Realms last that's good news. So if you look at the base some big funding in one dimension.
+10:42
+Is really the triumph over divide and conquer. Right, and indeed the you must agree with the bed is a very good technique.
+10:49
+You divide the input in multiple genres parts you conquer each part, say, but actually using a recursive the call and occasionally
+11:00
+You need to combine results from different calls. And again, we have not we are not combining over here, right, anything because once you enter in the
+11:11
+In the one dimensional big funding. Once we enter on the left, we don't combine any results and she needed another example in which, you know, he also used it all divide and conquer. But they did not use combine
+11:26
+Okay so much fun. We'll do it again.
+11:30
+So high. Now we want to do big finding in two dimensions. So we have an array. Right. And by him in this case is a square in these equal to three, and then is equal to free in when an element i j is a two dimensional peak if it is not smaller bunnies for neighbors, up, down, left and right.
+11:58
+Okay, I claim vapor in where baba
+12:03
+That two dimensional arrays. There are two pics I let you think, which ones they are
+12:11
+And of course, you find them, or at least you find the one of them. One is stand on the corner there. Right. And one is 14
+12:23
+By the way, I can tell 10 and 14 because
+12:27
+They don't appear twice. But otherwise, I should give you a Gordon, it's right. The peak is defined by he scored in it.
+12:33
+Okay, so now we know also in two dimensions. What up a PKs and and the problem is we want to find a two dimensional take
+12:47
+Again make sure what I want to find the Barry Gordon it. Don't just answer me 10 or 1514 a in homework or things like red
+12:56
+And I want to clarify. Wait, no, I don't insist in any special pig, I want an algorithm better returns any local pick you give me a local pig. I go there.
+13:09
+But this is a good question right before we start searching for anything. Let me take a sip of water.
+13:18
+You know, is a good thing to know before you start launch into looking for something a good question is
+13:28
+What I'm funding. Does it exist. And so what is your
+13:33
+opinion about a pic. Why should a pic exist.
+13:40
+Well, it is a very trivial equation.
+13:46
+In ways the trivial because, you know, the way I decided to dimensional peak and also freedom angel is going to be an array right all
+13:56
+Is a fun today anyway. And so in any fighter number over numbers in any final set of numbers, there is always a maximum
+14:05
+In the maximum is, of course, get them and or equal to anything else in particular to his neighbors. And so, because there is a maximum girls always a peak.
+14:17
+But I don't want to find the maximum I want to find that any peak whatsoever.
+14:24
+Okay, so now we understood the problem.
+14:27
+And we want to find that peak is guaranteed to because East elements of not order. I want to find a local maximum.
+14:37
+However, hair, lightweight
+14:41
+Well boot force in is always available right with force here is falling. Since I just said with any maximum element is a peek.
+14:52
+Veil bizarre reason I'm calling is and one is very to find the maximum element emulator. And we scored
+15:03
+Is it to do here is my array, otherwise we find the maximum Visser right well I inspect, you know, row by row always array in I always say keep around the
+15:15
+Maximum number but I made another main diagram found some of my record is called the knights. Once I after beta my maximum embittered editor.
+15:26
+And the complexity is, well, what can it be is order over N, M, because without nm elemental the array. I'm not saving I'm considering each one of them in based search for the max right
+15:42
+Okay so brute force algorithm is nm. By the way, sometimes in a brute force algorithm gives you orrible exponential things. This is
+15:53
+Pretty easy as a booth for some reason. Go.
+15:57
+So are there other ideas.
+16:01
+So when brute force doesn't work.
+16:04
+Or you are not happy with brute force if the oldest of think about other ideas and that whenever you look for a man ideas up in six double or six. The main idea is recycling.
+16:17
+Which means before, you know, thinking of a new idea, as well as the resource. I mean,
+16:23
+Saved your new words right recycling is easier. So if there is your best to say if I learned so far, sometimes, but I can use a technique and pull out of a hat easily
+16:34
+And so far, there is only one technique or idea of it that we have been using, which is divide and conquer. So the first thing we have to do is to see if we can recycle divide and conquer here.
+16:47
+And by the way, techniques are all about the recycling one because of technique is amazing, but at least solves problems. So, ladies. Okay, so here is a suggestion for recycling divide and conquer.
+17:03
+We are in two dimensions, I pick the middle column.
+17:09
+Also called a big column j
+17:12
+Equal to em over to
+17:15
+And what do I do invest a miracle.
+17:18
+I find a maximum element.
+17:23
+I only ever now elements and I go anti economize kind of anti calm, I found the maximum color day
+17:32
+All right, by the way.
+17:35
+If Emma in whatever it because I'm doing a recursive algorithm is equal to one. I just quit. But here you can see em is not equal to one way
+17:45
+We agree with and searching is is invite him as he wants to be at the beginning. Okay. So after I find when the maximum the middle column I compare this maximum, what they found with his neighbor call them A, B and C. And let's assume a now beta i found the beta be is greater than a
+18:08
+Vendor do I do then I want to look for my peak.
+18:13
+Invalid columns. Okay.
+18:19
+And that is very of the divide and conquer.
+18:22
+By taking the middle column I create
+18:26
+To sub arrival left column and right column I make one comment I find the maximum a I found that the neighbors b&c I compare b&c because be is greater than a I declare, but then go into the course on the left, call
+18:43
+Why
+18:45
+Because whenever you want to get to
+18:49
+choose where to the course, you must make sure that varies a pic
+18:55
+Invalid call now. Don't be confused. Anytime that I gave you
+19:00
+Some are a real ready say that any other way is a finance sector numbers. He has a maximum and very for by maximum any maximum is a peak because I must make sure that the when I decided to have a course on the left, the columns.
+19:18
+I find that not only a maximum. The left column Mata Pekin the original I gave it a but then given right
+19:27
+And why and my guaranteed that the bear is going to be a peek in the original array.
+19:35
+Okay, Linda let you
+19:38
+To say guns to to figure it out.
+19:42
+And so the idea is better. The left column. First of all, they must have been maximum better is always the case, it is finally
+19:49
+Last a maximum moment or you want to call a maximum element on the left, M L M for maximum and L for life. That's a good name.
+19:58
+Nobody's a bunch of cases. Right. The first case is that the maximum element invalid column is deep
+20:07
+In the left column and therefore is a peek in and so invested in the maximum amount of the left column stays there. Then, of course, is a peek because he's loud job and he's always in the verse.
+20:18
+And if he were here is also larger than his neighbors and therefore will be a peak in the original like a they only quote tricky and the court case is when the maximum on the left column is on the board says here.
+20:35
+And so the fact that is a maximum volume column and doesn't mean that is a that is a peak of the devil. Okay. Because of the right neighbor may actually be
+20:44
+Actually bigger many days, but not in this case. Why, because we can apply the triangle and equality. We know that Ml is a maximum and therefore on the left column is left is greater than or equal to anything in the left column, in particular, be be
+21:05
+We already said it was strictly greater than a a was a
+21:10
+A maximum innovate middle column a beggar for was greater than or equal to anything else.
+21:17
+Including the right neighbor or a male and better for BI triangle any quality ml is greater than is right, neighbor.
+21:26
+So we know that there is a peek in my left, so it is very good idea to curse on the left column which is b is greater than a similarly if sees good have any when we can hook or somebody had call
+21:42
+And
+21:44
+If he is greater than or equal to b and c, then of course at itself is a big. Okay, so now we have an algorithm. And we want to execute it.
+21:57
+Yeah, is our hey I pick up the middle column.
+22:01
+Done. I find that a maximum in the middle column.
+22:07
+Actually is nine year is the only maximum when I look at the neighbors, B and C, then I do a comparison BNA and I found the pain is greater than nine. So I have a course on the left column.
+22:22
+I find the maximum there. And by the way, at this point, m is equal to one that goes only ever be a single column. This
+22:31
+To deal with, I can hold and one one.
+22:36
+Is epic. They are limiting position one, one. Okay.
+22:42
+All right, so, uh, but for complexity.
+22:46
+With is our occurrence. Right.
+22:48
+And give them an array of of sides nm. And what do I do
+22:54
+I split them are going to like race that is very gorgeous because I I took a course on half of the columns, either on the left home but right
+23:03
+And what is the time to scan the middle column and and finding the maximum there and of course if you unravel this record, you get the login time that I entertain that I am for a grand total of data.
+23:20
+And the logging.
+23:21
+All right. Okay. So I want to, I want to tell you whether we are in a good point because we have found a we have a recycled. Again, the notion of
+23:36
+Divide and conquer, but this time we did it in a promo which, in which nothing was ordered and yet somehow in some sense of the generalization of binary search worked and divide and conquer or again work.
+23:50
+We feel somewhat happy in this example search, there is unnatural question to ask.
+23:58
+I have an angle game. I'll go in some
+24:02
+Can I do better.
+24:04
+Says, Well,
+24:06
+Maybe they can do better. But can you give me a hint. The answer is not
+24:13
+Do you know the solution. Absolutely not topic. Why, it's you know, I'll be bombarded by all solution until you emailed me until the solution comes
+24:23
+Do you get the expected it now, but I want to have a kind of of glory and honor or if you think about
+24:31
+If there is a perhaps a way to improve it, or convince yourself of activism to our algorithm or perhaps even try to argue it is impossible to do whatever it is. Okay, so that's all
+24:46
+I want to tell you about search as an example. Now we have the peak and when you guys think about maestro
+24:55
+Okay.
+24:57
+Today's subject was a
+25:01
+Section sorting.
+25:04
+Let's go to salty. So thing is a beautiful problem and
+25:11
+When we hit this little we all know about it, but it is required of it. You hear it again and because of the more you hear it, the better it sounds
+25:21
+So you have an array and you want to find a permutation.
+25:27
+You're gonna have a you want to find a permutation to be all over at such a rate of element as order, right. So you start with Mr. K. You want to end up in by Saturday be
+25:39
+Integers decimal numbers or whatever. And the question of course is that can we do the efficiency.
+25:47
+They first thing with everybody talks about when talking about sourcing is in session sort
+25:55
+And which means a beta know you scan way array and you somehow swap two elements were out of order locally.
+26:05
+So if we do it the pictorial Lee.
+26:10
+You have already sorted an array here. You want to try to enlarge that sub portion of a with a sort of a look at the some element of Jay
+26:19
+And what do you want to do when you want to compare with his neighbor and the 50s in order you leave it there and you enlarge whatever has been sorted
+26:30
+In otherwise you swap them and maybe it to swap them again and again until you find where the key was to go and when you put it there with the new location or the key and here is actually an array. Right. I start up a compelling to we've we've left and I i to swap it
+26:53
+One swap here, then I move on to the next age 23rd element and I compare it and I swap it. And by the way, I don't need to swap over to and again he finds his natural place in one swap nine I need to swap anything is already greater than eight
+27:15
+And now everything 248 is already sorted. When I go do swap. Here I Go To consider element free. And when you look at it I to do some free swag. To find the word
+27:29
+Free wants to go.
+27:33
+And so finally do element six and I find the know another two swaps and then at this point, I have nothing else to nothing else have to
+27:43
+Compare and trickle down today. So I'm done in Burgundy time of course is order n square because if somehow Ray was in reverse order yet to do one plus two plus three plus four. The total order n square comparison and swaps. OK. So again, that Inception sort
+28:12
+Is somehow way perhaps the easiest algorithm button or in principle you should also figure out of it. The brute force.
+28:20
+Would be n factorial, right, because of the brute force and looking for up annotation. What is sorted. How many permutation of a numbers I have, I am n factorial. That is a very fast growing so brute force is absolutely horrible.
+28:36
+But in session. So it is not good for us, but it's very elementary and can
+28:42
+Can work in order and square
+28:47
+By the way, this institution sort of waiver as a little bit of a nice property.
+28:55
+Verbatim, you don't need the much extra space, right, you keep on working on order a and perhaps you ever been on order one.
+29:05
+Of our sale computer memory to for doing a swap you put something they are not to erase it and so you use a very little extra space to do it. So, the time is and square, but you have an advantage to do very or the one
+29:24
+Extra Space
+29:27
+All right.
+29:30
+So now we want to do better. And the next beta is marriage sort of marriages or three is a type of thing beta. If you don't know about it. You are going to love it. And if you know about it, you can relax. Okay.
+29:44
+Personally, I learned about the marriage of sword.
+29:48
+When I was also after I did my undergraduate degree in mathematics. Can you believe it. I never heard about computer science and ever heard about algorithm, you guys are lucky you are. I had, but I remember to say, gee, this mentor sort of struck me to be a good idea.
+30:07
+And so here it is.
+30:12
+You want to sort an array of elements.
+30:16
+And then you say, well, if it evaluates very as a single man, and you're done. But it's nothing to sort
+30:24
+All otherwise.
+30:26
+You will recursive really sort of the first half of every day and basic on a server.
+30:33
+And then what you do. Finally, you do some some work to put together.
+30:38
+I am but to somebody days left. Hey sorted by writer I sorted is what I want to know. I wanted a they all have a sorted. So I want some our marriage. These to sort that our race finally had to do some combining
+30:53
+Is divide and conquer, but very son combine it and the combining sub routine is actually the main sub routine and his marriage.
+31:05
+Here is out you combine
+31:12
+Out your marriage to order right
+31:16
+So,
+31:17
+My array. And if you remember eight elements so valid array as four elements of it as four elements was even so I bet I equal sides. So one column is sorted already array and the other column is the other half sorted
+31:34
+And so here I want to prepare a bunch of buckets of eight buckets all together.
+31:41
+A show six dot dot dot rest and to all the all the elements on my era. And so what I do is that because I sorted. I can easily locate
+31:54
+Really the minimum of two array and which are not have the two possible minimum minimum minimum were over over holiday, the minimum of a tool. So I compare one and two, one is more or less well if it is as most
+32:11
+Of the meeting. Number two, he is the smallest all that all so I can put the okay to commit that the first output and the first element of algebra today is one
+32:20
+And then I deleted and so much fun. I'll do it again. I look at the smallest elemental the left or grey and override array.
+32:29
+And the smallest this too, I must make the best comparison and I can commit very, very sick on element available today is too and I deleted and keep on going like race like this like race like this.
+32:47
+Okay.
+32:49
+So,
+32:51
+Bottom line is that anytime
+32:55
+They want to commit to one or more element.
+33:01
+I'm taking essentially
+33:04
+One comparison and vain I essentially deleted conceptually when element and I move it over there. So I'm doing essentially order one work one comparison when maybe one, not a transfer, so to speak.
+33:18
+So it because I have been all I have to allocate a very element in each one of them cost them all the one way. Time to marriage is take away
+33:31
+Okay, so now we discovered it. Now we can do some analysis.
+33:38
+The analysis goes on but height manager sort I declared I give it a name takes up to end with a powerful operation and giving people
+33:47
+Things on name. You can reason about.
+33:50
+The base case, instead of one. We go as we said okay corrosively sort. Well, I have two arrays of
+34:02
+Sides each. So he's a tour and over to of course. And when we operation or marriage, instead of him. So what is my recursion is the following.
+34:14
+To TN over two plus that one or order one. If it's in a sequel to it and when, when you do solo record and sing in a recitation. You would find now, finally, a way to do it. But for now we have to do it from scratch.
+34:28
+I want to solve this stuff and I want to solve it by writing about Michael Jordan, like this, like I'm substituting to van.
+34:38
+Is equal written here twice to n plus your name, so I can replace my co vain and I get that to go down without a word of caution tree. And when I keep on doing the same thing here.
+34:51
+And I keep on doing my things here. Right. And so then, very good. So Festival. So now, we have to do the counting the first label it goes to me. See all then the second labor costs twice cn have a tool which is again total seal, then
+35:09
+The third the label is four times see over and over for. And so my OMA is co events, events. You'll then login time and therefore I have VR and leaves altogether.
+35:22
+And so very for VCs at the bottom. It takes me better when So Megan total is
+35:30
+Data or vendor login
+35:34
+Okay, so
+35:36
+If you have never seen the merger sort of before I you must agree with the rest is actually a non trivial algorithm.
+35:46
+In fact is inelegant Al Gore ism and I save it in all familiarity breeds.
+35:55
+And
+user avatar
+Silvio Micali
+35:57
+You despise familiarity and you're wrong.
+36:01
+Very often, I think, you know, you have to go down. You never realize it. So I ain't nobody knows the best algorithm and you lose interest right we lose interest in motorsport.
+36:13
+In a but if you seen for the first time, but like I saw my first time is a very elegant algorithms. RIGHT. THAT'S NOT THE FIRST THING WITH YOU THINK ABOUT sorting and you have an elegant abrogation of divide and conquer and perhaps
+36:29
+He is one of my favorite algorithm was a very clean and obviously it's a very clean idea is beautiful.
+36:37
+So the only thing with is not beautiful is better yet to do this, you know, somehow recursion tree right to analyze availabilities but you know, I'm the burial. Good news, as well as
+36:52
+Beta, you are going to learn. They must have my foot.
+36:56
+In the recitation. And that is an automatic way to solve the most recurrences.
+37:03
+So somehow, if I were you, I would say, I can't wait to learn resonator because I'm sick and tired of the hardest things
+37:12
+And if you are me. Let me confirm, but I also can wait for you to learn this major why because believe it or not to do PowerPoint to
+37:21
+unravel this tree. It takes me time and if I can just say solver by record some major saved me a lot of time so but online. That's all I wanted to say for today and my wishes. Let's go and master but rest of the day with web better things to do.
+37:41
+I notice visa waiver, we have
+37:44
+A few more.
+37:48
+A few more minutes.
+37:51
+And perhaps we want to make sure to
+37:55
+To use them wisely. Right.
+37:58
+Now what the better wise use of his finger with to contradict myself and starting getting into
+38:06
+You remember misspeak finding into dimension em Logan right
+38:13
+And I wanted to say maybe I should give you any hint and maybe the behavior doesn't work, you know, actually, the two feasible. I do not know if this trick works or not. But let's reason together.
+38:25
+In peak finding. In two dimensions. Right. Perhaps they want to do. I want to stop sharing. Maybe we'll
+38:34
+By the way, I should actually say before stop sharing is there is any questions about the material right now so presented before starting doing anything will be good.
+38:48
+I don't see any equation. So if I stop sharing so I stopped sharing
+38:54
+Okay.
+user avatar
+Silvio Micali
+38:58
+Okay.
+39:00
+We're back. So
+39:03
+I remember we have a VISTA matrix, right, and by him.
+39:08
+And they wanted to find
+39:11
+A two dimensional peak.
+39:15
+And with three will always move was order n times n. And when we find an empty logging.
+39:25
+Why, because we were somehow happening.
+39:30
+VIN number overalls, right, we might have a matrix into one half.
+39:36
+But the way the column remain always in Soviet for a head n times logging because I was only asking the hills, but not the calls. So if they're going to better
+39:52
+What is the only thing that I might be able to do to try to see if I can have both have a column and way.
+40:01
+And vay enviros right because if I have been both of them. Perhaps I can actually get some speed up
+40:13
+So this is the only idea, but I bet I have. I don't even know if it's a him to because I don't even know is easy to say in English. Well, I got a login because available to play.
+40:27
+Videos. So how about offering gold, silver, gold was easy to say, but remember, but when you try to do various you must convince better you can
+40:40
+huffing McAfee columns and rows together is is easy, but you must find a way
+40:48
+When you want to recursive one of these two quadrants to make sure to reverse in a quadrant. That is guaranteed to contain a to debug right
+41:01
+If you go back
+41:03
+In whatever
+41:05
+We went to food together when
+41:10
+We want to of course on the left column, we had to argue to ourselves vapor was something that we really wanted to find on the left. Otherwise, you go and get whole get lost in some black hole. So whatever idea you want to do.
+41:26
+If you want to follow this potential idea. I don't even know if it is a hint.
+41:32
+Oh you restrict like gradient
+41:35
+Wow.
+41:38
+That's a great idea. Let me put it on my side. Let's continue with my silly perhaps area.
+41:50
+I you know what the guys what I realized with a by projecting I don't see your chat questions one instead let's stop projecting I see that there is a 79 last chance. I must think about the way in going forward.
+42:06
+But I am alerted when, if you have a question of a chat. My goodness, what have I done. I started talking without noticing.
+user avatar
+Srinivas Devadas
+42:14
+Sylvia ST. JOHN and others have been answering the questions so
+user avatar
+Silvio Micali
+42:19
+All right. Hi.
+42:20
+My friends cover my back. Thank you very much, guys.
+42:26
+And
+42:27
+Okay, so right. So, baby. I remember when we want to look at the middle column and we will look at the way at the way the maximum and when we compare with the left and right in this
+42:38
+Was later at the say I'm going to look on this middle section, we wanted to be then certain there was a peak right
+42:48
+And so
+42:50
+So therefore, if you want to do a quadrant. You can do a quadrant, provided that you are able to find a way. Once you recording one quadrant by half. And in both columns and and and
+43:04
+And the roles at the same time, you must have an argument with a peak. Is there any few succeed. Maybe this idea is worthwhile. Otherwise, I don't even know. But is it
+43:16
+The idea is also seems a great is to say
+43:22
+You know, what is a peek, a peek here is
+43:28
+A peak is a local maximum. And in continuous mathematics right when you want to lose a local maximum. You look at the gradient which is a generalization of the derivative, right in multi dimensions. And if you want to follow a local maximum. Say, follow the gradient
+43:46
+And if everybody knows about the best part of mathematics. You know, if you follow a gradient, you are not guaranteed to enter in the total maximum, but you are guaranteed to enter in a local maximum.
+43:57
+Maybe there is a good idea here, right.
+44:01
+Maybe this idea from Bay.
+44:04
+Continues mathematics can apply here to and we may actually
+44:10
+Ever two ideas. One is this my idea of the quadrants, and one is idea of your friend to say, do a gradient. Again, remember when you have an idea, you must
+44:22
+Congratulate yourself for because he thought about something new.
+44:26
+whether it works or not is irrelevant. I think ideas should be always celebrated. So there is two ideas and perhaps you can find the third one, and that is actually the cool thing about an arm and
+44:39
+Algorithms that nobody knows of a mall is a really have more of an art algorithm. When a science. There is no recipe to find efficient targeting sense
+44:50
+You must find a bunch of ideas. What are we are going to do here have a staff of six level or six is to introduce you to 12345 ideas that are going to be
+45:05
+Very cool ideas and you can put them in your
+45:10
+In your set of tools and tie by recycling a new problem and try to fit into some of his ideas and if it works fine. And if it doesn't work, then
+45:21
+Then
+45:24
+Oh,
+45:26
+OK, and then
+45:30
+Venue to develop a new one. Right. Okay. So I think a bit a bit some somehow we took a lot of attention and now about an old divide and conquer.
+45:42
+And so far I can say is they only technique we really used. And so I think of it and all from next lecture we are going to use a little bit and or a different technique and
+45:54
+By the way, the new techniques is called action and let them tell you is a really good technique. So I encourage all of you to learn about it until and and to
+46:06
+And and see what the next lecture. Any other questions or otherwise, we can even must have a rest of the day with 10 minutes ahead will better quit when we, I had a
+46:23
+Question one question to question three. No. All right, let's guys. Have a good day and see you later. Okay, it's your own first day. Bye bye.

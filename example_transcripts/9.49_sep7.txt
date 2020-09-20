@@ -1,0 +1,1683 @@
+Ila Fiete
+00:06:31
+Hey everyone.
+user avatar
+Tho Tran
+00:06:37
+Afternoon.
+user avatar
+Ila Fiete
+00:06:47
+How are you all doing
+00:06:56
+I see if new new faces mostly people from last time, but a few new faces. I was thinking that at the end of class, maybe we can do slightly longer
+00:07:05
+Introductions or at least introductions where maybe you say something about a hobby. In addition to your other interests in your major. So, um, so we'll do that again at the end of class.
+00:07:17
+Welcome to neural circuits for cognition, um, any high level questions.
+user avatar
+Claudia F Lozano
+00:07:26
+Or
+user avatar
+Ila Fiete
+00:07:27
+Concerns before we start.
+user avatar
+Claudia F Lozano
+00:07:30
+Good question. Are those lights for this lecture. Good. I'm available before class.
+user avatar
+Ila Fiete
+00:07:38
+I haven't planned to make them available before class, but I plan to make them available right after class. So I think last time I posted my slides right after
+00:07:47
+Um, I prefer it that way, because then you know
+00:07:50
+You can just, like, watch my slides as I present them and then I'll make them available to you to look at right after
+00:07:57
+So yeah, that's my plan. And in addition, we're making the recordings available. How many of you did you all receive an email from though telling you about the location of the recordings. Yes. Did anyone not
+00:08:12
+Anybody did not
+00:08:16
+I guess an all I'm the only person who didn't then so
+00:08:21
+Okay, very good. I'm glad it's getting to where human needs to get to. So great. So yeah, in general, I guess, have all of you gotten access to the canvas website for the class anybody having trouble with that or are you pretty much. Okay.
+00:08:40
+Have all of you had a chance to finish the course survey the pre course survey about your connectivity and resources that you have available. Great.
+00:08:50
+I'm going to post another thing I'm going to post a brief math poll to try to figure out where everybody is
+00:08:56
+A math. It's not some fancy tests. It's just going to just to know where you all are on like integrating first order differential equations or, you know, then the algebra, just want to get a sense of snapshot. So I'll be posting that later today. So please have a look.
+00:09:09
+There's a page on zoom guidelines. Again, I really look forward to, you know, seeing all of you in class every day and if at all possible.
+00:09:18
+I definitely encourage you to, you know, keep your videos on and everyone gets to know you better. And we get to see you and I get to have at least a minimal amount of feedback of how you know if I'm reaching you if you're looking confused, but I understand that it's not always possible.
+00:09:34
+I know that you're in, sometimes in some work situation where it's not it's not so feasible to put on your video, you may have bandwidth issues. So no pressure, but it would be wonderful if you can keep your video on as much as possible.
+00:09:47
+Okay, any other questions or comments.
+00:09:57
+Alright, so I plan to put up the first homework assignment today for and it'll be doing approximately two weeks from now and so please look out for that as well. So that's going to go up and related to that. Okay, so let me just put up then some of these just share my screen for my slides.
+00:10:32
+Alright, so, um, yeah. So I wanted to
+00:10:36
+Just for those of you who weren't here last time on didn't have a chance to join in the first class. Oh, I'm your instructor. My name is Eli feet and your TA for the classes, though, who is here. I'm in on the video call and
+00:10:51
+She will superbly and expertly assist you on homework questions and also have some office hours. Again, just a very quick overview for those who couldn't make it last time, our course website as on canvas.
+00:11:06
+Lectures are going to be synchronous on zoom
+00:11:09
+Office hours are here. You can find them on the canvas website. And I wanted to ask all of you about whether or not we should do a tutorial on coding. So this is something I like to do
+00:11:25
+But we only not do it if all of you feel that would be boring and it's an optional tutorial, which I think though would run in the next few days, wants to just walk you through coding in Python specifically using vectors and matrices and integrating our first order differential equation.
+00:11:46
+Maybe doing computing eigenvalues and item vectors. So some very basic stuff on Python. How many of you feel like you would want something like that. Can I just have a show of hands.
+00:11:58
+Okay, so definitely some of you so fantastic. So I will talk to Joe and I will get put our heads together and schedule something like that. So I think it'll be most useful to do that.
+00:12:08
+In the next few days because this first assignment is going to go up that so it's just the right time. All right, thanks for that.
+00:12:19
+All right. Alright, so, um, what did we do last class.
+00:12:22
+Last class was just a very broad overview on some of the new technologies and neuroscience that are enabling us to finally fuse.
+00:12:29
+This very ancient field of, you know, studying psychology or cognition and humans with a much newer field which is, you know, the study of neural circuits and and and neural activity.
+00:12:41
+At the level of single neurons and the new technologies that we talked about enable recordings of neurons at cellular resolution single neuron resolution.
+00:12:51
+And in some cases, across the whole brain so whole brain recordings of time resolved activity in single neurons.
+00:12:58
+Either in entire circuits or brains. So this is a very exciting time in neuroscience, there are these technologies available to try to crack open like the neural basis of cognition and
+00:13:10
+Also model the circuits that you see they're using mathematical techniques. So I just had shown a diagram last time showing that really
+00:13:19
+There's the field of fields of psychology, neuroscience and computation and at the intersection of those
+00:13:25
+Three fields is the field of computational cognitive neuroscience and this class really sits at the bottom part of that intersection here this class strives to bring low level neural circuit modeling to the study of some cognitive
+00:13:42
+To do the study of some cognitive behaviors using computational techniques. So that's the very high level overview and there's another piece of overview. I feel like we need to get through before we can really talk about
+00:13:58
+The actual content of the course to really before we really begin. I feel like the elephant in the room is to define, you know what, what do we mean by cognition.
+00:14:06
+Right. And clearly, I think we can all agree that, you know, very sophisticated abilities like language, our cognition.
+00:14:12
+But what else is conditioned, it says, What is the lower boundary of cognition. What is, what is it, what are the most basic
+00:14:19
+Aspects of cognition. So that's something that I was hoping we could discuss today through a few examples and
+00:14:26
+And think about and some of these examples, maybe things you've seen before. I know some of you have taken some basic perception classes and other things. And so, but it's always fun to see some of these examples and to talk through why they might be examples of cognition.
+00:14:40
+Once again, please feel free to interrupt. Ask questions and just speak out. If you have a question, because I'm going to
+00:14:48
+Lower my participants screen. It makes me not able to see my own slides and you at the same time. So really do call out. If you have a question.
+00:14:56
+Okay, so last time at the very end of class, we started discussing this example which is an example of an visual effect.
+00:15:06
+The goal is to make a brightness perception to make a decision on whether A is brighter or B is brighter in terms of just local brightness like is that the different levels of grey and clearly our perceptual system tells us that be is white and is great, but
+00:15:23
+That that's what our brain believes, but I think enough of you have seen this illusion that if you connect me with a gray bar, it becomes apparent that A and B are actually the exact same shade of grey.
+00:15:38
+And and so they're they're brightness is exactly the same. And it's shocking how robust the perceptive of AB much darker than be until you join them. And so, um, what is it that we should take away here from this ability of this
+00:15:58
+Simple stimulus to fool our visual systems. Why is it that be look so much brighter. So it seems like the task is a very, very low level pixel level task. Right. I'm just asking you just look at the pixels locally in a and look at the pixels and be and tell me which is brighter.
+00:16:13
+And we're taking in, because our perception is strongly influenced by the global scene right like we're taking into account so so we talked last time about
+00:16:24
+What accounts for this perception of being much brighter and one of you gave, who was it. Let me see was that Nicholas was that you yeah okay so Nicholas
+00:16:33
+Gave the basic explanation, which is exactly that, you know, given the shadow being cast by this
+00:16:39
+Cylinder one knows that the the shadow is making things in the shadow appear darker than they truly are. And so our brains subtract the shadow out effectively so effectively we discount the shadow, we
+00:16:53
+Take into account that there is a shadow and say, Be looks dark, but actually it's light. And so given that there's a shadow. It's actually light and so
+00:17:02
+So we give it a like an interpretation of a light square, even though it's actually pixel wise as dark as a
+00:17:10
+Right. So that's the, that's the understanding and so just to unpack that a bit more like it's
+00:17:16
+That that explaining away that basic explanation took a number of steps, right, it basically involved and understanding of the whole global scene involved us interpreting the scene as a three dimensional scene in the world. It involved interpreting
+00:17:33
+This cylinder as casting a shadow and and in fact
+00:17:38
+The image. It's, it's not even that we were just looking at a, at a three dimensional world and then interpreting it as three dimensional we're actually looking at a
+00:17:46
+Two dimensional photograph and interpreting it as a three dimensional as a two dimensional depiction of a three dimensional world.
+00:17:53
+Turning it into 3D constructing you know this understanding of shadows and then subtracting out our expectation because of shadows. So, um, yeah. So it seems like something that might look like a very low level retinal kind of
+00:18:06
+decision to be made is being affected by all these very, very high level, you know, 3D world understanding kinds of global
+00:18:15
+Calculations. Alright so that was one now. Okay, so, so, so that was about constructing a 3D mental world. Right. And similarly here. This is an example of how we
+00:18:27
+Construct 3D mental worlds from
+00:18:28
+2D inputs.
+00:18:30
+This is an example of depth perception.
+00:18:31
+So I'm
+user avatar
+Tho Tran
+00:18:33
+Just a question.
+user avatar
+Ila Fiete
+00:18:34
+Yeah yeah
+user avatar
+Tho Tran
+00:18:36
+There's a question in a group chat.
+user avatar
+Ila Fiete
+00:18:37
+In the group chat.
+user avatar
+Tho Tran
+00:18:38
+Okay. Yep, you're
+00:18:39
+I'm
+user avatar
+Yizhi (Cherry) Wang
+00:18:46
+Okay, I'm sorry. Yeah, that's, that's my question that just wondering. It's not exactly i think what were we were going for. But could the fact that we know that it's a checkerboard so that like be is supposed to be the whiteboard and
+00:18:59
+A supposedly black also affect our understanding of how we perceive the colors.
+user avatar
+Ila Fiete
+00:19:05
+Yeah, that's a great point. I think, I think that's exactly right. So if there's a pattern filling the sort of a
+00:19:12
+Discovery of the regularity of a pattern as well where we understand that these are alternating black and white squares, and I'm sure that's also something that comes into it.
+00:19:20
+That's exactly right. That's right. So you're right. So it's, it's not just the shadows, but it's potentially as well the the understanding of this pattern and
+user avatar
+Minyoung Kim
+00:19:30
+I also have a question. I'm leaping learned or is it being already programmed in our brain network.
+user avatar
+Ila Fiete
+00:19:38
+That's another really good question. So what we're gonna do is we're going to go through a series of examples and we're going to see that there's all versions. Their examples where some of these
+00:19:50
+Biases in our interpreting of the world are hardwired and there's some examples where it can be learned. And there's some examples where there's individual variation. There's some examples where it's really something that's common across individuals.
+user avatar
+Minyoung Kim
+00:20:03
+Yeah I sound like last lecture or. I was wondering if like like dream one year old baby. What did what would this be looking like compared to our eyes.
+user avatar
+Ila Fiete
+00:20:14
+That is a fantastic question. And we can't usually ask a three month old baby. If one square looks darker than the other. But there's another
+00:20:21
+Really nice.
+00:20:23
+Experimental
+user avatar
+Ila Fiete
+00:20:25
+System in which you can kind of ask people this question, and this is I'm actually by one of my colleagues Parkinson on the department who works with Project Prakash, and what he does is
+00:20:37
+He does, he collaborates to do corneal operations and children who have, you know, congenital cataract. So they're born with cataracts in their eyes because of
+00:20:48
+Malnutrition and the mother during, during pregnancy. So these children are blind at birth, and they're blind through the early visual development period.
+00:20:58
+Where it would normally visual development, it would normally happen and then at, you know, you're at a young age, like, you know,
+00:21:05
+These children are anywhere between a few years old to teenagers. They do these corneal transplants and they do these cataract surgeries and remove the cataracts and suddenly these children have a vision restored to them and
+00:21:18
+Now on does Professor SNR does these experiments on the children and ask them about, you know, there's their
+00:21:26
+Perceptions like, do they see the same perceptual illusions that others do and thereby he can piece together what aspects of our visual perception are in, you know, sort of,
+00:21:36
+Genetically wired and what aspects are really learned through experience. And there's some really beautiful findings and papers. In fact, I might suggest some of those for some reading that would be really fun to do together so
+user avatar
+Minyoung Kim
+00:21:47
+Can you please share the links for for the References
+user avatar
+Ila Fiete
+00:21:50
+Oh, yeah. So if you look up province enough
+user avatar
+Minyoung Kim
+00:21:53
+Okay, yeah.
+user avatar
+Ila Fiete
+00:21:54
+Province and
+00:21:54
+And yeah, we can we can, of course, share the references as well.
+00:21:58
+But his lab works with. It's called Project Prakash, and he works on these problems of developmental visual neuroscience.
+00:22:09
+OK, so now another okay so here's some other cues that we use to construct three dimensional world understanding so
+00:22:17
+Clearly when we construct an understanding of the world is three dimensional. We use many different views.
+00:22:22
+Views occlusion. The fact that some objects come behind other objects because one is in front of the other. So the sense of occlusion is one way that we get a sense that the world is three dimensional.
+00:22:33
+We use brightness to determine three dimensionality. We use cognitive interpretations. For example, you know, just an estimate of, you know,
+00:22:44
+You know things. Yeah, so that we can like we saw in this other example there's there's many different cognitive sort of interpretations that we can
+00:22:52
+Use to infer depth and then there's a very relatively low level cue that we can use to infer depth, which is scary offsets the fact that if there's something
+00:23:03
+At some that's been our left and right i are offset from one another. So this leads slightly offset versions of the visual world because they're taking snapshots of the visual world from two different angles.
+00:23:14
+And it's, it was showing that Syria opposites alone. So even though the brain uses so many different cues to construct an estimate of a 3D
+00:23:24
+Mental Model even a single one of these cues can actually have a very powerful effect in making us feel like the world is three dimensional. And here's a really
+00:23:34
+interesting example showing that sphere offices alone is enough to produce a strong DEP DEP percent. So this is a stick around them. Steer Graham and this
+00:23:43
+was pioneered by Bella jewelers and Bell Labs. I think in 1960, if I'm not mistaken. Oh 7171. And so, oh, how many of you have done a random notes to your brand before
+00:23:59
+Many of you, but not all, are you kidding. Great. This is your chance. So, this used to be a big thing in the 1980s.
+00:24:06
+They used to be like random Nazi around everywhere you go to restaurants and they used to have them up, it was a it was it was a thing. Okay, so I'm revealing my age there. Okay, so what you can do is if you look at these two squares and kind of kind of find the right distance and
+00:24:25
+Go a little prophesied so that they merged, try, try to bring the two squares on top of each other.
+00:24:35
+You, you might have to do some moving around and Sunday focus thing of your eyes.
+00:24:49
+I don't see it yet.
+00:24:53
+The goal is to ID focus your eyes until the two squares on top of each other and then tell me what you see.
+00:25:13
+Anybody
+user avatar
+Steven Meisler
+00:25:17
+Yeah, I just see a kind of a circle in the middle that appears to be a little darker than the rest of the border.
+user avatar
+Ila Fiete
+00:25:25
+A circle in the middle that appears to be darker than the rest are
+user avatar
+Steven Meisler
+00:25:28
+Darker deeper
+00:25:31
+Yeah.
+user avatar
+Ila Fiete
+00:25:31
+A pop up. Do you see popping out
+user avatar
+Steven Meisler
+00:25:36
+I know I see it more as going into the screen.
+user avatar
+Ila Fiete
+00:25:40
+Okay, yeah, I'm going. Okay.
+00:25:42
+Let me see. I haven't managed to conjure this off and I can't remember this is a
+00:25:45
+Circle or square, okay. But you see a vivid circle.
+user avatar
+Steven Meisler
+00:25:50
+Yeah.
+user avatar
+Ila Fiete
+00:25:51
+In depth.
+00:25:51
+Anybody else see
+user avatar
+Bhav Jain
+00:25:52
+This. So, whenever I like my eyes go cross eyed, I just see four of the squares, instead of just to
+00:26:00
+Is that a common perception.
+user avatar
+Ila Fiete
+00:26:02
+I don't know if that's common um
+00:26:06
+I know that when they get this to work for me.
+00:26:08
+I see a very vivid pop in or pop out of an object in the middle.
+user avatar
+Steven Meisler
+00:26:13
+Oh wait, now I'm getting a rectangle in the middle.
+user avatar
+Ila Fiete
+00:26:16
+It's a rectangle in the middle. That's right. That's what you see, you should see a very vivid
+00:26:20
+Rectangle
+user avatar
+Ila Fiete
+00:26:26
+Well, this can take a while, but it's fun, it's really fun. Once you get it to work. It's amazing. It's incredibly vivid and it just pops out. It's very compelling. So try it.
+00:26:39
+Look at these slides again try to find the right distance from the screen and do it. It's truly, truly compelling. So, um, well we can spend that's been one more minute. Let's see if some more of you can get this
+user avatar
+Adam Joseph Eisen
+00:27:14
+Is this a rectangle that's taller than it is wide sit like a vertical. Has anyone getting that
+user avatar
+Steven Meisler
+00:27:20
+I got it with more horizontal
+user avatar
+Adam Joseph Eisen
+00:27:23
+Okay, perfect, perfect, perfect.
+user avatar
+Ila Fiete
+00:27:27
+Once you see it there will be no doubt in your mind. So I guess that's my, that's the statement like you won't have to ask, is this what I'm seeing. Once you see it, it just pops out
+00:27:43
+Yeah, you know, the doing it the first time is harder than doing it subsequent time so
+00:27:48
+Do it later. But please try, but it's very vivid and yeah there are they can be all scenes like islands and dolphins jumping around, all that stuff. So there. There's all kinds of these funds to your grants. Alright, so, but okay so let's assume
+00:28:05
+You experienced that percent which is please take my word for it. Very vivid and I hope you'll go try to experience it yourself on these slides after the class.
+00:28:13
+Um, so how are they built like the constructions kind of fun. So what you do is you take a square, but just random patterns in it.
+00:28:19
+And then what you do is cut out the centerpiece of the square like this, the actual pattern that centerpiece. And then
+00:28:27
+Cut it out and then shift that square to the left a little bit and then in the blanks area that's left here, you just fill in. Again, some random noise, right, just like the rest of the background.
+00:28:37
+And now, what you do is you go back to the original square and cut out that same second middle square and this time you shifted to the right.
+00:28:44
+And then you fill in the white rectangle on the left with just random noise and now you've got two images with random noise.
+00:28:52
+Both of which share a common background and they both also share a common center square but offset. This one's offset to the left. This one's offset to the right and and
+00:29:03
+When you fuse them together that small offset in this common noise, then it gives you a perception of a common background and a common square and the pop out.
+00:29:15
+So, so the input is constructed exactly according to what a foreground square on a background with similar texture would produce on your two eyes because of this visual disparity right because of the fact that you guys are a little offset from one another.
+00:29:29
+So it's the, it's the, it's basically the generative model that the way to generate this optical illusion is exactly just reproducing the image data that you would have from a real three dimensional textured a black and white square on a textured background that popped out
+00:29:52
+Alright so that was an example where hopefully if you all did it, you would get the same precept and and it's a precept that's engineered to
+00:30:02
+Be consistent with our eyes offset and therefore how we interpret the world. So some of you. It's not that some of you will see in in popping rectangle and others will see an outward coming rectangle, it'll be the same precept
+00:30:17
+Alright, so now here and and and the reason that you all get the same person in that example is because it's engineered to be a forward popping square
+00:30:26
+To coordinate with your left and right eyes. Now, this is another example that that is about depth. But it's an example of depth perception, even when the depth cues are ambiguous. So here the question for you is which. So these are these are semi circular bosses or indentations or
+00:30:50
+Yeah, semi circular shapes on a on a flat surface. And the question is which two are concave in
+user avatar
+Bhav Jain
+00:31:03
+I can see either of, like, it's either the pair on on the left or on the right bag and off, but I can see either as being both out and and if I like to try and visualize it as such.
+user avatar
+Ila Fiete
+00:31:14
+You could, you could see either one. Okay, but what about first. What's your first impression.
+00:31:18
+Anybody what. What would, what is anyone's first impression. Which one would you say
+user avatar
+Joachim J Kennedy
+00:31:24
+To dominate the top right.
+user avatar
+Ila Fiete
+00:31:27
+Top right and bottom left as concave in. Okay, does anybody else agree with that.
+user avatar
+Annika L Heuser
+00:31:33
+Yeah, I do.
+00:31:34
+Me too.
+user avatar
+Ila Fiete
+00:31:37
+So if you have you agree do most of you who didn't say anything actually disagree. Do many of you see the other Perez concave in
+00:31:47
+Or do most of you, firstly, the top right is concave in
+user avatar
+Nicholas J Guiliano
+00:31:53
+I'm like very much by stable in terms of the person. But that's just because I've seen it before.
+user avatar
+Ila Fiete
+00:31:59
+That one before. Okay.
+00:32:00
+All right.
+00:32:02
+Okay, so it's interesting. So now, okay. So it seems like right so the person can be by stable, you can like Ababa Nicholas you both see it both ways, but a number of you said that the top right one in the bottom left, one of the ones that are concave it now.
+00:32:18
+Okay, so, so these cues are consistent with two possibilities. Right. So why is it when, when should it be concave in well it's concave in if we assume that the lights coming from the top right.
+00:32:31
+If the lights coming from the top right then, or just from the top and journalists are not the top right, just from above. Then we expect that the shading where the right one has the top right is concave in
+00:32:45
+But if the lights coming from the bottom. Then it's consistent with the top right being concave out
+00:32:53
+Is so the so so basically the interpretation of the image depends on the assumption about the location of the light source and
+00:33:02
+And so, you know, and there's no other way to decide, without making a specific assumption about the light source.
+00:33:08
+It's it's a precept really ambiguous and get your system makes a firm decision right it chooses one or it uses the other, and then it might switch between them. And there seems to be some bias. Many people
+00:33:22
+Tend to look at this first and imagine that
+00:33:25
+Imagine that the top right one is concave in right the top right right and bottom left. So in other words, as an assumption.
+00:33:34
+Slightly more frequent assumption that the light is coming from the top right and and
+00:33:39
+And so that seems maybe consistent with some kind of a learned prior assumption that light tends to often in our world come from above, because of the side
+00:33:50
+So this is an example of something that's, you know, learned either an evolutionary timescale on or on a developmental timescale that light often comes from above us, but at least it's consistent across people
+00:34:06
+Okay, so another example. So this is an example that's called the color contrast effect in psychology and
+00:34:15
+This is an example where the same colors local pixel colors are interpreted as different based on global context. Okay, so here's an example where there are two
+00:34:24
+Rubik's Cubes one and yellow light and one in blue light. And it turns out that these blue squares in the yellow light are pixel wise identical to the yellow squares in the blue light.
+00:34:37
+Hard to believe
+00:34:39
+I certainly cannot bring myself to believe it unless we did another stripe thing again. Right.
+00:34:48
+It's, it's very, very hard to believe that the that these squares are gray and so are these ones, and it's just interpreted as completely different as blue and yellow. So this is called the color contrast effect.
+00:35:05
+And again, it depends on global context. Here's the opposite version. This is called a color constancy effect here different colors, different pixel level colors are perceived as the same this time based on based on global context. So, here there are
+00:35:24
+These squares are perceived as red as are these right these are all perceived as red. But if we look at them actually locally, only then these are really yellow and these are really purple so yellow and purple our board proceed on read as read based on the overall, you know, global context.
+00:35:45
+So this is called color constancy.
+00:35:48
+And here's yet another example. This is an example now of size perception.
+00:35:55
+And
+00:35:55
+I mean everybody right you see this from the time you're a child and you go to children's museums.
+00:36:00
+And you take a ball and you put it in a image of a hallway or or in the real hallway, you put it nearby and it looks
+00:36:09
+Small and you send it to the back. And it's the same physical size, but it's in the back because of the perspective, it makes it look really big right and so
+00:36:20
+And and and in 2D. It's the exact same size of ball, but it's the 3D context that makes it look different in size smaller or bigger.
+00:36:30
+So now the question is, where what is the neural basis of these perceptions of this perceptual effect, right, like at what what part of the brain do these, you know, higher level contextual three dimensional, you know, sort of,
+00:36:45
+Interpretations the world begin to influence the neural response.
+00:36:51
+To the precept, right, is it at the retinal level, where is it. So this is an interesting study which asked subjects they showed them images of this ball.
+00:37:01
+In this quarter. So, this this subject saw exactly this. And then they were shown a 2D circle on the right side like a 2D disk.
+00:37:09
+And the subjects could move a joystick to adjust the size of this ball over here on the this to the ball this 2D disc.
+00:37:17
+And they were asked to just adjust the size until it match the size of this ball in this image.
+00:37:21
+So they get to do this. And now we can look at the results of what the subjects found. And so when this ball was placed in the front, then the subjects.
+00:37:31
+Chose aside size for the disk which was smaller than if the the this ball was in the back, then the disk that they matched it size to even though they were side by side in the same way was on bigger. Okay, so first of all, they made this and this is, you know,
+00:37:48
+reflecting our perceptual judgment that the ball when it's in the back looks bigger
+00:37:54
+Alright. So now the question is what is where, where do you see this effect first in the neuro level.
+00:38:02
+So this is a brain imaging study. And this is a blown up version of Visual cortex M and what they do now is the duo version of this.
+00:38:14
+Stimulus, which is now stripy like this. So the balls are, you know, these checkered balls. The reason to do this is because
+00:38:22
+The visual system low level visual system V1 respond strongly to these kinds of, you know, high frequencies or checkered stimuli and not to
+00:38:31
+To just single ISO luminance an ISO contrast stimuli. So they use these on slightly modified stimuli and now they're just doing brain imaging
+00:38:41
+In visual cortex, which is over here, primary visual cortex, and then they're looking at increasingly eccentric locations within the visual cortex now visual cortex has a
+00:38:51
+Retinal topic organization. So the more eccentric Lee, you look it corresponds to, you know, the, the image being slightly more off center in the in the in the scene and so
+00:39:03
+You know, this is a ball here centered here and and and so on. So, like the different sizes reflect
+00:39:11
+So these different concentric circles are like different sizes of ball and they're shown over here.
+00:39:16
+This is the kinds of activations you should expect to see in low level visual cortex. If the low level visual cortex things, the ball is bigger than you should see activation all the way out to five and otherwise, you should see activation dominant one, two or three only
+00:39:30
+Okay, so then, so this is the setup and now here's the data. So when they do the experiments. Then they find that the peak of the the peak signal from fMRI as a function of eccentricity is it's the there's a
+00:39:49
+There's a bigger and bigger gap. So let me see here. So the, the, the, it's it's judged as when the, when the ball is judged as perceptual a larger, then you get activation in that MRI signal out to bigger
+00:40:05
+bit farther out in the visual cortex, then when the ball is perpetually judge to be on smaller. Okay, so in other words the the spread of the signal in primary visual cortex is related to the perceptual
+00:40:21
+Effect of the ball looking bigger just based on its location in this 3D hallway.
+00:40:32
+So that, that's striking right it's it's amazing that an area quite as low level in the visual hierarchy is V one is already influenced by these very high level global context cues that alter our perception of size.
+user avatar
+Nicholas J Guiliano
+00:40:48
+Influence on view one most see like, not exactly. It's not exactly inferring anything. It's like feedback from like later and V2 and empty.
+user avatar
+Ila Fiete
+00:40:58
+That's
+00:40:59
+Yes. So that's what's believed. I don't think we exactly know so the way so you can ask, how is it that anyone has these effects. And one of the
+00:41:07
+Right. One of the major models is to say we want to exhibit this effect. And because of
+00:41:12
+Top down signals coming back in. So the idea is that you know we want is doing very low level visual processing.
+00:41:18
+And then it's only as you get further and further up the visual hierarchy.
+00:41:22
+That the other areas, bring in information about context, the bigger spatial context on more abstract things like this is a three dimensional space. I should have a three dimensional interpretation and then the signals that are
+00:41:33
+Computed and interpreted over there, then get fed back to week one, but it's still quite surprising because the question is if it's not needed in V1 and the signal is not competing to be one. Why is it even going to be right.
+00:41:45
+So it just sort of tells you that somehow all this global contextual information processing.
+00:41:50
+Is somehow either distributed across all these areas. It's not just the high level areas, but it's also happening the computation of perceptual global cues is happening.
+00:42:00
+Also at low levels or it's being used in some way at the lower levels as well. Whether it's being computed there or not. So it's rather surprising and it's rather it's rather interesting. It's just interesting that you can localize such keywords as low as we
+user avatar
+Bhav Jain
+00:42:15
+Just have a quick question also like has ever been observed, I guess, has any study also attempted to measure activity in the higher order part of the visual cortex on this exact same like low level. Um, I guess stimulus.
+user avatar
+Ila Fiete
+00:42:33
+Um, yes. I think the answer to that is yes. I don't know if
+00:42:37
+I don't know if
+00:42:38
+This exact experiment has been done and then different areas have been quantified, I would say that the surprise level would be lower. Right. So in a sense, this stimulus is not that low level because
+00:42:48
+It really right to the perceptual effect depends on the fact that there is this, you know, locally. This
+00:42:53
+Brick hallway doesn't look locally this brick hallways very similar looking everywhere, right. It's only the very, it's a very sophisticated right
+00:43:03
+The, the perspective effect that makes the visual system, you know, interpret the ball as bigger when it's when the same size ball as move to the back. So I would say that it's actually
+00:43:13
+It's an effect that the processional effect that relies on this very subtle, you know,
+00:43:18
+Contextual cue this global queue. So I would say that right. I would say that, then if you did the recordings and higher level visual areas.
+00:43:27
+Maybe it would be, you know, more expected that you would see something there.
+00:43:32
+But I guess the surprises that it seemed quite as low as as we want, because you might think that we want. All it does is it just looks at pixels in the retina that are lit up, and then
+00:43:43
+The pixels that are lit up are lit up by the direct stimulus by these white and black checker pattern which take up a certain amount of area on your retina and
+00:43:52
+They take up the same amount of area in a retina, whether you know the stimulus is on the front of the hallway or the back of the hallway and
+00:43:59
+The wind is just pulling that information from the retina. And so really the amount of activation and the locations of the activation should just be correlated with the actual size of the object, not the proceed size of the object.
+user avatar
+Bhav Jain
+00:44:09
+So I think that's the surprise here. Yeah, that makes sense. Thank you.
+user avatar
+Joachim J Kennedy
+00:44:15
+For the question.
+00:44:17
+About the previous slide.
+00:44:20
+Like when
+00:44:23
+I'm
+00:44:25
+Like the ball. The ball in the back of the hallway looks to be like 10 times as big, but it looks like people when people were matching just up
+00:44:34
+They. It was only off by like 95% or
+user avatar
+Ila Fiete
+00:44:38
+That's, that's a really good question. I think that's because
+00:44:42
+I'm right. So, so this is I think if people just verbally said how big they think the ball is so if you put a physical scale bar in the front of the hallway and said, each break is, you know, like
+00:44:54
+10 centimeters or well each break is like 10 inches long.
+00:44:57
+What is the size of the ball in the front and what is the size of that ball in the back, you're right. I think they would report a much bigger difference in size that would say something like, it's, you know, five or 10 times bigger.
+00:45:07
+But here, they're doing something which is much more subtle. And the reason I think is because it's kind of like by by forcing people to adjust this 2D disc and having the disc be so close.
+00:45:18
+To that 3D ball. I think that you're kind of forcing them to think about this as a 2D area. Anyway, like this, the mall. Even though, right. So when when we remove that disk that they have to adjust the size of
+00:45:30
+Then it really looks like something that's 10 times bigger in the back of the hallway. Then in the front of the hallway.
+00:45:34
+But when you put this like 2D disk right side, side by side with it, then it becomes so much easier to compare the size of that circle that that right that circle the disk on the right with the ball on the left.
+00:45:45
+And I think that, you know, you kind of now forcing them to think of this as a duty problem. So it always takes away all the perceptual bias, but some of it still remains. You can think of it that way.
+00:45:58
+Right. It's like the perceptual biases only exists because of the interpretation of this as a 3D world and by forcing a 2D object to compare sizes, you're almost forcing them to go back to thinking about this as
+user avatar
+Joachim J Kennedy
+00:46:09
+I guess certified confused. It's like if I if I imagine myself doing this task, I would try to sort of like
+00:46:16
+Ignore the hallway and just like focus on the today and I
+user avatar
+Ila Fiete
+00:46:19
+Think that's what the people are doing the more or less ignoring it. And then this is the residual bias that our
+00:46:24
+3D system just cannot completely get rid of
+user avatar
+Joachim J Kennedy
+00:46:28
+And
+user avatar
+Ila Fiete
+00:46:29
+That's why it's only a 10 15% effect, rather than being something like a 500% effect.
+user avatar
+Joachim J Kennedy
+00:46:34
+Right, yeah. Exactly right. So,
+user avatar
+Ila Fiete
+00:46:40
+Okay, great questions. Right. So here's another one. Here's another example. So this is the famous and famous can. It's a triangle from
+00:46:51
+A psychologist named cancer. And I think you've all seen this one with these. They're just three circles in this picture with a little just cut out and there's no lines.
+00:47:03
+In between them. But I think you can all see a very vivid pop out triangle that that pops out right it's almost and in fact what's interesting is that if you measure
+00:47:15
+Neurons and be one the neurons that do edge detection neurons and the one that are sensitive to oriented edges actually was receptive fields, a lie.
+00:47:26
+On the invisible contour like on the country that doesn't exist. So
+00:47:30
+You know, there's a neuron, who is receptive field only covers this white area. There's nothing there to see, but the neurons will still fire. It's such a vivid perception.
+00:47:39
+That even low level visual editor detection neurons fire as if they were in it in that space. So it's extremely strong illusion. Once again, it's got a very low level neural correlate
+00:47:50
+In this. Okay. So what's going on here. There's something that our visual system is doing, it's filling in are predicting
+00:47:58
+The existence of a contour. It's sort of like the minimal explanation. How can I explain how these three circles have this wedge taken out of them in this perfect
+00:48:06
+Lee aligned way and the the the minimal or parsimonious explanation for that is that there might be a white triangles sitting on top of on top of all of them.
+00:48:14
+Right. And so, so that's our are filling in or prediction of what weather is in the world. Now it's interesting, I think, to contrast this
+00:48:25
+This stimulus with this one here and the stimulus is just the same exact components, but just rotated right outward. And so I think you're probably none of you seen any
+00:48:38
+Ritual contours. Anyone see any ritual contours.
+00:48:43
+Nobody sees ritual contours and nor do I. But the fact is, in both cases the contours are equally non existent and equally silly to imagine there. It's not like you know
+00:48:56
+It's not like one is, you know, more obviously sensible than the other. In fact, I could certainly draw contours that explain
+00:49:03
+This as well. Right. I could imagine that there's some, you know, contour, that is some object that some concave, right. It's got a hole in it you know with with these things poking out. So certainly, I could form some explanation of the stimulus on the right as well, but I don't
+00:49:21
+So there's certainly some bias that strongly flavors you know parsimony so we have a contract completion.
+00:49:29
+Bias. But the content completion doesn't fill an arbitrary contours. It really is biased towards straight and simple contours.
+00:49:41
+Here's another interesting example of an ambiguous precept, so I'm going to play it and I want you to tell me which way the stripes are moving over here. So which way the stripes moving in the barber in the barbershop.
+00:49:58
+Yeah, Cedric
+user avatar
+Ila Fiete
+00:50:02
+Now you're muted.
+user avatar
+Cedric Honnet
+00:50:04
+Sorry, I was hiding the
+user avatar
+Ila Fiete
+00:50:06
+Oh, you're moving to see if I was being kicked on it.
+00:50:10
+Yeah, yeah, which we just tried to
+user avatar
+Cedric Honnet
+00:50:12
+barber shop thing they're moving right I see green up
+user avatar
+Ila Fiete
+00:50:15
+They're moving up and down. Yeah. OK. So this gave me the way. Right. So, and let's just go back to this. Okay, so what about in the inner circle which we are the the lines moving this way right least they look like they're moving this way to me and
+00:50:30
+And again, if we go back to the horizontal this one, it looks like the moving left and here it looks like they're moving up right and then when the whole thing becomes transparent, we can see all the lines are moving in a coherent way which is diagonally across
+user avatar
+Cedric Honnet
+00:50:44
+And get that this is the famous of the bias. If I may add
+00:50:47
+Zoom is compressing the frame rate, which makes our perception. A bit different to yours. I think
+user avatar
+Ila Fiete
+00:50:54
+Ah, OK. Um hmm. Let's see, how do we fix this. What do you see
+user avatar
+Cedric Honnet
+00:51:00
+I think if I'm not sure who, when you share your screen.
+00:51:05
+Did you select the optimized for video sharing
+00:51:11
+My side I have a lower form right that makes it blink, a little bit.
+00:51:15
+Okay, I'm not sure if anyone has.
+user avatar
+Steven Meisler
+00:51:18
+Any yeah I've got two. Okay.
+user avatar
+Ila Fiete
+00:51:21
+Okay, I'm gonna stop share and here's
+user avatar
+Cedric Honnet
+00:51:23
+The moment.
+user avatar
+Ila Fiete
+00:51:24
+For video clip.
+00:51:25
+Let me. Yeah, okay.
+00:51:28
+All right, let's try that again.
+00:51:33
+Okay.
+00:51:34
+Which does that help
+user avatar
+Adam Joseph Eisen
+00:51:36
+Mood admits I just sent a link to it in the chat.
+00:51:41
+I think it's the same video
+user avatar
+Ila Fiete
+00:51:43
+Oh, good. Okay, so maybe you can all pull it
+user avatar
+Adam Joseph Eisen
+00:51:44
+Up.
+user avatar
+Ila Fiete
+00:51:45
+And look at it for a moment.
+user avatar
+Cedric Honnet
+00:52:17
+Very different.
+user avatar
+Ila Fiete
+00:52:18
+You guys see it. And then ask yourself which way the stripes are moving on the oval, which we are they moving on the left arm of the L and which we are they moving on the on the vertical part of the aisle.
+00:52:29
+And then look at the end of the video where they show the actual movement of the stripes.
+user avatar
+Cedric Honnet
+00:52:44
+But can we see once we know the with the transparency.
+user avatar
+Ila Fiete
+00:52:49
+You
+00:52:53
+Think
+user avatar
+Ila Fiete
+00:52:55
+It's a good question.
+00:52:57
+I mean, in the in the barbershop.
+00:53:00
+Thing. It always looks like it's going up right and it has to because, I mean, this is the famous aperture effect where you know you can only tell motion orthogonal to
+00:53:09
+To the right. So it's, it's, it's, you can only see emotion in a long oriented object with these if it's an aperture. Then you only see orthogonal motion. You don't see motion along the direction of the stripes, right, because you can't the stripes are
+00:53:27
+You know, it doesn't change. Right. So you have to just take away the component of motion parallel to the stripes and only the component of the motion orthogonal to the stripes is what you see now the interesting thing is that one. Let's the
+00:53:43
+The shape of the contour is determine our interpretation of motion. So if it's a long tall object we interpret that as upward motion.
+00:53:54
+If it's a horizontal object be interpreted as leftward motion. And if it's an oval object be interpreted as diagonal motion along the you know the the long axis, the diagonal axis. Sorry. So it's dying emotions right along the ellipse. Right.
+00:54:11
+Yeah, maybe it is hard to unseat it, I kind of agree with you there.
+user avatar
+Nicholas J Guiliano
+00:54:15
+Okay counterpoint to the unseen bit is there. Um, I think, was the diamond aperture.
+00:54:21
+Stimulus. Um, it's pretty much necessary to have the aperture on top of it and it's like pretty much impossible to see without it. And I think that that was the point of that study as well to see the kind of like return to baseline without the aperture.
+user avatar
+Ila Fiete
+00:54:37
+Ah, yes.
+00:54:40
+Oh yeah, do you have an example of the, do you have an example of the diamond one
+user avatar
+Nicholas J Guiliano
+00:54:44
+I'll find the link and I will be great. Yeah.
+user avatar
+Ila Fiete
+00:54:47
+That would be great.
+00:54:50
+So here's one more here is a motion perception. This is emotion effect. And so, um, this is called the key to our QA snake.
+00:55:02
+And I think what what do you guys see what's different left versus right
+user avatar
+Bhav Jain
+00:55:11
+Like, look.
+00:55:13
+On like just off of the left image like I'm gonna actually staring at it, but I'm like looking off on the side that it's
+00:55:21
+A process of is moving.
+00:55:22
+Yes.
+user avatar
+Ila Fiete
+00:55:24
+And then one in the right
+user avatar
+Bhav Jain
+00:55:26
+That's not moving. Yeah, but so if I steer right at the picture on the left.
+00:55:32
+Yeah.
+user avatar
+Bhav Jain
+00:55:34
+Hang on, I'm just trying to find your faces here.
+00:55:45
+I think if you click short video panel, it'll work.
+00:55:48
+On more
+00:55:50
+On more okay and you click Show video panel, then you should be able to see our faces.
+00:55:57
+Its bottom. Yeah, show video pedal.
+user avatar
+Ila Fiete
+00:56:01
+Oh, show me your panel. I see.
+user avatar
+Bhav Jain
+00:56:02
+Yeah, and then you should be able to see it. Great, great, great. Yeah, thanks.
+user avatar
+Ila Fiete
+00:56:07
+Yeah so. Okay, fantastic. So here you can see again.
+user avatar
+Steven Meisler
+00:56:11
+Now the the video, they're blocking the slide.
+user avatar
+Ila Fiete
+00:56:13
+Oh, okay. Oh, so you guys get blocked by the screen to I thought it's just me. I thought it just all
+00:56:19
+Right, I thought
+user avatar
+Bhav Jain
+00:56:20
+It is only you. But that's only if you share the the like slides only, but I think you've shared the
+user avatar
+Ila Fiete
+00:56:26
+share my desktop. Yeah.
+00:56:28
+Okay, that's what it is.
+00:56:32
+So I'm gonna, I'm going to just stop the share so I can only share my
+user avatar
+Steven Meisler
+00:56:35
+Slide so that you don't have this issue blocking your view.
+user avatar
+Ila Fiete
+00:56:39
+Okay, so, um, so this is just a multi version of the same thing.
+00:56:45
+Yeah, this is a multi version. Okay, so now you don't see the videos right
+00:56:49
+Correct. Okay, good. So this is a multi version of the same thing. You can see the movement on the left and not on the right. And so right.
+00:56:56
+Alert.
+user avatar
+Ila Fiete
+00:56:58
+Go ahead.
+user avatar
+Tho Tran
+00:57:00
+Oh no, it's a bit blurry. It was the slices bit blurry but I think it's better now.
+user avatar
+Ila Fiete
+00:57:04
+You still get the effect
+user avatar
+Cedric Honnet
+00:57:09
+Is bit on the, on the left.
+user avatar
+Ila Fiete
+00:57:10
+On the internet. Yeah, perfect.
+00:57:13
+So, um, so, now why is it that we see you lose your emotion from still images that theory is that, um, it's a construction of a seamless version of the world so
+00:57:22
+We know that we we exploit the fact that our brain constructs smooth motion from images in in movie making. So
+00:57:33
+Images are flashed with intervals of less than 20 milliseconds, then they're perceived as those two images are perceived as simultaneous we cannot distinguish, you know, a difference in the timing. If it's less than 20 milliseconds. If the two images are flashed
+00:57:50
+With a bigger than 40 hundred 52nd millisecond latency is perceived as sequential but static images. So there's like a magic into in the middle.
+00:57:58
+Between 20 milliseconds and 400,000,450 milliseconds, where you perceive the images of sequential and, moreover, not a static images, but as like motion. Okay, so this is
+00:58:09
+Was discovered by Wertheimer in the early 1900s and so movies have a frame rate of 24 Hertz, which is about 43 milliseconds per image. So it's, you know, pretty close to the simultaneous
+00:58:20
+Edge of things and the old movies like Charlie Chaplin movies right back in the day were filmed at a lower frequencies of 16 to 18 hurts. And then they were filming 16 to 18 hurts to
+00:58:33
+To, you know, to, to say a VA, I guess, well I guess these words, I can crank. Right. So somehow, I don't know what the constraint was and why
+00:58:41
+It was 16 to 18 hurts, whether it was like the cost of the film or whether it was the hand cranking and you couldn't do a different speed easily
+00:58:48
+But then they were projected for continuity. They had to be projected a little higher, right. So they have to be projected close to 24 hurts. So there were projected at 2224 hurts. And so then it looks better up and that's why the motion looks really funny in those movies.
+00:59:03
+And but if you do the right if you do play back at the same 16 to 18 hurts speed as as the filming. Then there's just too much flicker. It just looks like just still images and so
+00:59:15
+So, and then the solution was that to reduce flicker each image is showing two or three times. So you just show two or three images of the same image and then two or three
+00:59:25
+copies of the same image again. And so that's that's the trick that's still used. Um, and so, you know, the in movies, the same images is repeated.
+00:59:36
+And then it's only when you know so when audio was introduced into movies so went from like movies to talkies. Then you have to standardize the frame rate because you have to
+00:59:48
+You know synchronize the audio with the video and also because the year is very, very temporarily sensitive and it's very sensitive to small frequency changes. So you can't speed up the audio because then voices sound funny right without some technology so
+01:00:04
+Anyway, so that's what it is and slow motion is filming in 120 hertz and then playback at 24 so it's, you know, like, you know, six times, slow down.
+01:00:14
+And now it's possible actually MIT media lab has some nice video where you can watch a propagating light front because they film at tend to the nine Hertz. So it's cool. So if you want to go check out that video, you can find
+01:00:29
+All right, so, and then there's, um, there's one more illusion, which I'm not going to go into right now in in class, but I have a link here for it for you to look at and this flash lag effect is something that is
+01:00:44
+Illustrates how the brain tends to do predictive coding. So if there is a continuous
+01:00:52
+You know, well maybe I should just show it to you because why not. Okay. Let me show it because I actually want to make a point related to this. So let's do this.
+01:01:00
+Let's go to. I'm gonna have to stop my screen share and show you again. Or maybe you can all navigate. Can you all, navigate to that location or would you like me to just show it.
+01:01:12
+I'll just show it.
+user avatar
+Cedric Honnet
+01:01:13
+You can also paste the link in the chat.
+user avatar
+Ila Fiete
+01:01:22
+Let me
+01:01:34
+Why is it not even pulling up the site. Just a moment.
+user avatar
+Tho Tran
+01:01:40
+You can also post that link in the group chat.
+user avatar
+Ila Fiete
+01:01:43
+Yeah, I'm just about to do that. I just wasn't even letting
+01:01:47
+Copy, paste or pull up the site.
+01:01:49
+Okay, here we go, chat and
+01:02:07
+Here we go. Okay. So have a look at this.
+01:02:30
+So what you're seeing is you're seeing a dial that's rotating like a needle that's rotating and then you're seeing a second needle that flashes once in a while, and are they lined up with each other.
+01:02:40
+Or is one lagging the other
+user avatar
+Liane Z Xu
+01:02:45
+One likes the other
+user avatar
+Ila Fiete
+01:02:47
+Yeah, and which one likes the other
+user avatar
+Liane Z Xu
+01:02:50
+Flashing one
+user avatar
+Ila Fiete
+01:02:51
+The flashing one is lagging the smoothly moving one
+01:02:54
+That's right. So in reality.
+01:02:57
+Those two are actually completely aligned the flash comes on the flash line is completely aligned with the with this movie moving line.
+01:03:08
+But it appears to lag it
+user avatar
+Cedric Honnet
+01:03:09
+I think there's a technique as a glimpse of so maybe in some other people this this double
+01:03:17
+Effect depending on graphic cards that creates this weird kit, maybe some other people have that
+user avatar
+Ila Fiete
+01:03:24
+Are you looking directly in your, in your own browser.
+01:03:28
+Yeah.
+user avatar
+Cedric Honnet
+01:03:29
+And I think it's probably because my computer has been
+01:03:35
+With my blinking needle is sometimes speaking to process.
+user avatar
+Ila Fiete
+01:03:41
+Your blinking. One is split into two parts. Yeah, I see.
+user avatar
+Cedric Honnet
+01:03:47
+One.
+user avatar
+Ila Fiete
+01:03:50
+So what's going on here.
+01:03:52
+So the visual system has a delay in visual processing. Right. So if an image comes on, it takes some time for the image to be processed.
+01:04:03
+And so this latency causes some delayed processing of the flashed on bar right so the flash john bar is only perceived shortly after it actually appears
+01:04:15
+Now the moving bar. Why isn't that true the moving bar right so the same. So the latency visual latency also applies to moving bars, but because it smoothly moving
+01:04:27
+Our I our brain can interpolate and and place the bar in the visual system it as it's currently at its current correct location, just by prediction.
+01:04:40
+Right, because as a smooth motion and it's possible to actually predict its location. So this is why in the flashlight effect the flash bar looks like it's behind
+01:04:48
+The moving bar, even though they're actually aligned with each other.
+01:04:51
+So it just illustrates the difference that means smooth motion on which we can do prediction and therefore infer the correct location of the bar versus flash motion which is subject to the delay because there's no way to predict
+01:05:04
+The location of a just instantly flash object. So, so that's the flash lag effect. So the idea is that some of those motion effects. Maybe because of
+01:05:14
+These motion effects may be happening because of our visual system trying to predict motion, even when
+01:05:24
+There isn't any. So that's kind of the idea. So the emotion. There are two explanations for the flash lag effect. One is
+01:05:30
+Prediction, which is compensation of slow visual processing by predicting where the continuously moving line will be and the flash stimulus cannot be some really predicted and so lags behind
+01:05:39
+And the other explanation is that is filtering, which is that given that evidence is noisy, it needs to be integrated in time to obtain some measure of certainty and so filtering the moving stimulus and time causes it to be causes it to be.
+01:05:54
+So I can have to move my video screen here. So it needs to be integrated for sometimes the filtering the moving stimulus causes the estimate of its position to be
+01:06:04
+further ahead than it was at the time of the flash. So that's the these are the two explanations. I'm not sure how completely um
+01:06:12
+I don't know. I don't know that it's a dichotomy. It's not clear to me that filtering is inconsistent with prediction. But prediction is, you know, certainly one hypothesis out there.
+01:06:22
+So now, in fact, what's really interesting is, you know, how can one
+01:06:25
+You know, say something about whether indeed. So these are post hoc explanations for why it is that we have a flashlight effect.
+01:06:33
+So what's really interesting is if these you know if prediction is so important. You know, for the visual system then and prediction is what explains this up this this motion illusion.
+01:06:43
+Then we should be able to then neural networks trained to do prediction should also be subject to these illusions. So neural networks trained to do prediction should also be fooled by these stimuli.
+01:06:55
+So are they so that's that's a very interesting question. And so here it is. So these biases are important for perception. How many of these illusionary effects do motion machine learning techniques exhibit right so deep neural networks.
+01:07:08
+Turns out not that many deep neural networks exhibit a susceptibility to these effects to these visual effects that we've discussed and even just let me just restrict us off to the topic of
+01:07:21
+These motion effects. Then there's a neural network that was trained to do prediction. So here's the link to the paper illusionary emotion reproduced by deep networks train for prediction.
+01:07:32
+And this is a nice paper so they train the networks to predict based on video data to predict what's going to be in the next scene in the next in the next
+01:07:42
+Image in the video and those networks. Then when they're presented with this snake effect the kiddo guy snake.
+01:07:53
+These metrics predict emotion for the kid oka snake effect that is consistent with the loser emotion gets the right direction gets about the right magnitude
+01:08:03
+Now the, the other stimulus which looks similar superficially to the key to oka
+01:08:09
+Stimulus, but was a control for and doesn't show emotion. Emotion percent also for the neural network did not exhibit emotion precept, so that was a very neat record.
+01:08:19
+Finding. Now what about flash lag effect. I have not found literature, where deep networks trained to predict are subject to the flash lag effect.
+01:08:29
+And I also don't know how much of the literature on all of these other visual effects that we've talked about in this class. How much deep neural networks that are trained to do machine intelligence. How many of them exhibits those various effects. I would guess, not very many. So
+user avatar
+Steven Meisler
+01:08:46
+Do you think that um
+01:08:47
+Do you think that if the rotating line was moving randomly that we would then do the flash side effects if prediction is an important part in this.
+user avatar
+Ila Fiete
+01:09:00
+Right, that's exactly that would be a prediction. But then if it's moving randomly, then there's no notion of continuity. So I guess, then the question is how would one right so there isn't there wouldn't be anything that would be smoothly moving then at all or
+user avatar
+Steven Meisler
+01:09:17
+Like a random step as opposed to like a random placement
+user avatar
+Ila Fiete
+01:09:22
+Oh,
+01:09:24
+Random step in its angle right so I'm jumping example which is a discrete random job.
+01:09:31
+Well, it's
+user avatar
+Steven Meisler
+01:09:32
+So it's just a step by like one unit. It's not going to like flip from left to right randomly, but it would
+01:09:41
+move smoothly. It just wouldn't necessarily have a set direction.
+01:09:46
+That makes sense.
+user avatar
+Ila Fiete
+01:09:49
+Oh, okay, my smoothie. You mean it's not moving the same direction. So I can move one step left or one step right but
+01:09:55
+It was left to right, that's drawn randomly.
+user avatar
+Steven Meisler
+01:09:58
+Yes.
+user avatar
+Ila Fiete
+01:09:58
+But the amount of increment is is the same amount of increment as this movie rotating bar.
+user avatar
+Steven Meisler
+01:10:04
+Yeah.
+user avatar
+Ila Fiete
+01:10:04
+That's how you would want to set it up, um,
+01:10:08
+That's okay, but I'm not sure that just two frames is enough to then give us a sense of career in motion. Right, so I
+01:10:18
+Think probably it's true that you would not see a flashlight effect there, but I think you wouldn't see there just because the
+01:10:24
+The what we're calling smoothly. But randomly moving is not really smooth enough to really be smooth for our visual system. So my my expectation there would be that
+01:10:34
+If it's just doing random direction movement, then it's not smooth enough for the visual system to really predict and exactly, then you should expect it to break down. Got it. Yeah.
+user avatar
+Bhav Jain
+01:10:44
+Question. Oh, sorry, going
+user avatar
+Cedric Honnet
+01:10:46
+Going, going on.
+user avatar
+Bhav Jain
+01:10:47
+Oh, I was just gonna ask if you could explain the filtering hypothesis. Again, I'm not sure I completely understood that.
+user avatar
+Ila Fiete
+01:10:53
+Oh, it's the filtering hypothesis is talking about noise. So it's just saying that if we have and if we have evidence. So like
+01:11:02
+Under the assumption that even the moving bar is noisy, it needs to be integrated over time. Right, so, so in order to in order to estimate, you know, even its current position, you need to integrate over time.
+01:11:15
+You know all the data that you've had over you know over some window in time.
+01:11:20
+But in that case, you know, filtering the moving stimulus in time. If you ever just filtering like averaging over the past, then you would think that it would put the moving bar behind the flash bar right so um so
+01:11:35
+Filtering in terms of like past filtering like averaging from the, from the past.
+01:11:40
+doesn't explain the flashlight effect. It will give you something in the opposite direction. So now they're saying instead filtering the moving stimulus forward in time. So what you're doing is your estimate of the present I'm
+01:11:52
+Bar orientation depends on the present orientation and some future ones.
+01:11:57
+So that's like a forward filtering. But that's very similar to prediction. So that's what I was saying, I don't know that filtering is
+01:12:03
+In forward filtering is not that different from prediction. Because the only way that you can do forward filtering is by predicting to the future and then averaging
+01:12:12
+So forward filtering is just averaging over over the future, but you can only average over the future if you've predicted what the States or in the future. So I'm not sure that I see these as really exclusive. I think that the forward filtering is an example prediction. That's, yeah.
+user avatar
+Tomasz B Mloduchowski
+01:12:28
+So I was actually wondering here if maybe we were looking at the reverse filtering of the flashing bar. So instead of in a way to reconcile those two options, is that
+01:12:39
+We assume that the flashing bar is somewhere but it because we didn't have so many friends in between we start to assume that has been actually averaged out between the current location and the previous location which would have been at a different a different angle.
+user avatar
+Ila Fiete
+01:12:57
+Ah, but the flash bar you see jumps right because the flash bar is the previous location is nowhere close because they're only flashing the bar on like, I don't know, three or four times in the whole revolution. Right.
+01:13:08
+And so it's unlikely that it's really averaging this thing that came so far before and and if it did, like, you know, you could then then the prediction would be
+01:13:20
+If the flash bars being averaged over previous presentations of the flash bar, then the location and the perceived location of the flash bar should depend on how frequently you flash the bar.
+01:13:30
+In the past, and I think it doesn't depend on that.
+01:13:34
+So I think it's better predicted by this latency effect, which is how much latency. There isn't just the visual processing of the visual pathway forward.
+01:13:41
+Versus like forward prediction of the of the smoothly moving bar, but that's that's a good hypothesis. It just so happens that that depends on certain things which you can then test and rollout so
+user avatar
+Cedric Honnet
+01:13:55
+I have a good question.
+01:13:56
+Yeah, I would have to read the paper, but I was trying to understand how did these people
+01:14:04
+Create this
+01:14:07
+This prediction because you need a model of how we our brain is doing this prediction and unless you ask questions or good probes in the brain. I don't really understand how you can
+01:14:21
+How can you create this model.
+user avatar
+Ila Fiete
+01:14:23
+Are you asking about the deep learning model. Yeah.
+01:14:26
+Oh yeah, I can explain that a little bit. So the deep learning model is built by
+01:14:30
+Just I'm training.
+user avatar
+Cedric Honnet
+01:14:31
+A network.
+user avatar
+Ila Fiete
+01:14:31
+So you take a neural network and you train it on movie data sets. So you just give it sequentially, the frames of a movie. And then the task of the neural network is to is to given a frame of the movie to construct the next frame of the movie.
+01:14:48
+So it's a prediction task. Right. So you can just train the neural network on a prediction task and the statement is that a neural network train on a movie frame by frame prediction task.
+01:14:57
+Is now susceptible to so now you give it the still image and you ask it, then it will predict the next image right
+user avatar
+Cedric Honnet
+01:15:05
+That looks like.
+user avatar
+Ila Fiete
+01:15:06
+A shifted version of that image but if but for the other stimulus, the non snake control stimulus. It does not predict a movement of the stimulus.
+01:15:16
+So it's really fascinating.
+01:15:18
+Oh,
+user avatar
+Cedric Honnet
+01:15:19
+It's just to confirm. So everything that is Finn can predict wedding of what is happening in our brain when we see this illusion that is moving on.
+user avatar
+Ila Fiete
+01:15:31
+To get training a deep neural network to predict the next frame of a video.
+01:15:36
+Will also predict a moved version of that stimulus, like our brain perceives as
+01:15:43
+We do.
+user avatar
+Cedric Honnet
+01:15:45
+It looks like I was not the only one. But I only see this with movement when I'm not looking at it. So I felt like there was something is happening.
+user avatar
+Ila Fiete
+01:15:53
+Right.
+01:15:54
+That's a good question. So you're saying, how do you explain the phobia ation effect, right, the fact that if you look directly at it with our phobias, you don't see the motion. Whereas, if you look at it off for real.
+01:16:05
+You know off at some angle then you do see the effect. I think I may have to do something with the spatial frequencies. I'm not an expert in this.
+01:16:12
+visual system is not something that I have looked at carefully and this particular illusion in detail what the theory is behind it. It could just be something like that, right, because we know that, you know,
+01:16:22
+A on phobia we do a lot of very high resolution high, you know, high spatial frequency discrimination and off center. We do a lot of motion estimation and lower spatial frequency stuff so
+01:16:37
+That, you know, it's just because most of our, you know, our center acute, you know, our high acuity vision is really not for motion detection. It really is for like find discrimination and off to the side eccentric
+user avatar
+Cedric Honnet
+01:16:48
+So this word that could have some kind of low pass filter to replicate what's happening on our person.
+user avatar
+Ila Fiete
+01:16:53
+Usually. Yeah, it's a good question. I don't know exactly like what you would change in the model to get like the full creation effect. And if you had a very high resolution, you know, neurons visual resolution neurons in the model, whether it would lose this effect. Good question.
+user avatar
+Minyoung Kim
+01:17:08
+THANK YOU, JOHN I also have a question, like you mentioned about in the testing time you push the steel images to the network, right.
+user avatar
+Ila Fiete
+01:17:16
+One.
+user avatar
+Minyoung Kim
+01:17:16
+Must be the series of the frames so like a recurrent network type of neural net howdy have passed us still images just copy the still this image of like specific friends over entire sequences is that it
+user avatar
+Ila Fiete
+01:17:32
+I think that there. It's just next frame prediction. So these are these are models that don't predict, you know, overlong theories. Right. So it's just given a frame. They just have to predict the next frame.
+01:17:41
+So I don't think that these are long term memory models that you have, you know, 10 frames to predict predict the next frame, I believe.
+01:17:48
+So yeah, it's literally just, you know, given a single frame. What's the next frame, though, although that's tough. Right. Because then you can't do the motion. That's a good question.
+user avatar
+Minyoung Kim
+01:17:57
+That's why. That's what I was thinking.
+user avatar
+Ila Fiete
+01:17:59
+I would have to look at the paper, but for the details on that.
+01:18:02
+But it's a good question.
+01:18:05
+Okay so individual variations and biases.
+01:18:08
+Okay. So we had this question of, right, there's a lot of high level contextual biases that we bring into our interpretation of the world.
+01:18:15
+And but all of those have been largely consistent across individuals and the examples I've shown you, if something is, you know,
+01:18:22
+A certain size at the far end of the hallway it look like it's bigger than when it's close by, etc. Now I'm
+01:18:30
+Of course, their individual variations and bias in bias. This is the famous dress that blew up the internet. What is it, how many years ago now. Is this how many of you have seen this dress.
+01:18:41
+How many of you have not seen the dresser. That's easy question to ask.
+01:18:45
+Okay. So most of you seen the dress. All right, so, so, okay, white and gold. How many white and gold.
+01:18:54
+My God, the minority black and blue.
+01:19:00
+What
+user avatar
+Cedric Honnet
+01:19:01
+Actually, I would normally say waiting. Good. But my current screen has
+01:19:07
+hot coffee. And I think it's affecting my judgment right now.
+user avatar
+Ila Fiete
+01:19:11
+You guys are crazy the guise of you, those of you who see the, the black and blue. I just, I don't get it. And my kids see black and blue. And I just don't get it. I just don't get it.
+01:19:19
+Anyway, the point is that this is a clear wonderful example of high ambiguous highly ambiguous stimuli, which are very individual interpretations. And of course, there's a Bayesian explanation for this, which is that
+01:19:36
+Okay, so. So first of all, here's the original image. Here it is. And then if you just if you just overexpose the image and make everything brighter.
+01:19:46
+Then and and increase the contrast, but also make everything much brighter than it looks. Clearly, white and gold. If everything is made darker then um you get
+01:20:00
+But, but the Congress has again increased and it looks clearly even I can see blue and black.
+01:20:06
+And so okay and but the basic interpretation is that, you know, if you look at this dress.
+01:20:12
+When your interpretation of its color depends on you know what your interpretation as of the light source of striking the dress. So if you think that the light is
+01:20:19
+A warm color like warm bright yellow light, then you interpret the yellow tones on the stress as being due to the light and the dress itself as being blue and black.
+01:20:30
+Whereas if you interpret the illumination as being like a cool bluish color then you interpret any blue shades on the dress as being from the illumination and the dress itself as being white and gold.
+01:20:41
+And this is what's going on here like, you know, there's a part of this image where it looks like the light could be a bit bluish
+01:20:46
+And then if you focus on those, you might think of the dresses white and gold. But if you focus on some of these warmer parts of the image here and over here, then you would interpret
+01:20:56
+That the dresses being blue and black. What's interesting though, isn't this one. It's not that easy to flip this is not an example where you can add will flip the precept, at least, most people can, I think, a very small minority of people can put the percent
+01:21:11
+I cannot. To me, the stress will always be white and gold. So
+user avatar
+Nicholas J Guiliano
+01:21:17
+There's an interesting study that was done that showed that the ability to view it as either white or gold or blue and black was kind of correlated with if you were an idol or an early bird due to biases and receiving artificial or natural lighting.
+user avatar
+Ila Fiete
+01:21:33
+Interesting.
+user avatar
+Nicholas J Guiliano
+01:21:34
+People who like set up late or more exposed artificial lighting and therefore more likely to see it.
+user avatar
+Ila Fiete
+01:21:40
+As white and gold.
+01:21:41
+Yeah. Hmm.
+user avatar
+Cedric Honnet
+01:21:44
+I'm not sure if that continues, but I watch this exact thing. Two days ago and I was really sweet whiting good and now I see blue and black.
+user avatar
+Ila Fiete
+01:21:53
+And I see your perception. Your perception flipped.
+01:21:56
+I don't know that many people who can fly.
+user avatar
+Cedric Honnet
+01:21:58
+Away. I wonder if it's because of my lighting right now because of I became a gnarly bird. I like that. Yeah.
+user avatar
+Ila Fiete
+01:22:07
+So right so
+01:22:09
+Now,
+user avatar
+Ila Fiete
+01:22:14
+So these are all you know I think shed light on the fact that internal biases and external contacts.
+01:22:23
+Affect our perception very strongly. Um, and some of these local effects of like color constancy. And it's very
+01:22:30
+Very commonly seen example this Rubik's Cube example where two different pixel colors are interpreted as the same color right so the color constancy effect.
+01:22:40
+Um it, but many of the same mechanisms, right, like the sort of the low level idea is that there are these two things that are, you know, different on a pixel level but on a high level, really, you know, our interpret is the same and
+01:22:56
+You know, one wonders of similar mechanisms are at play in the construction of abstract concepts. So this is an example from high in the visual system. This is
+01:23:04
+A cell in the hippocampus, the MTL medial temporal lobe from a very famous experiment by it's like fried. And so this, this is a neuron at the bottom you see the firing.
+01:23:16
+Spike roster of a neuron over here in blue and in red. It's a histogram of it's firing rate as a function of time during the presentation of this image and so
+01:23:25
+Humans are putting into fMRI scanners and then showing different images and then their neural
+01:23:31
+I'm sorry, this is not a this is actually a unit recording, so this is human brain surgery. Patients that have single unit recordings
+01:23:39
+While they're being shown these images. So these are usually patients that are you know in surgery for epilepsy and so they have a recording electrode, you know, pre surgically.
+01:23:48
+Implanted so that you can, you know, sort of see what's going on.
+01:23:52
+In the epilepsy, but at the same time, it gives an opportunity to do some neuroscience and record some of these neurons. So, um,
+01:23:58
+So this is an example of one particular neuron being recorded on a while all of these different images are shown to the subject. So these are just images of different celebrities. I'm sorry that this is very grainy.
+01:24:10
+But these are just images of various different celebrities animals places over here and here are multiple different views of
+01:24:19
+The actress Jennifer Aniston. And you can see that on the pixel level. These images are extremely different from one another as different from one another.
+01:24:27
+As any of these images is from any of these other images that were here. But nevertheless, this is a cell, it fires strongly in response to
+01:24:35
+All the images of Jennifer Aniston and weekly to anything else. In fact, almost not at all to any of the other faces. So this is like that the kind of cell that's now called grandmother cell and these neurons.
+01:24:49
+Have this very high specificity to particular individuals. Okay, in this area.
+01:24:55
+Um, but at the same time, they have a lot of so that they're very highly tuned the very specific to an individual, but the same time they're very invariant
+01:25:03
+To different renditions of the individual right different poses different, you know, clothing, different things. In fact, even more remarkable in the same study they found another cell Halle Berry cell where the cell know responds
+01:25:15
+Very strongly to different images of Halle Berry and not just photos of Halle Berry, but also drawing some Halle Berry.
+01:25:22
+Halle Berry, even with most of her face obscured in the role of Catwoman. Right. So here it's not a visual recognition thing. It's really more of a
+01:25:30
+Cognitive recognition that this is the movie Catwoman and the primary character, the actress in that movie is Halle Berry and even more strikingly in response to text that spells out the word Halle Berry, the words Halle Berry, um,
+01:25:44
+And and not to text that spells out Kobe Bryant or shows any of the other faces. This is truly striking. Right. So these are cells that are both highly specific yet highly invariant
+01:25:59
+So I want to sort of stop there for the moment and and just say that, you know, what's our summary here is our hopes our summary here is, hang on. Sorry, just need to share my screen again so
+01:26:16
+I guess the summary is, I was just trying to reach for some examples of, you know, what could be called cognition.
+01:26:25
+And I took a very you know what we think of as, you know, low level sensory system and and a lot of tasks that are very low level sensory processing guys like
+01:26:33
+You know, what is the size of this object, you know how, what is the color of this pixel. What is the brightness of this pixel and even at those very, you know, low level seeming tasks.
+01:26:45
+There is a melding of information from, you know, all kinds of processing.
+01:26:52
+Including a construction of the 3D world learned experience internal biases and I think, arguably, all of those are instances of cognitive processes in our perception.
+01:27:04
+So maybe as a working definition, we could say what is cognition. Maybe it's processing that combined sensory evidence with internal states.
+01:27:13
+To produce decisions judgments precepts and these internal states can take the form of priming memory evolutionary biases shared across individuals individual biases, etc.
+01:27:24
+And the other thing other piece of what construction of cognition may be is the construction of abstract representations and interpretations of the world.
+01:27:35
+And of course this definition these definitions of cognition include things like language and reasoning and all these higher mental faculties.
+01:27:41
+That you know we can clearly point to as cognitive humans, but I think also the these definitions encompass much much more basic phenomenon like
+01:27:50
+Memory memory is something that combines external information right that is putting into memory.
+01:27:57
+And then internal states which are responsible for propagating that memory forward in time, even when the sensory cues removed. So even very basic things like low level memory can buy these definitions, maybe be called cognitive
+01:28:16
+So I want to stop there, take any questions, and then we'll start talking about single neuron models in the next class.
+user avatar
+Bhav Jain
+01:28:29
+So would you say that even internal states are are like, I guess encoded by some form of like neural activity like in the sense are for instance instincts encoded by neural activity also
+user avatar
+Ila Fiete
+01:28:45
+I think that's a tough question. I think that um yeah I think that's a very good and a very hard question. So the fundamental hypothesis of neuroscience is that
+01:28:56
+Learning and Memory are encoded in synaptic weights and connections.
+01:29:01
+And that and therefore, you know, it's a. But then at the same time, we know that there are neural correlates for memory. So for instance, if you show me an image, take it away and asked me later to recall that image or, you know,
+01:29:16
+Do a task that involves, you know, recalling some something about the properties of an image, then it's clear that there is persistent neural activity that exists in my brain.
+01:29:28
+During the delay period, the period between which you presented the stimulus to me and later when I have to report about the stimulus.
+01:29:33
+There is elevated neural activity which has specificity that's specific to some features of what was shown to me so I you know you can show me bars of a certain orientation and later asked me to match.
+01:29:44
+The orientation of a new bar to the bar that was presented to me, and there is stimulus specific or angle specific neural activity that persists over that delay period. And so it's clear there that memory is
+01:29:56
+Is being at least expressed in the form of neural activity, but whether the memory is stored as an activity or that store to some synaptic weight changes.
+01:30:07
+And whether that's going to be different for short term memory versus long term memory and long term memories preferentially
+01:30:14
+Stored as weight changes and short term memories preferentially stored as neural activity that's the working hypothesis, but I think that's still one of the grand questions in neuroscience that has to be definitively addressed.
+user avatar
+Bhav Jain
+01:30:26
+Yeah, so like I guess I'm specifically curious on, like, for instance, like you mentioned, these like
+01:30:32
+Evolutionary biases so so instincts, which are not ever actually learned by us book like almost come like pre packaged in every human being are those also likely to be encoded by synaptic weights and connections are those some other type of encoding.
+user avatar
+Ila Fiete
+01:30:49
+So that is a great question. I hope that like in the form of very simple circuit models, we could you know address some of those questions, but I think the answer. I don't know the answer to that. I would guess that
+01:31:01
+You know, these evolutionary biases are present in instructors and weights of neural circuits.
+01:31:09
+So, you know, neural circuits are predisposed to represent information certain ways they impose certain constraints in in how we represent information and those neural circuit constraints.
+01:31:20
+Are probably expressions of our evolutionary biases. So it's probably circuit architectures and circuit weights and can activities.
+01:31:29
+We know that, you know, if you take a patient and then and and you you know you you basically, you know, patients sometimes die right like their, their cases of, you know, people falling into a you know a cold.
+01:31:42
+Very, very cold stream and then their, their heart stops and they basically die right for, you know, according to many physiological measures and then they're slowly brought back
+01:31:55
+To life they're live revive slowly, you know, but in many senses, you know, their personalities and many of their biases remain intact. So I think that's some evidence that
+01:32:03
+There's a lot of information stored in brain states that are not you know just neural activity. It's, you know, clearly the some structural things that you know have remained constant, even when the neural activity has been shut off so
+user avatar
+Liane Z Xu
+01:32:19
+I had a question about the. I have a question about the grandmother cells, what part of the brain where those recorded from is that isn't like a higher level area or like our
+user avatar
+Ila Fiete
+01:32:31
+Yes, that's a high level area. The hippocampus.
+user avatar
+Liane Z Xu
+01:32:34
+I'm sorry, I missed
+user avatar
+Ila Fiete
+01:32:36
+The medial temporal bone. Oh, of course. Yeah, sure. And we'll be talking, you know it more length about the hippocampus.
+01:32:42
+But these kinds of cells like very highly specific cells are found in it cortex, which is another high level visual cortex and hippocampus, which is actually higher level than that because it takes it pulls all the sensory. It's the very top of all the sensory hierarchies. So,
+user avatar
+Annika L Heuser
+01:32:58
+I have a question about the illusions that we've seen. And I'm wondering whether all of them could be modeled with vision modeling or whether there are some that we really wouldn't be able to achieve that way.
+user avatar
+Ila Fiete
+01:33:14
+So that's a great question. I think that the the visual motion effect like the flashlight effect. I do.
+01:33:22
+Or rather the snake effect, right, the, the, the, the snake effect. It's not created as a low level basic model to explain that. I think that on some level, though. I mean, Beijing.
+01:33:36
+I mean basically language can be pretty all encompassing in the sense that, you know, if you're, you know, you can almost turn anything that involves
+01:33:45
+prior knowledge or biases plus sensory input anytime you have to combine both of those.
+01:33:52
+Right on that lose level. Everything's Beijing right because you're if you're just combining something that's a prior with something that's data, then it can be busy now.
+01:34:02
+If you want to take a strict form of Beijing, right, like, you know, are the probabilities being combined in the exact ratios.
+01:34:09
+That they should be combined. You know, given the reliability of the prior and the reliability of the data. Right. Usually if you've got, you know, two probabilities. One is a prior probability, when's the
+01:34:17
+Likelihood that you get from the data based says beige rule says that you have to combine them with a certain ratio, right, like, you know, according to the inverse, you know, reliability.
+01:34:26
+Or our inverse variances. So according to the reliability. So in the strict sense. I don't know how many of these are truly strictly based in
+01:34:33
+In a very loose sense they're all busy and because it's combining you know priors with with data. So in the loosest sense they're all busy in in the strictest sense. I don't know if any of them are Bayesian
+01:34:44
+Yeah.
+user avatar
+Ila Fiete
+01:34:48
+Great, thank you for the questions and I'm I should let you go. Just because we should make sure that if any of you have other classes to get to you have time
+01:34:57
+And yeah, and we'll look out for the homework today and also the map pull
+user avatar
+Bhav Jain
+01:35:06
+You so much, Professor.
+user avatar
+Ila Fiete
+01:35:08
+Do take care
+user avatar
+Claudia F Lozano
+01:35:09
+Thank you.
+user avatar
+Cedric Honnet
+01:35:11
+Bye. I just sent her little message in the chat. I think there might be a copy paste
+01:35:17
+Problem.
+user avatar
+Ila Fiete
+01:35:18
+In the slide. Okay.
+user avatar
+Annika L Heuser
+01:35:22
+Thank you.
+01:35:23
+Bye.
+user avatar
+Minyoung Kim
+01:35:26
+Think office hours.
+user avatar
+Ila Fiete
+01:35:27
+I'm going to leave this session. And I'm going to go into the office. Our recession.
+01:35:31
+Okay, but that because this one's being recorded, and the other one is not
+01:35:35
+Okay. Okay, bye.
