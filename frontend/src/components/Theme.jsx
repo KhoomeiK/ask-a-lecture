@@ -1,11 +1,11 @@
 import React from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { roboto } from '@theme-ui/presets'
+import { tailwind } from '@theme-ui/presets'
 
 const theme = {
-    ...roboto,
+    ...tailwind,
     styles: {
-        ...roboto.styles,
+        ...tailwind.styles,
     },
 }
 
