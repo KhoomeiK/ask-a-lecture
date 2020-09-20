@@ -11,21 +11,13 @@ from spacy.lang.en import English
 import difflib
 import itertools
 
-# from transformers import BertTokenizer, BertForQuestionAnswering
-# import torch
-# import logging
-
 class Model:
   def __init__(self, indicesDir='whooshIndices', maxResults=5):
     self.indicesDir = indicesDir
     self.maxResults = maxResults
     self.nlp = spacy.load('en_core_web_sm')
-    self.stopwords = English.Defaults.stop_words.union({'?', 'happen', 'thing'}) # continue adding words to remove
-
-    # self.modelTokenizer = BertTokenizer.from_pretrained('bert-base-uncased') # TODO: make this not take so long or cache
-    # self.model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    # logging.getLogger("transformers.tokenization_utils").setLevel(logging.ERROR) # suppress long seq message; logging.WARNING
-
+    self.stopwords = English.Defaults.stop_words.union({'?', 'happen', 'thing'}) 
+    
   def generateIndex(self, chunks, lectureDir): # generates whoosh lectureDir from parsed chunks
     schema = Schema(timestamp=TEXT(stored=True), text=TEXT(stored=True, analyzer=StemmingAnalyzer()))
     
@@ -58,27 +50,3 @@ class Model:
         resultDocs.append(dict(results[i]))
 
     return resultDocs
-
-  # def answer(self, question):
-  #   documents = self.search(question)
-
-  #   answers = set()
-  #   for document in documents:
-  #       # print("----------DOCUMENT %s:" % document['title'])
-  #       # print(document['content']) # return docs for flask?
-        
-  #       input_dict = self.modelTokenizer.encode_plus(question, document['content'], return_tensors='pt')
-
-  #       if len(input_dict['input_ids'][0]) > 512:
-  #         continue
-
-  #       start_scores, end_scores = self.model(**input_dict)
-  #       start, end = torch.argmax(start_scores).item(), torch.argmax(end_scores).item() + 1
-        
-  #       all_tokens = self.modelTokenizer.convert_ids_to_tokens(input_dict['input_ids'].squeeze(0).tolist())
-  #       all_tokens = [x.replace('▁', '') for x in all_tokens]
-  #       answer = all_tokens[start : end]
-
-  #       answers.add((' '.join(answer), document['path']))
-
-  #   return list(answers) # TODO: return best answer (take avg as confidence?)

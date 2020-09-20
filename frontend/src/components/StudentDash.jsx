@@ -96,7 +96,15 @@ export const StudentDash = (props) => {
                     variant: 'styles.header',
                 }}
                 className="header">
-
+                <div sx={{ mx: 'auto' }} />
+                <Link {...rest} to="/professor"
+                    sx={{
+                        color: 'inherit',
+                        '&.active': {
+                            color: 'primary',
+                        },
+                        marginRight: '10px'
+                    }}>Professor View</Link> 
             </header>
             <div className="dashboard">
                 <Box
