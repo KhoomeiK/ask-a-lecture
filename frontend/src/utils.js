@@ -1,7 +1,8 @@
 import {toast} from 'react-toastify'
 
 export const classes = [
-    {className: 'Special Subject in Mathematics', classNumber: '18.S096'}, {className: 'Algorithms for Parallel Computing', classNumber: 'CS6320'}
+    {className: 'Special Subject in Mathematics', classNumber: '18.S096', lectures: {'lecture 1': 1, 'lecture 2':2}}, 
+    {className: 'Algorithms for Parallel Computing', classNumber: 'CS6320', lectures: {'lecture 1':1, 'lecture 2':2, 'lecture 3':3}}
 ]
 
 export const classKeywords = [

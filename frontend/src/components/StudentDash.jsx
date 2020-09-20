@@ -31,25 +31,32 @@ export const ClassCollapsible = (props) => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (<React.Fragment>
-        <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button>
-        <Collapse isOpen={isOpen}>
-            <Card>
-                {classObject.className}
-                {classObject.classNumber}
-                <CardBody>
-                    <Link {...rest} to={{pathname: "/search", state: classObject}}
-                        sx={{
-                            color: 'inherit',
-                            '&.active': {
-                                color: 'primary',
-                            },
-                            marginRight: '10px'
-                        }}
+        
+        <Button className="maxButton" style={{width:'100%'}} onClick={toggle} style={{ marginBottom: '1rem' }}>{classObject.className} {classObject.classNumber}</Button>
+        <Collapse  isOpen={isOpen}>
+            {Object.keys(classObject.lectures).map(lecture => {
+                const lectNum = classObject.lectures[lecture]
+                return(
+                    <Card >
+                        <CardBody>
+                            <Link {...rest} to={{pathname: "/search", state: {...classObject, lectureNum: lectNum}}}
+                                sx={{
+                                    color: 'inherit',
+                                    '&.active': {
+                                        color: 'primary',
+                                    },
+                                    marginRight: '10px'
+                                }}
 
-                    >lecture 1</Link> 
-                </CardBody>
-            </Card>
+                            >{lecture}</Link> 
+
+                        </CardBody>
+                    </Card>
+                    
+                )})}
+                    
         </Collapse>
+
     </React.Fragment>
     )
 }
@@ -88,25 +95,8 @@ export const StudentDash = (props) => {
                 {/* <StyledDropzone setText={setText} setLoading={setLoading} /> */}
                 <Box
                     style={{marginTop: '30px'}}>
-                    {/* onSubmit={e => uploadTranscript(e, text)} */}
-                    {/* <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button> */}
-                    <Button onClick={toggle} style={{ marginBottom: '1rem' }}>18.01</Button>
                     {classes.map(obj => <ClassCollapsible classObject={obj}/>)}
-                    {/* <Collapse isOpen={isOpen}>
-                        
-                        <Card>
-                            <CardBody>
-                                <Link {...rest} to="/search"
-                                    sx={{
-                                        color: 'inherit',
-                                        '&.active': {
-                                            color: 'primary',
-                                        },
-                                        marginRight: '10px'
-                                    }}>lecture 1</Link> 
-                            </CardBody>
-                        </Card>
-                    </Collapse> */}
+
                 </Box>
                
             </div>
