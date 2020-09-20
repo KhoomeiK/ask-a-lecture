@@ -16,20 +16,9 @@ import itertools
 # import logging
 
 class Model:
-  def __init__(self, indexDir='whooshIndex', maxResults=5):
-    self.indexDir = indexDir
-
-    try:
-      self.ix = open_dir(indexDir)
-      print('fetching index dir')
-    except:
-      os.system('rm -rf %s' % indexDir) # reset directory
-      os.system('mkdir %s' % indexDir)
-      print('please generate index')
-      self.ix = None
-
+  def __init__(self, indicesDir='whooshIndices', maxResults=5):
+    self.indicesDir = indicesDir
     self.maxResults = maxResults
-
     self.nlp = spacy.load('en_core_web_sm')
     self.stopwords = English.Defaults.stop_words.union({'?', 'happen', 'thing'}) # continue adding words to remove
 
@@ -37,39 +26,35 @@ class Model:
     # self.model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     # logging.getLogger("transformers.tokenization_utils").setLevel(logging.ERROR) # suppress long seq message; logging.WARNING
 
-  def generateIndex(self, chunks): # generates whoosh index directory from files
+  def generateIndex(self, chunks, lectureDir): # generates whoosh lectureDir from parsed chunks
     schema = Schema(timestamp=TEXT(stored=True), text=TEXT(stored=True, analyzer=StemmingAnalyzer()))
-    self.ix = create_in(self.indexDir, schema)
-    self.writer = self.ix.writer() # create writer for index
+    os.system('mkdir ./%s/%s' % (self.indicesDir, lectureDir))
+    ix = create_in('./%s/%s' % (self.indicesDir, lectureDir), schema)
+    writer = ix.writer() # create writer for index
 
     for chunk in chunks:
-      self.writer.add_document(timestamp=chunk[0], text=chunk[1])
+      writer.add_document(timestamp=chunk[0], text=chunk[1])
 
-    self.writer.commit()
+    writer.commit()
+    return 200
 
-  def search(self, question): # fetches possible result documents for a question
+  def search(self, question, lectureDir): # fetches possible result answers for a question in lectureDir
+    try:
+      ix = open_dir('./%s/%s' % (self.indicesDir, lectureDir))
+    except:
+      print('Error: lecture has not been indexed')
+      return 404
+
     tokens = self.nlp(question.lower())
     coreTokens = [token.lemma_ for token in tokens if not str(token) in self.stopwords]
     coreStr = ' '.join([word for word in coreTokens])
 
     resultDocs = []
-    with self.ix.searcher() as searcher:
-      query = QueryParser('text', self.ix.schema).parse(coreStr)
+    with ix.searcher() as searcher:
+      query = QueryParser('text', ix.schema).parse(coreStr)
       results = searcher.search(query)
       for i in range(0, min(len(results), self.maxResults)):
         resultDocs.append(dict(results[i]))
-    resultDocs = list({doc['text']:doc for doc in resultDocs}.values())
-
-    # if len(resultDocs) >= 2: # remove similar documents
-    #   combs = itertools.combinations(resultDocs, 2)
-    #   for a, b in combs:
-    #     similarity = difflib.SequenceMatcher(a=a['content'], b=b['content']).ratio()
-    #     if similarity > 0.90: # documents more than 90% similar will be removed
-    #       try:
-    #         poppedInd = max(resultDocs.index(a), resultDocs.index(b)) # remove worse ranked of the two
-    #         resultDocs.pop(poppedInd)
-    #       except:
-    #         pass # document already removed
 
     return resultDocs
 
