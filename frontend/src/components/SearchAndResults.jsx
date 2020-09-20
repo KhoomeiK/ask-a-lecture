@@ -35,9 +35,11 @@ const fetchResults = async (search) => {
     const filteredResults = await(postSearch(search));
     try {
         const data = await filteredResults.json();
+        console.log(data)
         // return data;
-        if (data != []) {
-            return data.map(value =>  ({...value, title: timeStampToYouTube(value.timestamp, "https://youtu.be/hFQL7BS6lrs")}));
+        if (data !== []) {
+            const { link, title } = data;
+            return data.results.map(value =>  ({...value, linkWithTime: timeStampToYouTube(value.timestamp, link), title}));
         }
         return data;
         
@@ -62,9 +64,12 @@ function exampleReducer(state, action) {
     }
 }
 
-const resultRenderer = ({text, timestamp}) => {
-    const updatedText = text.slice(10) + "..."
-    return <Card>{updatedText}, <Link href={timeStampToYouTube(timestamp, "https://youtu.be/hFQL7BS6lrs")}>Video Link</Link></Card>
+const resultRenderer = ({text, linkWithTime, title}) => {
+    const updatedText = text.slice(0, 100) + "..."
+    console.log(text)
+    console.log(typeof(text))
+    console.log(updatedText)
+    return <Card key={title}>{updatedText}, <ThemeLink target="_blank" href={linkWithTime} >Video Link</ThemeLink></Card>
 }
 
 function SearchExampleStandard(props) {
@@ -86,9 +91,7 @@ function SearchExampleStandard(props) {
             const isMatch = (result) => re.test(result.title)
 
             const search = {"classId": props.classId, "lectureNumber": props.lectureNum, "question": data.value}
-            console.log(search)
             const source = await fetchResults(search)
-            console.log(source)
 
             dispatch({
                 type: 'FINISH_SEARCH',
