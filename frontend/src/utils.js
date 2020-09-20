@@ -1,10 +1,15 @@
 import {toast} from 'react-toastify'
 
+import n from './components/images/neural_circuits.jpg';
+import a from './components/images/algorithms.jpg';
+import l from './components/images/linear_algebra.png';
+import c from './components/images/crypto.jpg';
+
 export const classes = [
-    {className: 'Special Subject in Mathematics', classId: '18.S096', lectures: {'lecture 1': 1, 'lecture 2':2}}, 
-    {className: 'Algorithms for Parallel Computing', classId: 'CS6320', lectures: {'lecture 1':1, 'lecture 2':2, 'lecture 3':3}},
-    {className: 'Deep Learning', classId: 'CS3892', lectures: {'Gradient Descent': 1, 'Stochastic Gradient Descent':2, 'Neural Networks':3}},
-    {className: 'Error Correcting Codes and Cryptography', classId: 'MATH3320', lectures: {'Error Detection': 1, 'Perfect Codes':2, 'Hamming Bounds':3}}
+    {className: 'Special Subject in Mathematics', classId: '18.S096', lectures: {'lecture 1': 1, 'lecture 2':2}, image: n}, 
+    {className: 'Algorithms for Parallel Computing', classId: 'CS6320', lectures: {'lecture 1':1, 'lecture 2':2, 'lecture 3':3}, image: a},
+    {className: 'Deep Learning', classId: 'CS3892', lectures: {'Gradient Descent': 1, 'Stochastic Gradient Descent':2, 'Neural Networks':3}, image: l},
+    {className: 'Error Correcting Codes and Cryptography', classId: 'MATH3320', lectures: {'Error Detection': 1, 'Perfect Codes':2, 'Hamming Bounds':3}, image: c}
 ]
 
 export const classKeywords = [

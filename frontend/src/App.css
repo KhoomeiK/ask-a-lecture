@@ -51,3 +51,10 @@ body,
 .maxButton {
   width: 100%;
 }
+
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
