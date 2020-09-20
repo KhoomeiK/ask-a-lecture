@@ -1,0 +1,1194 @@
+WEBVTT
+
+1
+00:00:03.899 --> 00:00:04.259
+Silvio Micali: Good.
+
+2
+00:00:06.960 --> 00:00:14.429
+Silvio Micali: Good morning everyone and welcome back to six, six. Let me. Great job.
+
+3
+00:00:15.480 --> 00:00:15.719
+Silvio Micali: In
+
+4
+00:00:16.920 --> 00:00:22.710
+Silvio Micali: Memory and started sharing right away way. Let's see if I can
+
+5
+00:00:25.020 --> 00:00:36.480
+Silvio Micali: Share now. All right, ladies and gentlemen, it is my distinct pleasure to introduce you to Ashley and let me tell you right away.
+
+6
+00:00:37.530 --> 00:00:38.040
+Silvio Micali: Vegas very
+
+7
+00:00:40.110 --> 00:00:49.230
+Silvio Micali: Ashamed is a great idea. Okay, just in case we have some confusion if you don't think is a good idea. You and I are not Olds or I didn't do a good job.
+
+8
+00:00:50.550 --> 00:00:57.210
+Silvio Micali: So what is the goal. Here they go. Think of it is that you want to efficiently maintain a set of numbers.
+
+9
+00:00:57.690 --> 00:01:10.290
+Silvio Micali: Season maintaining I said the numbers. I have a better things to do. We beat the techie. Well, just remember that everything is a number because you can encode anything as a number right away, but he's asking English, everything becomes a number
+
+10
+00:01:10.860 --> 00:01:14.580
+Silvio Micali: Pictures, or whatever you good. So in other words, we have a
+
+11
+00:01:15.600 --> 00:01:25.080
+Silvio Micali: Set S and we want to support of this operation over insert, delete, and find. And when I say fine. I mean,
+
+12
+00:01:25.560 --> 00:01:36.270
+Silvio Micali: Membership in a test, right. So what is a test is a set of objects, you want to know about an object is in or out. You would sometimes we want to put another object you want to take an object out
+
+13
+00:01:36.660 --> 00:01:44.460
+Silvio Micali: And when you forget well is objects envisat have right now and when whether what the fine does. So altogether.
+
+14
+00:01:45.510 --> 00:01:49.530
+Silvio Micali: They so we call it a high tech data structure. So far we talk about and all
+
+15
+00:01:51.090 --> 00:02:00.840
+Silvio Micali: Sorting and other other performance. This is a data structure and essentially I did a structure. Think of it like I said in a bunch of operations with you want to support them assets.
+
+16
+00:02:01.530 --> 00:02:11.310
+Silvio Micali: And so these are in terms of sites are inserted delete and paste and find really web based the bread and butter or what the 70s, but you should appreciate
+
+17
+00:02:11.850 --> 00:02:22.380
+Silvio Micali: Other operations. Right. You have a set set this dynamic at any point in time. You want to say, oh, what is the minimum number in my set, what is the max or whatever you please. Right.
+
+18
+00:02:23.250 --> 00:02:41.970
+Silvio Micali: And so you must realize that data to optimize your data structure, you must use a different data structure, depending on whatever operations. We are going to you're going to be interested in supporting so today. These are the operation bread and butter on a set
+
+19
+00:02:43.230 --> 00:02:50.940
+Silvio Micali: So let's jump up in the way, how can we efficiently implement these operations, because of this course is about the algorithm and efficiency.
+
+20
+00:02:51.960 --> 00:02:57.720
+Silvio Micali: I'll do officially implement so well elementary water so I implemented as a link least right
+
+21
+00:02:58.590 --> 00:03:05.190
+Silvio Micali: Here is my set and all of a sudden decided to insert x into. I said, all right, done right.
+
+22
+00:03:05.550 --> 00:03:18.510
+Silvio Micali: When I want to insert. Why, where do I insert a do head over least right big solve it. I don't keep two pointers, but only one pointer. Wonderful. I want all and somehow now insert Z done
+
+23
+00:03:19.320 --> 00:03:38.760
+Silvio Micali: Okay, so I've done some inserting and finally say, okay, good, you know, tell me if why w is envisat right now yes or no. Alright so let them eat that. So I go ahead and I said, and when I start scanning my list. Okay. Not yet. This is not the blue.
+
+24
+00:03:40.020 --> 00:03:42.060
+Silvio Micali: And the scanner. Again, not yet.
+
+25
+00:03:44.190 --> 00:03:54.330
+Silvio Micali: Not yet, not only not yet, but because the. Now, I realized that the mandible LEAST I CAN NOT WITHOUT already say who is not here in beset. All right.
+
+26
+00:03:55.590 --> 00:04:07.800
+Silvio Micali: About the delete. Well, what is the candidate going to do you know to delete and our in our, in our link least you'll find the item and once you find that you by scanning police you bypass it and that's how you
+
+27
+00:04:07.950 --> 00:04:08.490
+Implement
+
+28
+00:04:11.820 --> 00:04:15.690
+Silvio Micali: Claim you have beer. Let's talk about complexity.
+
+29
+00:04:16.200 --> 00:04:18.540
+Silvio Micali: As you know, when every time you have a complexity.
+
+30
+00:04:18.780 --> 00:04:29.670
+Silvio Micali: You have to say, well, the complexity as a function of what as a function of n. Well, thank you very much. What is it well in is the number of elements inverse it right. Okay.
+
+31
+00:04:30.900 --> 00:04:45.600
+Silvio Micali: So you inserted delete and find how long does it take to insert an element. Are you giving me that is order one because I got an edible East and inserted there. Right. And when an update and all another pointer done
+
+32
+00:04:46.800 --> 00:05:06.060
+Silvio Micali: Are you delete it. Well, this time. If you have any elements invested and if you're lucky, you to scan the entire set until you find whatever you want to delete and to find the an element. Well, again, you have to his order hand because in the worst case is kind of entire
+
+33
+00:05:07.140 --> 00:05:11.100
+Silvio Micali: List because of your item is not isn't the end or
+
+34
+00:05:12.420 --> 00:05:25.560
+Silvio Micali: Or is not there at all. Okay, so very fast. Insert and leave here time delete and find guess what we are greedy and we want to do better.
+
+35
+00:05:27.240 --> 00:05:35.070
+Silvio Micali: Okay, I'll do better. The first technique is a direct access. And so, when can I use the x axis.
+
+36
+00:05:36.300 --> 00:05:51.390
+Silvio Micali: I can use direct access when I have a good estimate or tea or what have a maximum conduct an integer envisat can maybe capital and that's what's the maximum number in my sight of it can be
+
+37
+00:05:52.140 --> 00:06:06.060
+Silvio Micali: Okay, you may know what I do in order to to maintain myself I create an array with us as maybe elements as have a maximum candidate cabling right 123 up to capital and
+
+38
+00:06:07.080 --> 00:06:13.020
+Silvio Micali: All right, let's play. Now when I say I assume that they want to insert my number three in my site.
+
+39
+00:06:14.400 --> 00:06:20.220
+Silvio Micali: I find the third element in Belgrade and they put one to say this element is in
+
+40
+00:06:21.330 --> 00:06:36.810
+Silvio Micali: Well, gee, see we have it took very little time, of course, because what is good about our days and our random access at all machines is data elements in our library can be accessed in order one time in Constantine
+
+41
+00:06:38.370 --> 00:06:47.550
+Silvio Micali: So assume, but I want to insert the seventh of the first step I shoot myself in location 723 and I write one, I assume, or they want to insert the end
+
+42
+00:06:48.210 --> 00:07:05.100
+Silvio Micali: I go there. And inside that. Okay. So after a while I decide I want to find to is to invest it I bought I shoot myself in the location to I don't find anything here so I can authoritatively report not here.
+
+43
+00:07:06.330 --> 00:07:09.360
+Silvio Micali: All right, now assume that I want to delete the 723
+
+44
+00:07:09.900 --> 00:07:22.650
+Silvio Micali: No problem. I but I showed them myself. I find the one I raised it and now my element is the data from the set. Okay, so is it is represented, but all those elements in the array, but contain one
+
+45
+00:07:23.790 --> 00:07:27.060
+Silvio Micali: So what is the complexity insert
+
+46
+00:07:28.380 --> 00:07:45.450
+Silvio Micali: Well he's older one because I shoot myself in cost on time and I write one whatever I Island to delete is although the one I bought I shoot myself there and I replace it with zero or I hate it. And the fine in his older one
+
+47
+00:07:48.030 --> 00:07:59.070
+Silvio Micali: Wow, I mean it is fantastic, right. So we have hold the one I inserted delete find it is very hard to beat. Who can do better than base.
+
+48
+00:08:01.530 --> 00:08:02.940
+Silvio Micali: When as
+
+49
+00:08:05.340 --> 00:08:16.800
+Silvio Micali: Astronauts famous also note that said we have a problem. And so, and what is the global beta in order for direct access to work and to be so efficient.
+
+50
+00:08:17.430 --> 00:08:27.570
+Silvio Micali: We must know what the visa maximum candidate in element is that is, but it's not only about knowing, but it better be small enough, because this
+
+51
+00:08:28.140 --> 00:08:36.990
+Silvio Micali: Capital N, the maximum candidate in the integer in so could be enormous. Let them he demonstrated assume I said as
+
+52
+00:08:37.560 --> 00:08:43.350
+Silvio Micali: I am an amateur biologist and once in a while. I read on the paper or in some specialized
+
+53
+00:08:44.160 --> 00:09:01.320
+Silvio Micali: Publications as a landslide something, say, Oh, a new gene has been discovered. So when it says, I'm very excited, say, oh, I put to know. I live in about this gene. I want to put it in my set. And of course, as you know, genes are written and alphabet AC GT
+
+54
+00:09:02.400 --> 00:09:12.630
+Silvio Micali: And so, and what is the possible length of a of a G. So, are you kidding, I'm a computer scientist, I have no idea. So let me look it up in Google.
+
+55
+00:09:13.830 --> 00:09:21.330
+Silvio Micali: I actually typed. How long is a typical gene. And that's what the Google tells me, blah, blah, blah, blah, will make sounds complicated things
+
+56
+00:09:21.750 --> 00:09:43.980
+Silvio Micali: But what I read this letter the other Julian is 256 bass, bass, bass, so possible length is greater than 256 because what is the average length. So the maximum length could be much better, much bigger. And so I've got the least that I should expect 236 a GCT
+
+57
+00:09:45.180 --> 00:09:45.750
+Silvio Micali: So,
+
+58
+00:09:48.150 --> 00:10:08.040
+Silvio Micali: The maximum into joke when I can express myself on it. I'm a four elements and mouth, but I have a two to 256 is for two by 256 and if I want to put her in binary. I am to two by two to the power 256, also known as to 272
+
+59
+00:10:09.210 --> 00:10:18.750
+Silvio Micali: So here is my other day as starts with one I want to get the possible jeans velocity element in the array is two to the power 472
+
+60
+00:10:20.040 --> 00:10:31.980
+Silvio Micali: Are you kidding me, you just remember what I said. The last time No integer in our university is really a physical interpretation, if it is greater than two to 300 because of no not enough.
+
+61
+00:10:32.640 --> 00:10:46.470
+Silvio Micali: LM elementary particles in the universe. How do I construct of his idea is on Adams forget items. I don't even ever Nuff elementary particles. Okay, so that is a two to 472 is unimaginable large number
+
+62
+00:10:48.000 --> 00:10:57.000
+Silvio Micali: Okay, so that is in general by promo but I wanted to straight for jeans here, but in general the potential
+
+63
+00:10:58.650 --> 00:11:11.070
+Silvio Micali: Elements of a sector, leaving a very large universe capital view in my actual set is more than you. So victoriously so you had a visit blue
+
+64
+00:11:12.090 --> 00:11:16.530
+Silvio Micali: Points which you can be very large numbers, but the ones that I'm going to ever
+
+65
+00:11:17.700 --> 00:11:26.520
+Silvio Micali: Booked in my sake I actually much fewer number of activities or read points here. So in our peers example. The universe is
+
+66
+00:11:28.320 --> 00:11:42.960
+Silvio Micali: Base pairs. And this is the human genes. Another example is whether you are all possible computer words. And of course, as is going to be a smaller set when you why, because remember award.
+
+67
+00:11:44.250 --> 00:11:58.110
+Silvio Micali: Typically is a fairly two bytes, which is equal to 256 bits and therefore I can represent two to 256 integers, which is so close to 200
+
+68
+00:11:58.440 --> 00:12:12.690
+Silvio Micali: Fact of it is essentially a gigantic universe. So, of course, any set of it. I'm going to collect elements from is going to be less than that. So example of the example universe can be huge. They said as much small
+
+69
+00:12:14.040 --> 00:12:32.430
+Silvio Micali: What do we do with the problem because director says access cannot possibly work because I cannot locate an array, but as, as long as the maximum number over at maximum MMA element in that in my set so
+
+70
+00:12:33.570 --> 00:12:36.330
+Silvio Micali: The idea is beta wave. I know.
+
+71
+00:12:37.440 --> 00:12:41.850
+Silvio Micali: A national function. So what is that action function is something that takes a
+
+72
+00:12:43.200 --> 00:12:49.350
+Silvio Micali: maps of the universe. This should be a capital you, I can see that I made a mistake here into
+
+73
+00:12:50.580 --> 00:13:04.230
+Silvio Micali: 02 n minus one. In other words, and to say I have an affordable array. But then, you know, I have a budget, I can only afford another day. But as m elements zero to a minus one.
+
+74
+00:13:05.460 --> 00:13:18.690
+Silvio Micali: And so now order I do you remember that before in direct access. I was storing one another's x. Now instead, I'm going to insert X about that age of x. So,
+
+75
+00:13:20.970 --> 00:13:27.510
+Silvio Micali: By the way, why do I store X in a moment that will become clear why store. Excellent. Other than one. Okay.
+
+76
+00:13:28.920 --> 00:13:44.940
+Silvio Micali: So I don't store X in an address x because sector my address is, is only em, but I i first compute h of x, which now is a number, by definition, between zero and A minus one and I started x
+
+77
+00:13:45.930 --> 00:13:52.170
+Silvio Micali: There. Let me do it the pictorial Lee year is my larger view blue universe.
+
+78
+00:13:52.740 --> 00:14:13.680
+Silvio Micali: Era is my set as, of course, I said this is showing you my speech, a little bit segregated from the rest of you, but you have to think about intermingle and so and so all of a sudden, what I want to do is what I want to insert X one. So I am going to insert x one in location HR. Next one.
+
+79
+00:14:14.880 --> 00:14:17.220
+Silvio Micali: I want to insert x two in location.
+
+80
+00:14:18.270 --> 00:14:40.710
+Silvio Micali: He likes to insert text me in location, a trophy. Okay. And at some point is going to happen, but I try to insert the Explore I go into location age of explore, but this is a location with coincide with edge of extreme best case and there is already something like there, I get a collision.
+
+81
+00:14:43.170 --> 00:15:02.190
+Silvio Micali: By the way, you should realize that these collisions are actually guaranteed EV sides of a second, n is greater than me besides over a right because you notice like can all be john principles. Right. So if you have a seven.
+
+82
+00:15:03.270 --> 00:15:16.500
+Silvio Micali: Seven pigeons and and six cages, you know, one cages or two other two pages. There's no way I and, moreover, this actually can occur quite frequently. If n is roughly
+
+83
+00:15:17.160 --> 00:15:34.080
+Silvio Micali: More or less as big as I am. And there's going to be rare if n is much smaller than me. Okay, so if I want to do action by storing X in location A checks. A must respect collisions.
+
+84
+00:15:35.190 --> 00:15:39.600
+Silvio Micali: Fair enough, what to do. Okay, now we have to cope with collision.
+
+85
+00:15:42.090 --> 00:15:54.570
+Silvio Micali: They first idea is to choose your hash function that maps any possible element into a number of individual location between zero and n minus one to be on colliding.
+
+86
+00:15:55.200 --> 00:16:03.120
+Silvio Micali: So do us a favor, can you choose an uncle lighting father. Good luck is like saying is better to be beautiful, rich
+
+87
+00:16:04.110 --> 00:16:21.510
+Silvio Micali: I don't know, and young and old ugly and poor and this is easy to say, but you're safe this dynamic out you know that an all I'll can you choose a age when I say it is going to change. No afterwards so that to be on colliding. I have no good ideas there but ups you do
+
+88
+00:16:22.560 --> 00:16:28.080
+Silvio Micali: The second idea and which is they want to discuss today is changing.
+
+89
+00:16:29.400 --> 00:16:31.380
+Silvio Micali: And a third idea.
+
+90
+00:16:32.910 --> 00:16:53.730
+Silvio Micali: Is open addressing and if time allows. It will discuss it today. Otherwise, you should see roughly area in India problems that we are going to explain and having a problem about open undressing after explaining, of course, good. So today. Our topic is changing.
+
+91
+00:16:55.440 --> 00:16:56.250
+Silvio Micali: Your is change.
+
+92
+00:16:57.330 --> 00:16:58.740
+Silvio Micali: Anybody's following say
+
+93
+00:17:01.740 --> 00:17:09.630
+Silvio Micali: Your day is not the way you're going to store the elements of a set, but the yard. Hey, is an array or link the least
+
+94
+00:17:10.320 --> 00:17:26.280
+Silvio Micali: And anytime that you want to insert say x one, you don't store expanding location. HE LIKES ONE BUT YOU PUSH x one in a link the least that starts at HR. Next one. So in other words, let me see if I can get
+
+95
+00:17:27.300 --> 00:17:33.960
+Silvio Micali: My point of work like I don't even set the x one here, but I put him in a link the least
+
+96
+00:17:35.070 --> 00:17:41.100
+Silvio Micali: And so I've done what I've done before. I've been said that at swan. I've been said that you know extort inside the extreme
+
+97
+00:17:41.580 --> 00:17:46.410
+Silvio Micali: And so finally, I'm going to have a, like a before I'm going to have another collision.
+
+98
+00:17:46.950 --> 00:17:55.680
+Silvio Micali: But now what do I do with this coalition, I simply insert exploring this link least which I can do all either to do in certain different done
+
+99
+00:17:56.280 --> 00:18:07.500
+Silvio Micali: Okay. So this time I can always store things new things that come. I mean, if we've collision or we could. We thought collision. I don't care. I can always insert in a link list.
+
+100
+00:18:09.420 --> 00:18:11.730
+Silvio Micali: All right. Every solve a problem.
+
+101
+00:18:12.900 --> 00:18:14.400
+Silvio Micali: Well, let's see.
+
+102
+00:18:16.080 --> 00:18:30.270
+Silvio Micali: To find the number, right, because remember, I can not only insert. They've also to find something, I must scanner veil least see if I want to see if to see if is there or not.
+
+103
+00:18:30.930 --> 00:18:42.300
+Silvio Micali: And if my involvement from my least link least is L to find a number in a link to lease them a lane family is going to take and comparisons.
+
+104
+00:18:43.350 --> 00:18:51.090
+Silvio Micali: So if all numbers ash to the same bucket vein Luca cost is going to be
+
+105
+00:18:52.950 --> 00:18:54.690
+Silvio Micali: All my golden, right.
+
+106
+00:18:55.770 --> 00:19:13.320
+Silvio Micali: Well, that is really the worst case that I use. He always he somehow convergence to a single point. And he's going to take an order and but I think about is going to be. We want to be more optimistic and what is optimism here.
+
+107
+00:19:14.520 --> 00:19:22.140
+Silvio Micali: We assume with the number in my set as are equally likely. After hashing to land in every bucket. Right.
+
+108
+00:19:23.160 --> 00:19:34.920
+Silvio Micali: Independent aware other number nice might have Elaine did before. Right. But let's video and so visa, we call it simple uniform fashion.
+
+109
+00:19:37.020 --> 00:19:46.650
+Silvio Micali: Because after all, why should they be all elements in my s h of x should always be the same. So they're going to spread out independently or wherever, Queensland.
+
+110
+00:19:47.460 --> 00:20:00.990
+Silvio Micali: And simple in the flashing is exactly that. Let's remember beta simple really. For mashing is an assumption. And so even assumption is reasonable, when
+
+111
+00:20:03.810 --> 00:20:08.640
+Silvio Micali: When we can actually analyze the average case over she
+
+112
+00:20:09.660 --> 00:20:14.790
+Silvio Micali: Under Sue, ha. So simple uniform hashing assumption.
+
+113
+00:20:15.900 --> 00:20:17.250
+Silvio Micali: Okay, let's analyze it.
+
+114
+00:20:18.870 --> 00:20:19.470
+Silvio Micali: We have
+
+115
+00:20:20.790 --> 00:20:26.340
+Silvio Micali: N keys to distributed or hand numbers to discourage story, but the number of in in buckets.
+
+116
+00:20:27.450 --> 00:20:36.750
+Silvio Micali: So the other edge number of keys per bucket is an overhead and we this faction and over him.
+
+117
+00:20:38.370 --> 00:20:45.660
+Silvio Micali: We call it alpha and this is going to important to one another analysis. The National because we go to the Lord factor right
+
+118
+00:20:46.290 --> 00:20:59.610
+Silvio Micali: So, given my sides of the array. And how many numbers you have in your set alpha represents that I convey average number of teasing them in my inbox longer is the link the least over there. Okay.
+
+119
+00:21:00.720 --> 00:21:11.640
+Silvio Micali: So now what is the time to find the expected time to find one key. Well, first of all, let's say, either at least one because I to part
+
+120
+00:21:12.510 --> 00:21:26.220
+Silvio Micali: Why, because I'm assuming that the my hash function is computed in one step. And I can go in one step in the NBA. So I have been there. And once I mean the way I should look for my item.
+
+121
+00:21:27.330 --> 00:21:43.770
+Silvio Micali: 1234 we must follow very, very re evaluate the link least as a member is going to take alpha. Okay, so let's so so that means Victor if I choose
+
+122
+00:21:44.910 --> 00:21:54.450
+Silvio Micali: My m to be essentially order of and I'll actually all my goal in that which means that alpha is order one.
+
+123
+00:21:55.710 --> 00:22:07.560
+Silvio Micali: In other words, in expect that constant time. I can find an element using chaining. We are showing under simple uniform rushing assumption.
+
+124
+00:22:09.270 --> 00:22:21.570
+Silvio Micali: And that's actually is pretty damn good, right, because that means a bit and all. If I know roughly what is the number N of elements inverse that
+
+125
+00:22:22.560 --> 00:22:34.800
+Silvio Micali: Just choose an IRA that as roughly elements M is equal. And if you want to be feel rich. If you have a little bit more space choose it twice, an
+
+126
+00:22:36.150 --> 00:22:54.000
+Silvio Micali: element in the array and you're done, you're going to expect to find something in in in order one time. Okay. But this is under the assumption. Right. So I remember one thing and he is a function. So whenever you once you
+
+127
+00:22:55.320 --> 00:23:04.590
+Silvio Micali: Once you find x you are obliged to Bhutan in in in bucket eight 812 X in the vertical axis, the developments in
+
+128
+00:23:05.940 --> 00:23:08.370
+Silvio Micali: In your state. Remember not to be around tomorrow.
+
+129
+00:23:09.960 --> 00:23:13.830
+Silvio Micali: So the idea is let's say well if they if they
+
+130
+00:23:15.030 --> 00:23:17.100
+Silvio Micali: My elements are not random.
+
+131
+00:23:18.120 --> 00:23:30.180
+Silvio Micali: Sam, oh I want with my deterministic function is random enough. I'm speaking of two sides of my mouth right because the minister, things are not quite, quite random
+
+132
+00:23:30.900 --> 00:23:42.150
+Silvio Micali: But that you guys have you know by now with the various such a thing like you know pseudo random number generation which is I'm deterministic programs that spits out number with
+
+133
+00:23:42.600 --> 00:23:53.430
+Silvio Micali: The fact or as good as as random or at least is a good the artistic. So what you want is it to whoever hash function.
+
+134
+00:23:53.910 --> 00:24:13.410
+Silvio Micali: Survey to no matter what axes. He makes should be random enough for a being, looking at random. Moving enough and now becomes an all. Where do I find a visa candidate hash function. Good news is that there are several popular candidates in the literature.
+
+135
+00:24:15.180 --> 00:24:24.120
+Silvio Micali: In fact that we are so many that we can afford only to talk about the one and perhaps a will in reservations and discuss and all others.
+
+136
+00:24:24.930 --> 00:24:45.780
+Silvio Micali: And so here is a popular one is the division hash function which is simply maps x into x modern. So if you think that x is a complete fits in a computer reward division is is quite fast can take an order one time and so it seems to be very fast.
+
+137
+00:24:48.240 --> 00:24:51.210
+Silvio Micali: Okay. Oh, we're under music go well.
+
+138
+00:24:52.890 --> 00:24:56.010
+Silvio Micali: If m is a power or two when he makes
+
+139
+00:24:57.510 --> 00:25:00.240
+Silvio Micali: Simply ease velocity out of it. So, x
+
+140
+00:25:01.980 --> 00:25:02.370
+Silvio Micali: So,
+
+141
+00:25:04.530 --> 00:25:13.530
+Silvio Micali: Taking the last bits of x is a super duper fast hash function, but it's not necessarily random right so depending on what your keys are right.
+
+142
+00:25:14.670 --> 00:25:25.980
+Silvio Micali: So for me the reasons people actually say I like the ash function. The division as function, but do you mind if I actually choose
+
+143
+00:25:27.330 --> 00:25:44.400
+Silvio Micali: They function to be me to be a prime instead. Well, you know, I can choose the array of any size I want, I want to choose the way I do a raffle it to be as many as many number in my said, I expect to be in my set
+
+144
+00:25:45.450 --> 00:25:54.240
+Silvio Micali: So Brian's are quite dense right so I can find a time in between x and twice x right so i think
+
+145
+00:25:55.290 --> 00:26:07.800
+Silvio Micali: I feel good about it. I can find a prime and I can choose my array to have time and no one you pick a number, x and divided by a plan, you break a lot of correlation
+
+146
+00:26:08.910 --> 00:26:26.130
+Silvio Micali: Letizia you're a stick right and but somehow in practice. He works. And so if chaining using hash function to be division mock mod p, where Peace Prize and he works, who complains about something and works.
+
+147
+00:26:27.870 --> 00:26:28.350
+Silvio Micali: Use it.
+
+148
+00:26:30.720 --> 00:26:33.810
+Silvio Micali: We must a waiver realize, wait, whenever
+
+149
+00:26:35.790 --> 00:26:47.880
+Silvio Micali: We had to be cash function massage function has to be very quick so that you can shoot yourself in bed right element in the array, and he has to be random enough.
+
+150
+00:26:48.750 --> 00:27:00.720
+Silvio Micali: But you must save it. Whatever you choose for us function varies anniversary can always construct a set, Ed, as that is bad for your specific hash function.
+
+151
+00:27:01.860 --> 00:27:18.900
+Silvio Micali: Just to do as an exercise ever friends or just a function. And when you to construct a set as much of it. The message function will not spread out the ashes all over there. Very but it will somehow concentrate on some work.
+
+152
+00:27:20.160 --> 00:27:27.060
+Silvio Micali: Okay, we must be going through some of this fat, but hopefully this bad set is not your set right i mean
+
+153
+00:27:28.260 --> 00:27:35.490
+Silvio Micali: Sets are not all not all states are chosen by a diverse very vague existed beforehand, the end the chance or high beta
+
+154
+00:27:37.410 --> 00:27:50.580
+Silvio Micali: Model the P is a good dash function and in any case perfection is when you're over good so good luck with your hash function. So is this what is clear about what ash function is I want to
+
+155
+00:27:51.450 --> 00:28:08.130
+Silvio Micali: Map x into each of X and that I wanted ash function but ideally looks random and I say more dippy XML up to me is random enough. Go ahead and try if you run into trouble. Well, change P backups or
+
+156
+00:28:09.720 --> 00:28:15.420
+Silvio Micali: Look forward for a different hash function. But, you know, in practice, we all know that somehow
+
+157
+00:28:16.500 --> 00:28:24.360
+Silvio Micali: unless unless it is determined by your anniversary your favorite eight me or you are my favorite. I mean, you have your hand if
+
+158
+00:28:26.190 --> 00:28:32.010
+Silvio Micali: You are not going to have as such you know elements is going to be spread out good. So now we have
+
+159
+00:28:33.300 --> 00:28:35.250
+Silvio Micali: A picnic, which is
+
+160
+00:28:37.500 --> 00:28:49.650
+Silvio Micali: Ashley and we store X in Berlin, he linked leaks to the start up a 12 X in Bel ray and let's say, congrats what bashing nice
+
+161
+00:28:51.660 --> 00:28:52.230
+Silvio Micali: All right.
+
+162
+00:28:53.280 --> 00:28:59.310
+Silvio Micali: How about now, we started looking at some examples, something were to take the benefits of ash.
+
+163
+00:29:01.410 --> 00:29:09.960
+Silvio Micali: And I want to start with the setting dissection problem. And what is visible and given two sets of N numbers.
+
+164
+00:29:11.100 --> 00:29:23.940
+Silvio Micali: Call it a and b, a one for n and be one for a year. And what I want to do. I want to find the intersection of resets what's actually some, some, a very useful thing clue.
+
+165
+00:29:24.840 --> 00:29:32.640
+Silvio Micali: So I'll do i do it well remember booth force always works and what is booth for car is I'll go with someone
+
+166
+00:29:33.450 --> 00:29:42.630
+Silvio Micali: Namely, if you want to find the intersection between capital A, capital B take for each element in a compare it with every element in be
+
+167
+00:29:43.260 --> 00:30:01.560
+Silvio Micali: If it is equal to one of them putting them into section of advice, choose the next element or capital A and keep on going. All right, how many comparison, the way to do here. Well, order n square right because I'm elements and each one has to compare against the elements and square
+
+168
+00:30:03.420 --> 00:30:04.830
+Silvio Micali: Okay, can we do better.
+
+169
+00:30:07.110 --> 00:30:14.820
+Silvio Micali: Well, yes. And in fact, that we can do as I'll, I'll go on to better. And the idea is sort of a
+
+170
+00:30:16.140 --> 00:30:16.980
+Silvio Micali: And then
+
+171
+00:30:18.270 --> 00:30:20.940
+Silvio Micali: Search. A for each element in be
+
+172
+00:30:22.410 --> 00:30:28.170
+Silvio Micali: That sounds a pretty good idea because sorting a text or the analog in
+
+173
+00:30:29.790 --> 00:30:39.930
+Silvio Micali: And then to compare each element in be to try to search for each element in being in, in, in a way, now we're a sorted
+
+174
+00:30:40.740 --> 00:30:48.990
+Silvio Micali: If. How long does it take well searching in another order array takes log in and I have to search each of the
+
+175
+00:30:49.800 --> 00:31:07.830
+Silvio Micali: Elements in Cabo be so he's an login again. So he's a login to sort a in another analog end to search for each element in OB in a twice and Logan is an order and logging. Wow. But so much better. And by the way,
+
+176
+00:31:08.880 --> 00:31:29.790
+Silvio Micali: It may be look at a tree, the logo ism, but I think it's actually is that clever. I'll go into right because you start to using some idea sorting, but does nothing to do set intersection. So I find that it actually, it becomes a very natural to you had taught you are getting exist before.
+
+177
+00:31:31.980 --> 00:31:32.700
+Silvio Micali: For outgoing so
+
+178
+00:31:33.750 --> 00:31:34.290
+Silvio Micali: All right.
+
+179
+00:31:35.760 --> 00:31:38.190
+Silvio Micali: But here is another better let them.
+
+180
+00:31:40.200 --> 00:31:41.640
+Silvio Micali: I'll go on to his performance.
+
+181
+00:31:43.950 --> 00:31:45.780
+Silvio Micali: Harsh copy boy. What do I mean
+
+182
+00:31:47.700 --> 00:31:55.380
+Silvio Micali: Take each element of capital A and I should you know Ray T capital T or sides and
+
+183
+00:31:57.210 --> 00:32:09.480
+Silvio Micali: So much fun, but I'll do it again. Now I take, I should be I think every element to be and I put in, you know, a in the same array of capital T.
+
+184
+00:32:10.710 --> 00:32:17.550
+Silvio Micali: Ball. By the way, I can find collision. Bingo. Anytime I collision, what does, what does this mean
+
+185
+00:32:19.560 --> 00:32:25.320
+Silvio Micali: When, when I started I know my mom. My mom, my collision. I have to
+
+186
+00:32:26.760 --> 00:32:33.210
+Silvio Micali: I have I is very easy to deduce what a intersect the BS right because
+
+187
+00:32:34.350 --> 00:32:40.560
+Silvio Micali: I'm, I'm not talking about funding coalition. When I asked capital A, I may have some conditional may do some
+
+188
+00:32:41.880 --> 00:32:47.130
+Silvio Micali: Ma'am, I'm a user and chaining to to resolve the Gulf region.
+
+189
+00:32:47.370 --> 00:33:04.410
+Silvio Micali: I'm talking here. Once you try to insert the elements of capital B anytime and now you'll find that collision. You're only to remember. I find that collision with an element of A or I find the collision with an element of be so anytime. But you find a collision between
+
+190
+00:33:05.640 --> 00:33:15.300
+Silvio Micali: Elements of different sets you record this element. And once you're done. Always. You have the intersection of asset. Right. I hope that this
+
+191
+00:33:16.530 --> 00:33:32.520
+Silvio Micali: Is is clear to everybody. Good. How long does this take so first of all I have to say. And that takes all the time, right, because he's order one machine with chaining, no matter
+
+192
+00:33:33.420 --> 00:33:41.760
+Silvio Micali: Elements. So he's ordering. Overall, then I have to, I should be but be as any elements but takes order him.
+
+193
+00:33:42.570 --> 00:33:51.810
+Silvio Micali: Also, and anytime that I find that collision. I'm asking the equation or your collision between an element of A and 11 to be. If so, put it, that is a
+
+194
+00:33:52.620 --> 00:34:10.110
+Silvio Micali: Is a is an easy comparison I do keep a little bitter one bit the regular, you and I, mentally or not. And I collect them and said, this also is or the end because, at the most, and or a is equal to be so three times or domain is order him. Okay.
+
+195
+00:34:11.610 --> 00:34:21.450
+Silvio Micali: I mean, that is a really amazing, right. So you take this promo set intersection and you solve it by Hashem better
+
+196
+00:34:22.200 --> 00:34:33.690
+Silvio Micali: On the face of it hashing has nothing to do with set intersection are all but the you see a little bit this easy way to store elements of a set
+
+197
+00:34:34.650 --> 00:34:46.950
+Silvio Micali: And to retrieve them. I'm not even using the feature of deleting here and I solve a set intersection in linear time. Wow. That is really cool idea.
+
+198
+00:34:47.700 --> 00:35:01.710
+Silvio Micali: And it's not the way only application. The machine I'm saying I should let them be predict is going to remain your friend particular if you continue in computer science because it's really everywhere, okay, is a very cool.
+
+199
+00:35:03.000 --> 00:35:18.000
+Silvio Micali: All right. In fact, that to get the most benefit to all the hashing. You must a little bit to generalize the problems in how do we generalize it with generalizing with your set now consistent now or two fields element.
+
+200
+00:35:20.370 --> 00:35:39.600
+Silvio Micali: So key field in the data field and what the escape game is a unique identifier for us. And so if you think about a dictionary. What is a dictionary. The key would be the word in English and vadera is, what does it mean
+
+201
+00:35:41.190 --> 00:35:46.920
+Silvio Micali: To be an element in the set. So another example. You
+
+202
+00:35:48.000 --> 00:35:59.280
+Silvio Micali: You have been all English words and French translation. So the unique identifier is the English word and the data associated is what is the equivalent in in French.
+
+203
+00:36:01.410 --> 00:36:04.710
+Silvio Micali: Let's put it pretty cool example of a key and data.
+
+204
+00:36:07.140 --> 00:36:16.050
+Silvio Micali: Fields, you can actually ever misspelled words, these are your keys and the you and the data is the correct spelling
+
+205
+00:36:17.520 --> 00:36:26.550
+Silvio Micali: And you're going to have actually username and then the data is phone number address and what have you. Right. And so you can see whether this point.
+
+206
+00:36:27.510 --> 00:36:40.410
+Silvio Micali: We want visit structure set which has a key and a data as to feel the elements is pretty much a very big windows and such a safe to we call the a dictionary. Right.
+
+207
+00:36:41.490 --> 00:36:46.650
+Silvio Micali: So essentially a dictionary is a set of key data bears.
+
+208
+00:36:47.910 --> 00:37:03.780
+Silvio Micali: Right. But that's it. And by the way, we are interested in dynamic dictionaries, because you want to add the user, you want to subtract a user typical thing so big and because you have a dynamic dictionaries. Usually you want to have
+
+209
+00:37:04.860 --> 00:37:15.000
+Silvio Micali: Pointers are very good because appointed things have changed. Whenever things changes you look up, you use pointers. So we want to have directly. They said to be not
+
+210
+00:37:15.810 --> 00:37:26.250
+Silvio Micali: They said two pairs, but my Seto pointers to key. The debaters right then now you have a very good thing. By the way, don't tell anybody.
+
+211
+00:37:27.000 --> 00:37:46.530
+Silvio Micali: In order to have dynamic dictionaries. I may actually add another element for manipulating the sets for making my life easier. Right. But originally, that's what I have a set is represented by a set of pointers, whose elements are key data bears. Oh, good. Let me
+
+212
+00:37:48.210 --> 00:37:56.220
+Silvio Micali: Start working on changing on a again. Now, I have here a universal keys to be service unique identifiers
+
+213
+00:37:57.270 --> 00:38:10.500
+Silvio Micali: These are all the possible case I'm going to have all the possible usernames, but then of course the keys that I actually have to deal with capital K is much smaller. And so what do I do
+
+214
+00:38:12.180 --> 00:38:13.920
+Silvio Micali: I put visa.
+
+215
+00:38:15.690 --> 00:38:29.730
+Silvio Micali: Each each each key k one, I can I go into the link to least ah ok one and I inserted element there the element is K one data one k to data to right and
+
+216
+00:38:30.600 --> 00:38:46.800
+Silvio Micali: So if I have a collision I about a link the least over to and so on so forth. Okay, so if we remember the pointers. Our exes now upon those two elements, the operational insert x means in set the X at the head of a least
+
+217
+00:38:49.500 --> 00:38:53.220
+Silvio Micali: Which is embarrassing position he have a key of x, right.
+
+218
+00:38:55.020 --> 00:38:58.050
+Silvio Micali: And delete means that delete the
+
+219
+00:38:59.160 --> 00:39:01.380
+Silvio Micali: element x, but these are the least
+
+220
+00:39:02.910 --> 00:39:08.460
+Silvio Micali: In age of your mics and find the means of finding a an element would kick a
+
+221
+00:39:09.900 --> 00:39:31.950
+Silvio Micali: Even scanning Vic, at least, or imposition. Ah. Ah, OK. OK. So the same thing, essentially. So now we can do user ashes and changing to endo sets of numbers, or we can actually use to endo a set of pointers to keep database to dictionary, it's
+
+222
+00:39:33.570 --> 00:39:38.010
+Silvio Micali: Okay and this point, we have a few legitimate questions.
+
+223
+00:39:39.540 --> 00:39:41.250
+Silvio Micali: And let me go one by one.
+
+224
+00:39:42.390 --> 00:39:46.560
+Silvio Micali: Well, first, the legitimate question is, if S is dynamic.
+
+225
+00:39:48.000 --> 00:39:50.670
+Silvio Micali: I may not know in advance the value of an
+
+226
+00:39:52.230 --> 00:40:10.560
+Silvio Micali: So, ushering loop works pretty well if they if m have a number of elements in the array is roughly roughly the same size, or at least have the same size of them. But if I don't know. And what do I do. Good question.
+
+227
+00:40:11.730 --> 00:40:24.000
+Silvio Micali: What is another question. Well, arrays are very simple objects, but that raise a link. The least you know is something more to program to keep around with the pointers of a
+
+228
+00:40:25.380 --> 00:40:26.850
+Silvio Micali: may create some impediments
+
+229
+00:40:28.080 --> 00:40:45.870
+Silvio Micali: A fair the legitimate questions very well does really, these are mod po po to Sylvia your life on base to be a good punch, etc, etc. These are legitimate questions but so let me tell you a little bit rate varies a lot more to rushing
+
+230
+00:40:46.890 --> 00:41:01.590
+Silvio Micali: Then we can do it in one lecture I remember that six the double six is an introductory course and this lecture is the introduction to Russian either introductory course to algorithm. So visa, if you
+
+231
+00:41:01.980 --> 00:41:12.750
+Silvio Micali: Continue in computer science or if for our homework or recitations we may answer some of these equations. So if you have a question in your mind.
+
+232
+00:41:13.350 --> 00:41:21.330
+Silvio Micali: You are on the right track. You should ask this question, so they're all legitimate questions. And in general, we believe in all questions being legit.
+
+233
+00:41:24.060 --> 00:41:30.210
+Silvio Micali: Well, if we like questions to ask ourselves some quick equations as well.
+
+234
+00:41:33.000 --> 00:41:40.260
+Silvio Micali: Who needs sorting. If we can both store and search in order one. So, gee, that's pretty quickly. Well, I'd only
+
+235
+00:41:41.820 --> 00:41:43.110
+Silvio Micali: Well, what do I mean by that.
+
+236
+00:41:44.430 --> 00:41:49.830
+Silvio Micali: So they often say, is that the same. Either way, I needed sorting because I may want to find
+
+237
+00:41:51.120 --> 00:41:56.670
+Silvio Micali: The case for larger element in percent. We also could be a bit like way.
+
+238
+00:41:57.780 --> 00:42:00.270
+Silvio Micali: But they also
+
+239
+00:42:01.980 --> 00:42:05.430
+Silvio Micali: Also also when he's a quick question also as a quick answer.
+
+240
+00:42:09.090 --> 00:42:17.220
+Silvio Micali: All people like me if I have to use to to consult the phone books to find the phone number or somebody because of its was about the chronology. We had that time.
+
+241
+00:42:18.630 --> 00:42:20.190
+Silvio Micali: When I add your age.
+
+242
+00:42:21.750 --> 00:42:37.380
+Silvio Micali: And so, what was that technology was an ink and glue to make him his phone books so sorting was absolutely necessary. Even though my, oh my, only thing I want to do is to look up the number of a particular user
+
+243
+00:42:38.970 --> 00:42:48.480
+Silvio Micali: If they gave me a bunch of a, of an array around a random access machine I give you, I would sort of a woman by Russia.
+
+244
+00:42:49.110 --> 00:42:57.540
+Silvio Micali: So sorting was made the very prominent. It was prominent in the past due to activate that technology.
+
+245
+00:42:58.380 --> 00:43:13.290
+Silvio Micali: I mean, was very primitive, but there was a distributed to everybody. So perhaps it could be that we are going to sort less because we don't need to sort anymore. If we have a random access to machines.
+
+246
+00:43:14.580 --> 00:43:24.990
+Silvio Micali: If our power is in storing and retrieving information right because hashing does way better than searching, searching sorting and when do binary search
+
+247
+00:43:27.240 --> 00:43:40.920
+Silvio Micali: Here is another quick equations. Well if memory serves, about storing and searching any fashion. You're telling me is the best way to store and search, does the brain hash.
+
+248
+00:43:43.590 --> 00:43:49.350
+Silvio Micali: That's pretty quick, too. But you know what's an interesting question because what did we say
+
+249
+00:43:50.490 --> 00:44:06.750
+Silvio Micali: We said the best algorithms are everywhere and somehow organisms creatures who are alive, they must up by evolution process or something come up with an efficient algorithm.
+
+250
+00:44:07.980 --> 00:44:21.030
+Silvio Micali: Otherwise, it will be too much computation to decide what to do or I'm angry. What the hell am I going to do it. So I'ma let me let me invoke have a hunger solving alcoholism. If it is an all
+
+251
+00:44:21.210 --> 00:44:25.920
+Silvio Micali: In Cuba and ever so many sales is good luck. So the brain.
+
+252
+00:44:27.690 --> 00:44:38.340
+Silvio Micali: And be surprising but brain ash at. In fact, there is a lot of people, women, computer scientists to say to tell the biology. So, you know, we must look for ushering in the brain.
+
+253
+00:44:39.630 --> 00:44:46.980
+Silvio Micali: And in fact, actually. So far, we haven't figured out, so about a few do it if was of you or biologist.
+
+254
+00:44:48.030 --> 00:44:58.830
+Silvio Micali: Pick it up to say fashion so good. Can it be the blame for brainwash. Absolutely. And if you solve this. Well, Stockholm awaits you. Okay.
+
+255
+00:44:59.460 --> 00:45:08.760
+Silvio Micali: Well, why store calm, because that's where Maggie, the Nobel Prize. Right. So think of six available or six and your noble Express. So you are going to gain
+
+256
+00:45:09.300 --> 00:45:23.160
+Silvio Micali: A very spatial edge against any other researcher who has not taken in whatever field as not taking see down below six because algorithm are really the true key idea to understand to understand the word
+
+257
+00:45:24.330 --> 00:45:34.260
+Silvio Micali: And I really would like to to spend a little bit more time on this because I really believe of it. There may be rushing in the brain. Because think about it.
+
+258
+00:45:35.820 --> 00:45:45.180
+Silvio Micali: The brain as always tend to be 10 neurons better they actually randomly linked to each other. So the notion that you want to ask a condom location. Well,
+
+259
+00:45:45.840 --> 00:45:52.710
+Silvio Micali: At birth for your heavier, but over the finger Gundam wired. Anyway, so it actually is not so bad.
+
+260
+00:45:53.430 --> 00:46:07.170
+Silvio Micali: And I never think that they want you to notice is that when you get older, you have noticed with in your parents, your grandparents, and if you're lacking Gun, gun parents may seem to have a little bit of difficulty recalling things
+
+261
+00:46:08.370 --> 00:46:15.210
+Silvio Micali: Let's go back to Ashley, when does ashen work well, very well when my array is not totally fool.
+
+262
+00:46:16.050 --> 00:46:34.110
+Silvio Micali: So, right. So when the number of things that I want to store you so much smaller than they are great. But the more I store for now it to go forward this link leaves the, where do I put to be sad or somewhere, somewhere, somewhere. Of course, if we age you accumulate memory. That's a good
+
+263
+00:46:35.550 --> 00:46:42.030
+Silvio Micali: Mix hashing a retrieval much harder. So, I believe, a very maybe something there. We cheese.
+
+264
+00:46:42.720 --> 00:47:03.570
+Silvio Micali: All I wanted to say about about Russia. Let's remember rushing is a great way to maintain a dynamic set of numbers, or even a dynamic dictionary and numbers represents of a world and dictionary even more variable is a key data payers seem to be everywhere.
+
+265
+00:47:04.770 --> 00:47:27.390
+Silvio Micali: And we have the idea to have chaining to resolve a collision. And so we are going to exploit the order one access to our random access memory that I think is some technology advantage and ushering takes advantage of this particular part of the technology and we should be very, very
+
+266
+00:47:28.440 --> 00:47:33.300
+Silvio Micali: Useful and the collision, we said that we can actually do by
+
+267
+00:47:34.830 --> 00:47:40.200
+Silvio Micali: By changing, but because I see what we have in a few minutes. I'd like to give you
+
+268
+00:47:41.280 --> 00:47:52.860
+Silvio Micali: A very general idea about another way to resolve collisions, which I mentioned that is open addressing
+
+269
+00:47:53.940 --> 00:47:56.550
+Silvio Micali: And very i is data before we
+
+270
+00:47:57.840 --> 00:48:10.590
+Silvio Micali: Forget the link to least if a bad bucket is occupied various to find another bucket. And by the way, for opening addressing to work. A must be greater than or equal to aim and preferably twice as n
+
+271
+00:48:12.210 --> 00:48:22.110
+Silvio Micali: So would you do to insert don't go into a single location and put it there but probe a sequence of bucket until you find an empty one
+
+272
+00:48:23.820 --> 00:48:32.850
+Silvio Micali: OK, so the idea, and we are not going to ever more space of in the just the main idea is beta when you want to
+
+273
+00:48:35.430 --> 00:48:37.680
+Silvio Micali: End the lakes. You are going on. Do
+
+274
+00:48:39.240 --> 00:48:43.470
+Silvio Micali: You want wave of your hash function that maps to the universe of
+
+275
+00:48:45.120 --> 00:49:04.320
+Silvio Micali: End one way into one twin. So you have a universal keys and appropriate number and a bucket. So you tell me what attempt. I'm trying to put x into into VR, Ray. Your turn is a third attempt, I give you a location if I can put it there. I put i can I do if I can't
+
+276
+00:49:05.790 --> 00:49:19.470
+Silvio Micali: They are should function tells you for West x and the for for trial I give you a different bucket trying to best back. So here is my idea I want to insert say keep a data K is my array.
+
+277
+00:49:20.670 --> 00:49:26.820
+Silvio Micali: I go into the first trial which he have a key one is some random element of vessel re
+
+278
+00:49:27.840 --> 00:49:47.430
+Silvio Micali: If it's empty. A puja very element there if I find the other data store there. I have a collision. Very good. What do I do not changing here right i do is wait now I gosh, okay. In the second trial. Number two, and I got into another part of eBay.
+
+279
+00:49:48.600 --> 00:50:02.970
+Silvio Micali: If it's empty, I put my data there. If it's not, then I have another collision. I go over there, fair trial. Ah, OK. Free is a random location represent the my third trial if it is ok.
+
+280
+00:50:04.260 --> 00:50:11.550
+Silvio Micali: Another collision doin one last time final is empty free spot I put my data there. So, but these Melbourne undressing right
+
+281
+00:50:12.840 --> 00:50:16.230
+Silvio Micali: So inserting is your blog until you find an empty bucket.
+
+282
+00:50:17.370 --> 00:50:39.000
+Silvio Micali: Search, but all been till you find an item and returned with success or find an empty bucket, which means the item is not there. And why is not there, because if item is inserted. I would use a bit empty bucket. So, and delete is that the world but till you find the item.
+
+283
+00:50:40.350 --> 00:50:41.760
+Silvio Micali: And if you remove
+
+284
+00:50:43.230 --> 00:50:44.850
+Silvio Micali: You leave it empty.
+
+285
+00:50:46.470 --> 00:50:56.100
+Silvio Micali: That is the only problem with Felicia. Right. But the problem is that if you insert X even said to I suppose the proper sequence for why
+
+286
+00:50:56.970 --> 00:51:06.270
+Silvio Micali: Possible X bucket, then you will store why elsewhere. So if you want to now to delete X and leaving a whole where you deleted.
+
+287
+00:51:06.660 --> 00:51:18.120
+Silvio Micali: And then you search for why the pub sequence. It's again, he bucket, but this time he finds the bucket empty and therefore, you've got her go ahead incorrectly conclude that advice, not in the table.
+
+288
+00:51:18.810 --> 00:51:31.320
+Silvio Micali: And what is the solution is beta when you delete X deleted in Bitbucket and my market deleted Buddha like IP. Rest in peace. He was dead. So fuser chairs of excess
+
+289
+00:51:32.160 --> 00:51:47.670
+Silvio Micali: Returns X know found if they found the rip and otherwise insert z and override it because if somebody is is written is another way to know that you have not. You don't waste space that you make errors.
+
+290
+00:51:49.290 --> 00:52:00.720
+Silvio Micali: Thank you for the expectation MRs are happily idea and I think it was worthwhile for later without an all in things. And let me stop sharing right there.
+
+291
+00:52:08.670 --> 00:52:09.060
+Collin R Warner: Thanks.
+
+292
+00:52:14.610 --> 00:52:18.690
+Silvio Micali: Alright guys, right. So, so it's hashing and
+
+293
+00:52:20.490 --> 00:52:26.610
+Silvio Micali: You must start the meeting with is pretty cool right he lets you do strange things in a very quick way.
+
+294
+00:52:27.270 --> 00:52:35.820
+Silvio Micali: set intersection, all kinds of things information storing and Retrieving, deleting methods of your, your ticket to efficient algorithms.
+
+295
+00:52:36.570 --> 00:52:46.950
+Silvio Micali: No matter what you do, you must enter lashing at some point and and that's all we wanted to do and the rest that will put in some homework and but is a cool idea. So it varies and not
+
+296
+00:52:49.110 --> 00:52:59.700
+Silvio Micali: And the other particular thing and I wish, as usual, but an excellent day and thank you for getting up participating. So in the morning.
+
+297
+00:53:01.110 --> 00:53:02.190
+Silvio Micali: Like guys's keep
+
+298
+00:53:02.370 --> 00:53:04.080
+Keep a little. Yep.
+
